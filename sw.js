@@ -1,5 +1,5 @@
 /* Tally: keeps the app available offline. The newest index.html is used whenever there is a connection. */
-const VERSION = 'tally-9';
+const VERSION = 'tally-10';
 const SHELL = ['./', './index.html', './manifest.webmanifest', './icon-192.png', './icon-512.png', './icon-maskable-512.png', './apple-touch-icon.png'];
 const FONT_HOSTS = ['fonts.googleapis.com', 'fonts.gstatic.com', 'cdnjs.cloudflare.com', 'cdn.jsdelivr.net'];
 

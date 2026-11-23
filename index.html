@@ -868,6 +868,284 @@ body.locked>*:not(.lock){visibility:hidden}
   .funpick .btn{flex:1}
   .plus{width:38px;height:38px}
 }
+
+/* ---------- version 10: back, periods, home, budget amounts, games, baby mode, two-step lock ---------- */
+.backb{display:inline-flex;align-items:center;gap:6px;min-height:34px;padding:4px 12px 4px 9px;border-radius:999px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);font-weight:500;font-size:15px}
+.backb .chev{width:8px;height:8px;border-left:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);margin-left:3px}
+.backb:hover:not(:disabled){background:var(--ink);color:var(--paper)}
+.backb:disabled{opacity:.35;cursor:default}
+.util{display:flex;align-items:center;gap:8px}
+.util .help{background:transparent}
+.notice .adopt{margin-left:auto;white-space:nowrap;background:var(--signal);border-color:var(--signal);color:var(--on-signal)}
+.notice .adopt:hover{background:var(--signal);color:var(--on-signal);filter:brightness(1.08)}
+.vhint{font-size:14px;color:var(--muted);padding:8px 8px 0;max-width:60ch}
+.warnbox{margin:6px 0 4px;padding:10px 12px;border-left:4px solid var(--warn);background:color-mix(in srgb,var(--warn) 10%,var(--panel));border-radius:0 8px 8px 0;font-size:15px}
+
+/* start: spheres first */
+.start .orbs-sec{margin-top:0}
+.start #doing{margin-top:30px}
+.doing-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 16px;margin-bottom:14px}
+.doing-head .q{margin-bottom:0}
+.doing-head .seg button{padding:6px 12px}
+.per-nav{display:flex;align-items:center;gap:12px;margin:0 0 12px}
+.per-nav strong{font:600 20px/1.2 var(--cond);min-width:9ch;text-align:center}
+.per-vis .week{margin-top:0}
+#doing>.sub{margin-top:0}
+.per-7{margin-top:12px}
+@media (min-width:900px){.per-grid{display:grid;grid-template-columns:auto minmax(0,1fr);gap:56px;align-items:start}.per-grid .per-line{margin-top:44px}}
+.wk.fut{opacity:.4;cursor:default}
+.mgrid{display:grid;grid-template-columns:repeat(7,minmax(0,44px));gap:6px 8px;margin-bottom:8px}
+.mgrid .mg-h{font-size:12px;color:var(--muted);text-align:center}
+.mgrid .wk{padding:0}
+.mgrid .ring{width:38px;height:38px} .mgrid .ring b{width:29px;height:29px;font-size:13px}
+.ybars{display:grid;grid-template-columns:repeat(12,minmax(26px,34px));gap:6px;align-items:end;height:150px;margin:4px 0 10px}
+.yb{display:flex;flex-direction:column;align-items:center;gap:3px;height:100%;justify-content:flex-end}
+.yb-col{flex:1;width:100%;max-width:30px;display:flex;align-items:flex-end;background:color-mix(in srgb,var(--rule) 45%,transparent);border-radius:6px;overflow:hidden}
+.yb-col i{display:block;width:100%;background:var(--done);border-radius:6px 6px 0 0}
+.yb-v{font-size:12px;color:var(--ink);min-height:1.2em}
+.yb-col i[style*="height:0%"]{display:none}
+.yb small{font-size:12px;color:var(--muted)}
+.yb.fut{opacity:.4}
+.per-line{margin-top:6px;font-size:16px} .per-line b{font:600 28px/1 var(--cond);margin-right:4px}
+.per-note{margin-top:4px}
+.per-bars{display:grid;gap:8px;margin-top:12px;max-width:640px}
+.per-bars li{display:grid;grid-template-columns:minmax(0,1fr) minmax(80px,160px) 3.5em;align-items:center;gap:12px;font-size:15px}
+.per-bars .pb-l{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.per-bars .meter{height:8px}
+.per-bars .pb-v{text-align:right;color:var(--muted)}
+
+/* home: today at a glance */
+.subseg{max-width:100%;overflow-x:auto;scrollbar-width:none}
+.subseg::-webkit-scrollbar{display:none}
+.subseg button{white-space:nowrap;flex:none}
+.htoday{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;margin:10px 0 18px}
+.ht{display:flex;flex-direction:column;align-items:flex-start;gap:1px;padding:10px 12px;border-radius:12px;border:1px solid var(--rule);background:var(--panel);color:var(--ink);text-align:left;min-width:0}
+.ht:hover{border-color:var(--ink)}
+.ht-ic{font-size:18px;line-height:1.2}
+.ht b{font:600 26px/1.05 var(--cond)}
+.ht small{font-size:13px;color:var(--muted);line-height:1.2}
+.ht.zero b{color:var(--muted)}
+.ht.warn b{color:var(--signal)}
+.ht.din b{font:600 17px/1.15 var(--cond);overflow-wrap:anywhere}
+.ppl{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:8px 0 6px}
+.person{display:inline-flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:999px;border:1.5px solid var(--rule);background:var(--panel);color:var(--ink);font-weight:500}
+.person:hover{border-color:var(--ink)}
+.person small{color:var(--muted);font-weight:400}
+.av{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--done);color:var(--on-done);font-size:14px;font-weight:600}
+.ml-top{margin:0 0 12px}
+.meals{display:grid;gap:8px;max-width:900px;padding:0;list-style:none}
+.meal{display:grid;grid-template-columns:5.5em minmax(0,1fr) minmax(0,1.3fr) auto;gap:8px;align-items:center;padding:8px 10px;border-radius:12px;border:1px solid var(--rule);background:var(--panel)}
+.meal.now{border-color:var(--signal);box-shadow:inset 3px 0 0 var(--signal)}
+.ml-d{font:600 17px/1.1 var(--cond);text-transform:capitalize}
+.ml-d small{display:block;font:400 12px var(--body);color:var(--signal);text-transform:none}
+.meal input{width:100%;min-width:0;background:var(--paper);border:1.5px solid var(--rule);border-radius:6px;padding:7px 9px}
+.meal input:focus{outline:2px solid var(--signal);outline-offset:0;border-color:var(--signal)}
+.meal .btn:disabled{opacity:.4;cursor:default}
+.sug .hint{margin-right:4px}
+
+/* budget: set amounts */
+.plus.txt{width:auto;border-radius:999px;padding:0 10px;font-size:13px;font-weight:600;white-space:nowrap}
+.btn.adj{margin-right:10px}
+.bp-layout{display:grid;grid-template-columns:minmax(0,760px) minmax(260px,320px);gap:20px 44px;align-items:start}
+.bp-side{grid-column:2;grid-row:1;position:sticky;top:12px}
+.bp-main{grid-column:1;grid-row:1;min-width:0}
+.bp-main .grp{flex-wrap:wrap}
+.bp-sum{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px;margin:0 0 14px;border-radius:14px;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid var(--rule)}
+.bp-tile{display:flex;flex-direction:column;gap:2px;padding:8px 12px;border-radius:10px;background:var(--panel);border:1px solid var(--rule);text-align:left;color:var(--ink);min-width:0}
+button.bp-tile:hover{border-color:var(--ink)}
+.bp-tile span{font-size:13.5px;color:var(--muted)}
+.bp-tile strong{font:600 24px/1.1 var(--cond)}
+.bp-tile small{font-size:12.5px;color:var(--muted)}
+.bp-tile.big{grid-column:1 / -1}
+.bp-tile.big strong{font-size:34px}
+.bp-tile.ok strong{color:var(--done)} .bp-tile.warn strong{color:var(--warn)} .bp-tile.bad strong{color:var(--bad)}
+.bp-say{grid-column:1 / -1;margin:0;font-weight:500;font-size:15px}
+.bp-say.bad{color:var(--bad)}
+.bp-steps{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:0 0 12px}
+.bp-steps>span{font-size:14px;color:var(--muted);margin-right:4px}
+.bp-steps button{border:1.5px solid var(--rule);background:var(--panel);color:var(--ink);border-radius:999px;padding:4px 12px;font-weight:500;font-size:14px}
+.bp-steps button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.bp-list{display:grid;gap:0;margin-bottom:16px;max-width:760px}
+.bp-row{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:4px 14px;padding:10px 0;border-top:1px solid var(--rule)}
+.bp-row:last-child{border-bottom:1px solid var(--rule)}
+.bp-name{min-width:0}
+.bp-nm{background:none;border:0;padding:0;color:var(--ink);font-weight:500;text-align:left;text-decoration:underline dotted color-mix(in srgb,var(--muted) 60%,transparent);text-underline-offset:4px}
+.bp-name small{display:block;color:var(--muted);font-size:13.5px}
+.bp-ctl{display:flex;align-items:center;gap:6px}
+.bp-b{width:40px;height:40px;border-radius:50%;border:1.5px solid var(--ink);background:var(--panel);color:var(--ink);font:500 24px/1 var(--body);padding:0;display:grid;place-items:center;touch-action:manipulation;user-select:none;-webkit-user-select:none}
+.bp-b:hover{background:var(--ink);color:var(--paper)}
+.bp-b:active{transform:scale(.93)}
+.bp-in{display:flex;align-items:center;gap:2px;border:1.5px solid var(--rule);border-radius:8px;background:var(--paper);padding:0 8px;height:40px}
+.bp-in:focus-within{border-color:var(--signal);outline:2px solid var(--signal);outline-offset:0}
+.bp-in span{color:var(--muted)}
+.bp-in input{width:6.5ch;border:0;background:transparent;font:600 18px/1 var(--cond);text-align:right;padding:0;outline:0;-moz-appearance:textfield}
+.bp-in input::-webkit-outer-spin-button,.bp-in input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.bp-meter{grid-column:1 / -1}
+.bp-meter .meter{height:6px}
+
+/* learning games */
+.kids{margin-bottom:34px;padding-bottom:26px;border-bottom:1.5px solid var(--rule)}
+.band-row{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:4px 0 14px}
+.band-row>span{font-weight:500}
+.band-row .subseg{margin:0}
+.games{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+.game{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding:14px;border-radius:16px;border:1.5px solid var(--rule);background:var(--panel);color:var(--ink);text-align:left;min-height:150px}
+.game:hover{border-color:var(--ink)}
+.game-ic{font-size:34px;line-height:1.1;margin-bottom:4px}
+.game strong{font:600 20px/1.1 var(--cond)}
+.game small{color:var(--muted);font-size:13.5px;line-height:1.3}
+.game .stars{margin-top:auto;padding-top:6px}
+.stars i{font-style:normal;color:color-mix(in srgb,var(--rule) 90%,var(--paper));font-size:17px}
+.stars i.on{color:#F2B705}
+.kids-note{margin-top:12px}
+.gm{max-width:760px;margin:0 auto 30px}
+.gm-top{display:flex;align-items:center;gap:10px;padding-bottom:10px;margin-bottom:16px;border-bottom:1.5px solid var(--rule)}
+.gm-ic{font-size:26px}
+.gm-top strong{font:600 24px/1.1 var(--cond)}
+.gm-prog{margin-left:auto;color:var(--muted)}
+.gm-q{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;margin-bottom:18px;position:relative}
+.gm-say{font-size:22px;font-weight:500;line-height:1.3}
+.gm-say b{color:var(--signal)}
+.say{width:44px;height:44px;flex:none;border-radius:50%;border:1.5px solid var(--rule);background:var(--panel);font-size:20px}
+.gm-opts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.gm-opts.n4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.gm-opt{aspect-ratio:1;border-radius:20px;border:2px solid var(--rule);background:var(--panel);color:var(--ink);display:grid;place-items:center;padding:10px;min-width:0}
+.gm-opts.wide .gm-opt{aspect-ratio:auto;min-height:120px}
+.gm-opt:hover:not(:disabled){border-color:var(--ink)}
+.gm-opt.right{border-color:var(--done);background:color-mix(in srgb,var(--done) 18%,var(--panel));animation:pop2 .3s ease}
+.gm-opt.wrong{border-color:var(--bad);opacity:.5;animation:shake .35s ease}
+@keyframes pop2{50%{transform:scale(1.07)}}
+@keyframes shake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.shp{width:78%;height:78%}
+.emo{font-size:clamp(44px,10vw,76px);line-height:1}
+.emo.big{font-size:clamp(70px,16vw,110px)}
+.bignum{font:600 clamp(36px,8vw,58px)/1 var(--cond)}
+.cnt{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 10px;max-width:420px;font-size:46px;line-height:1.1}
+.cnt.many{font-size:34px}
+.seq{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;font-size:38px}
+.seq.num{font:600 34px/1.2 var(--cond)}
+.qm{display:inline-grid;place-items:center;min-width:1.3em;border-radius:10px;border:2px dashed var(--signal);color:var(--signal);padding:0 6px}
+.eq{font:600 clamp(42px,9vw,64px)/1.1 var(--cond)}
+.blank{font:600 40px/1.1 var(--cond);letter-spacing:.04em}
+.word{font:600 30px var(--cond);margin-right:6px}
+.gm-fb{min-height:1.6em;margin-top:16px;text-align:center;font-size:20px;font-weight:500}
+.gm-fb b{color:var(--done)}
+.frac{display:inline-flex;flex-direction:column;align-items:center;font:600 44px/1.05 var(--cond)}
+.frac b:first-child{border-bottom:3px solid currentColor;padding:0 8px}
+.eqw{font:600 20px/1.1 var(--cond)}
+.fbars{display:flex;flex-direction:column;gap:6px;align-items:center;margin-bottom:6px}
+.fbar{display:flex;width:min(320px,80vw);height:18px;border:1.5px solid var(--ink);border-radius:4px;overflow:hidden}
+.fbar i{flex:1;border-right:1px solid var(--ink)} .fbar i:last-child{border-right:0}
+.fbar i.on{background:var(--signal)}
+.mem{display:grid;gap:10px;max-width:520px;margin:0 auto}
+.mem.c3{grid-template-columns:repeat(3,minmax(0,1fr));max-width:420px}
+.mem.c4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.card{aspect-ratio:1;border-radius:16px;border:2px solid var(--ink);background:repeating-linear-gradient(45deg,var(--band),var(--band) 8px,color-mix(in srgb,var(--band) 80%,var(--signal)) 8px,color-mix(in srgb,var(--band) 80%,var(--signal)) 16px);display:grid;place-items:center;font-size:clamp(30px,8vw,52px);padding:0}
+.card.open{background:var(--panel)}
+.card.done{border-color:var(--done);background:color-mix(in srgb,var(--done) 15%,var(--panel));opacity:.75}
+.sg-intro{display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center}
+.sg-demo{display:grid;grid-template-columns:auto auto;gap:6px 12px;align-items:center;font-size:18px}
+.sg-demo .sg-go,.sg-demo .sg-stop{font-size:36px}
+.btn.big{font-size:20px;padding:12px 34px;border-radius:999px}
+.sg-pad{display:grid;place-items:center;width:min(320px,78vw);aspect-ratio:1;margin:0 auto;border-radius:50%;border:3px solid var(--rule);background:var(--panel);font-size:clamp(80px,22vw,140px);touch-action:manipulation}
+.sg-pad.go{border-color:var(--done);background:color-mix(in srgb,var(--done) 14%,var(--panel))}
+.sg-pad.stop{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 12%,var(--panel))}
+.sm-st{text-align:center;margin-bottom:14px}
+.pads{display:grid;grid-template-columns:1fr 1fr;gap:14px;width:min(360px,82vw);margin:0 auto}
+.pad{aspect-ratio:1;border-radius:24px;border:0;background:var(--pc);opacity:.45;transition:opacity .08s,transform .08s;touch-action:manipulation}
+.pad.lit{opacity:1;transform:scale(1.04);box-shadow:0 0 26px var(--pc)}
+.pad:disabled{cursor:default}
+.nl{margin:26px auto 0;max-width:640px}
+.nl-track{position:relative;display:block;width:100%;height:64px;border:0;background:none;padding:0;cursor:crosshair}
+.nl-track::before{content:"";position:absolute;left:0;right:0;top:50%;height:6px;margin-top:-3px;border-radius:3px;background:var(--ink)}
+.nl-track::after{content:"";position:absolute;inset:16px 0;border-left:3px solid var(--ink);border-right:3px solid var(--ink)}
+.nl-g,.nl-t{position:absolute;top:50%;width:18px;height:18px;margin:-9px 0 0 -9px;border-radius:50%}
+.nl-g{background:var(--signal)}
+.nl-t{background:var(--done);box-shadow:0 0 0 4px color-mix(in srgb,var(--done) 30%,transparent)}
+.nl-t b{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);font:600 20px var(--cond);color:var(--done)}
+.nl-lab{display:flex;justify-content:space-between;font:600 18px var(--cond);color:var(--muted)}
+.gm-res{text-align:center;padding:10px 0}
+.big-stars .stars i{font-size:56px}
+.gm-res h3{font:600 32px/1.1 var(--cond);margin:8px 0 6px}
+.gm-res .row-btns{justify-content:center}
+
+body.gaming #gbtn,body.gaming #fab{display:none!important}
+/* baby mode: only the games */
+body.baby .top-b,body.baby #rail,body.baby #notice,body.baby #tabs,body.baby #gbtn,body.baby #foot,body.baby #fab,body.baby .bar-r{display:none!important}
+body.baby{padding-bottom:env(safe-area-inset-bottom,0px)}
+body.baby #main{padding-top:14px}
+.kids.big{border-bottom:0}
+.kids.big .area-head .q{font-size:40px}
+.kids.big .games{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+.kids.big .game{align-items:center;text-align:center;border-width:2px;border-radius:24px;min-height:170px}
+.kids.big .game-ic{font-size:56px}
+.kids.big .game small,.kids.big .kids-note{display:none}
+.gm.big .gm-say{font-size:26px}
+.gm.big .gm-opt{border-radius:28px}
+.gm.big .emo{font-size:clamp(56px,14vw,84px)}
+.baby-out{display:flex;justify-content:center;margin:30px 0 20px}
+.baby-exit{--h:0;position:relative;overflow:hidden;border:1.5px dashed var(--muted);background:transparent;color:var(--muted);border-radius:999px;padding:10px 18px;font-size:14px;touch-action:none;user-select:none;-webkit-user-select:none}
+.bx-ring{position:absolute;inset:0;background:color-mix(in srgb,var(--signal) 25%,transparent);transform-origin:left;transform:scaleX(var(--h));z-index:-1}
+
+/* lock: two steps */
+.lock-step{font-size:13px;color:var(--muted);margin:0}
+.pw-fld{width:100%;margin:6px 0 0}
+.pw-fld input{text-align:center;font-size:18px}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.lock2 h4{font-weight:600;margin:14px 0 2px}
+
+@media (max-width:760px){
+  .appbar .top-a{grid-template-columns:auto minmax(0,1fr) auto}
+  .appbar .brand{justify-self:center}
+  .backb{width:38px;height:38px;min-height:38px;padding:0;justify-content:center;border-radius:50%}
+  .backb .bl{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .backb .chev{margin-left:4px}
+  .util{gap:6px;flex-wrap:nowrap}
+  .util .help{width:34px;height:34px}
+  .util .btn{white-space:nowrap;padding:6px 10px}
+  .notice [data-act=reset-sample]{display:none}
+  .ybars{grid-template-columns:repeat(12,minmax(0,1fr))}
+  .start #doing{margin-top:16px}
+  .doing-head{margin-bottom:10px}
+  .doing-head .seg{width:100%;display:grid;grid-template-columns:repeat(4,1fr)}
+  .doing-head .seg button{padding:8px 4px;font-size:14px}
+  .mgrid{grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}
+  .mgrid .ring{width:32px;height:32px} .mgrid .ring b{width:25px;height:25px;font-size:12px}
+  .ybars{height:120px;gap:3px}
+  .yb small{font-size:10.5px}
+  .per-bars li{grid-template-columns:minmax(0,1fr) 70px 3em;gap:8px;font-size:14px}
+  .htoday{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  .ht{padding:8px 10px}
+  .ht b{font-size:22px}
+  .meal{grid-template-columns:1fr auto;padding:10px}
+  .meal .ml-d{grid-column:1 / -1}
+  .meal .ml-dish,.meal .ml-ing{grid-column:1 / -1}
+  .meal .btn{grid-column:2}
+  .bp-layout{display:block}
+  .bp-side{position:sticky;top:calc(60px + env(safe-area-inset-top,0px));z-index:5}
+  .bp-sum{grid-template-columns:1fr 1fr 1.15fr;gap:6px;padding:6px;margin-bottom:12px}
+  .bp-tile{padding:6px 8px}
+  .bp-tile span{font-size:11.5px}
+  .bp-tile strong,.bp-tile.big strong{font-size:19px}
+  .bp-tile small{display:none}
+  .bp-tile.big{grid-column:auto}
+  .bp-say{font-size:12.5px;line-height:1.3;padding:0 2px}
+  .bp-main .grp .num{flex-basis:100%;margin-left:0;font-size:13.5px}
+  .bp-row{grid-template-columns:1fr;gap:8px}
+  .bp-ctl{justify-content:space-between}
+  .bp-in{flex:1;justify-content:flex-end}
+  .bp-in input{width:100%}
+  .bp-b{width:46px;height:46px}
+  .notice .adopt{min-height:34px;padding:3px 10px}
+  .games{grid-template-columns:1fr 1fr;gap:10px}
+  .game{min-height:140px;padding:12px}
+  .gm-opts,.gm-opts.n4{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .gm-opts.n3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .gm-opts.wide{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .gm-say{font-size:19px}
+  .kids.big .games{grid-template-columns:1fr 1fr}
+}
+@media (prefers-reduced-motion:reduce){.gm-opt.right,.gm-opt.wrong{animation:none}.pad{transition:none}}
 </style>
 </head>
 <body>
@@ -1728,7 +2006,7 @@ function blank(name,role){
   return {name:name||'',role:role||'',sample:false,ex:'',kind:'',touched:false,seededOn:today(),show:showAll(),
     rates:{lookup:3,update:30,day:10},budget:4,checks:[],days:{},numbers:[],jobs:[],shelf:[],tools:[],g:{},events:[],home:{items:[],notes:'',routines:[],bills:[],shop:[],contacts:[]},trips:[],nw:{accts:[],props:[],debts:[],hist:{},manual:{}},goals:{years:{}},bud:{income:0,extra:0,method:'aval',cats:[],tx:[]},travel:{seen:{},want:{},bucket:[],passport:''},fun:{items:[]}};
 }
-function normalize(o){
+function normalizeBase(o){
   if(!o||typeof o!=='object'||!o.profiles||typeof o.profiles!=='object')return null;
   if(o.v===1){delete o.profiles.sample;if(o.active!=='mine')o.active='eng';o.v=2}
   if(o.v!==2)return null;
@@ -1858,7 +2136,7 @@ function lifeMore(p,T,kind){
     fi('Board game night with the neighbors','play'),fi('Saturday farmers market','go'),fi('Live music in the park','go'),fi('Try the climbing gym','play',true)]};
   if(p.trips[0])p.trips[0].budget=stu?450:1400;if(p.trips[1])p.trips[1].budget=stu?250:600;
 }
-function buildSample(kind){
+function buildSampleBase(kind){
   var T=today(),m0=monday(T),p;
   function checks(list){return list.map(function(l,i){return {id:'c'+(i+1),label:l}})}
   function hist(vals){return vals.map(function(v,ix){return {d:addDays(m0,-7*(vals.length-1-ix)),v:v}})}
@@ -2687,7 +2965,7 @@ function focusOf(p){
 }
 
 /* ---------- rendering ---------- */
-function render(){
+function renderBase(){
   if(ui.locked){applyChrome();return}
   buildOff();applyChrome();renderTop();renderRail();renderTabs();
   $('#fab').hidden=!P()||ui.tab==='start';$('#fab').setAttribute('aria-label',t('fab_add'));
@@ -2718,7 +2996,7 @@ function renderTop(){
   $('#mid').innerHTML=
     '<div class="seg lang" role="group" aria-label="'+t('lang_label')+'">'+['en','es','fr'].map(function(k){
       return '<button data-act="lang" data-l="'+k+'" lang="'+k+'" aria-pressed="'+(lang()===k)+'" title="'+L[k].lang_name+'" aria-label="'+L[k].lang_name+'">'+k.toUpperCase()+'</button>'}).join('')+'</div>';
-  $('#help').setAttribute('aria-label',t('tour_btn'));$('#help').title=t('tour_btn');
+  var hb=$('#help');if(hb){hb.setAttribute('aria-label',t('tour_btn'));hb.title=t('tour_btn')}
   $('#util').innerHTML=p?'<button class="btn small" data-act="settings">'+t('settings')+'</button>':'';
   $('#who-l').textContent=t('viewing');$('#b-by').textContent=t('brand_by');
   $('#who-btn').innerHTML='<span>'+(state.active==='mine'?esc((state.profiles.mine&&state.profiles.mine.name)||t('my_work')):t('ex_'+state.active))+'</span>';
@@ -3754,7 +4032,7 @@ var HTABS=['todo','rout','bills','shop','info'];
 function everyText(r){return tn('every_'+r.unit,+r.every||1)}
 function rollNext(r){var T=today(),n=+r.every||1;if(r.unit==='d')return addDays(T,n);if(r.unit==='w')return addDays(T,7*n);var d=parse(T);d.setMonth(d.getMonth()+n);return iso(d)}
 function subSeg(list,cur,act,pre){return '<div class="seg subseg" role="group">'+list.map(function(k){return '<button data-act="'+act+'" data-k="'+k+'" aria-pressed="'+(cur===k)+'">'+t(pre+k)+'</button>'}).join('')+'</div>'}
-function renderHome(){
+function renderHomeBase(){
   var p=P(),box=$('#area'),T=today(),H=p.home,tab=HTABS.indexOf(ui.homeTab)>=0?ui.homeTab:'todo',ym=T.slice(0,7),h='';
   var addAct={todo:['home-add','home_add'],rout:['rt-add','rt_add'],bills:['bl-add','bl_add'],info:['ct-add','ct_add']}[tab];
   h+='<div class="area-head"><h2 class="q">'+t('q_home')+'</h2>'+(addAct?'<button class="btn primary" data-act="'+addAct[0]+'">'+t(addAct[1])+'</button>':'')+'</div>'+subSeg(HTABS,tab,'home-tab','ht_');
@@ -3848,7 +4126,7 @@ function debtPlan(p){
   }
   return {months:months,interest:interest,order:order,never:months>=720};
 }
-function renderWorth(){
+function renderWorthBase(){
   var p=P(),box=$('#area'),tab=BTABS.indexOf(ui.budTab)>=0?ui.budTab:'month',h='';
   if(!p.sample)budSeed(p);
   h+='<div class="area-head"><h2 class="q">'+t('q_bud')+'</h2>'+(tab==='month'?'<button class="btn primary" data-act="tx-add">'+t('tx_add')+'</button>':tab==='debt'?'<button class="btn primary" data-act="nw-debt-add">'+t('nw_add_debt')+'</button>':'')+'</div>'+subSeg(BTABS,tab,'bud-tab','bud_');
@@ -4059,7 +4337,7 @@ function renderDoing(){
 
 /* ---------- fun ---------- */
 var FK=['watch','read','eat','play','go','other'],FK_IC={watch:'🎬',read:'📚',eat:'🍜',play:'🎮',go:'🎟️',other:'✨'};
-function renderFun(){
+function renderFunBase(){
   var p=P(),box=$('#area'),F=p.fun,open=F.items.filter(function(x){return !x.done}),done=F.items.filter(function(x){return x.done});
   var pick=open.filter(function(x){return x.id===ui.funPick})[0];
   function row(x){return '<li><label><input type="checkbox" data-act="fun-done" data-id="'+x.id+'"'+(x.done?' checked':'')+'><span'+(x.done?' class="done-txt"':'')+'>'+esc(x.text)+'</span></label><button class="link quiet" data-act="fun-edit" data-id="'+x.id+'">'+t('edit')+'</button></li>'}
@@ -4121,7 +4399,7 @@ function b64(buf){return btoa(String.fromCharCode.apply(null,new Uint8Array(buf)
 function unb64(s){var bin=atob(s),a=new Uint8Array(bin.length);for(var i=0;i<bin.length;i++)a[i]=bin.charCodeAt(i);return a}
 function bioOK(){return topLevel()&&!!window.PublicKeyCredential&&!!navigator.credentials&&window.isSecureContext!==false&&!!(window.crypto&&crypto.getRandomValues)}
 function hasPin(){return !!(state.lock&&state.lock.hash)}
-function renderLock(){
+function renderLockBase(){
   var box=$('#lock'),unlock=LK.mode==='unlock';
   var title=unlock?t('lock_enter'):LK.mode==='set2'?t('lock_again'):t('lock_new'),keys='';
   [1,2,3,4,5,6,7,8,9].forEach(function(n){keys+='<button class="key" data-act="pin-key" data-n="'+n+'">'+n+'</button>'});
@@ -4536,7 +4814,7 @@ document.addEventListener('change',function(e){
 });
 document.addEventListener('keydown',function(e){
   var el=e.target,tag=el&&el.tagName,typing=tag==='INPUT'||tag==='TEXTAREA'||tag==='SELECT';
-  if(LK.mode){
+  if(LK.mode&&LK.mode!=='pass'){
     if(/^[0-9]$/.test(e.key)){e.preventDefault();act['pin-key']({getAttribute:function(){return e.key}})}
     else if(e.key==='Backspace'){e.preventDefault();act['pin-back']()}
     else if(e.key==='Escape'&&LK.mode!=='unlock')act['pin-cancel']();
@@ -4563,6 +4841,1544 @@ document.addEventListener('toggle',function(e){
   if(job){if(d.open)ui.openJobs[job]=true;else delete ui.openJobs[job]}
   if(item){if(d.open){var was=ui.openShelf[item];ui.openShelf[item]=true;if(!was)logLookup(item)}else delete ui.openShelf[item]}
 },true);
+
+
+/* ---------- version 10: interface text ("~" stands for a non-breaking space) ---------- */
+function addL(o){Object.keys(o).forEach(function(lg){var d=o[lg];Object.keys(d).forEach(function(k){var v=d[k];L[lg][k]=typeof v==='string'?v.replace(/~/g,'\u00a0'):v.map(function(x){return x.replace(/~/g,'\u00a0')})})})}
+addL({
+en:{
+back:'Back',adopt:'Make it mine',adopt_t:'Make this profile yours',adopt_hint:'Everything in this example comes with you: check-ins, deadlines, numbers, notes, home and budget. Change your name and role now, then edit or delete anything later.',
+adopt_replace:'This replaces your current profile, {name}. Back it up in Settings first if you want to keep it.',adopt_go:'Make it mine',adopt_done:'It’s yours now. Edit anything in Settings.',
+adopt_tip:'Pick an example that looks like your job, then tap Make it mine to adopt it.',chore_me:'Me',
+grp_f:'Leadership',ex_sales:'Sales Executive',ex_lawyer:'Lawyer',ex_opsdir:'Director of Operations',ex_build:'Construction Worker',ex_food:'Fast Food Shift Lead',ex_eduadmin:'School Administrator',ex_ceo:'Chief Executive Officer',ex_editor:'Editor and Asset Manager',
+ex_english:'',
+tour_top_b:'Back takes you to the screen you were on before. Use Viewing to switch between the examples and your own work, and Make it mine to adopt an example. The round ? button next to Settings reopens this tutorial.',
+tour_doing_b:'Tap today’s check-ins in under a minute. Switch to Weekly, Monthly or Yearly to see how steady you have been and which check-in needs attention. Pick any date on the calendar to open that day.',
+per_day:'Daily',per_week:'Weekly',per_month:'Monthly',per_year:'Yearly',per_none:'No check-ins recorded in this period yet.',
+per_sum:['of check-ins done across {n} day','of check-ins done across {n} days'],per_best:'Strongest: {a}. Needs attention: {b}.',per_prev:'Earlier',per_next:'Later',
+per_last7:'Last 7 days: {p} of check-ins done.',per_see_week:'See the week',per_since:'Counting from {d}, your first check-in.',per_year_aria:'Check-ins done in each month of {y}',
+ht_chores:'Chores',ht_meals:'Dinners',hd_today:'At home today',hd_todo:['to-do due','to-dos due'],hd_rout:['routine due','routines due'],hd_bills:['bill due soon','bills due soon'],
+hd_chores:['chore left','chores left'],hd_shop:['thing to buy','things to buy'],hd_dinner:'Dinner tonight',hd_dinner_none:'Not planned',
+ch_add:'Add a chore',ch_lede:'Who does what around the house. Check a chore off when it’s done; daily chores reset each day and weekly ones each Monday.',
+ch_person_add:'Person',ch_rotate:'Rotate chores',ch_rotated:'Everyone has the next person’s chores now.',ch_none:'No chores yet. Add one, or start from these:',ch_free:'Nothing assigned.',
+ch_daily:'Daily',ch_weekly:'Weekly',ch_sug:'Dishes|Laundry|Take out the trash|Vacuum the living room|Clean the bathroom|Make the beds|Feed the pets|Water the plants',
+ch_t:'Chore',ch_what:'What needs doing',ch_who:'Who does it',ch_how:'How often',ch_del:'Delete chore',ch_person_t:'Person',ch_person_del:'Remove person',
+ml_lede:'Plan the week’s dinners and send what you need straight to the shopping list.',ml_all:'Add all ingredients to the shopping list',ml_clear:'Clear the week',ml_clear_sure:'Tap again to clear every day',
+ml_dish:'dinner',ml_ing:'ingredients',ml_dish_ph:'What’s for dinner?',ml_ing_ph:'Ingredients, separated by commas',ml_add:'Add to list',ml_ideas:'Quick ideas:',
+ml_idea_list:'Tacos|Pasta night|Breakfast for dinner|Soup and grilled cheese|Rice bowls|Leftovers|Homemade pizza|Chili',ml_added:['{n} item added to the shopping list','{n} items added to the shopping list'],ml_full:'Every day already has a dinner.',
+bud_plan:'Set amounts',bp_adjust:'Adjust amounts',bp_log:'+ Spent',bp_lede:'Tap − or + to change what you plan to spend in each category, or type an amount. Hold a button to move faster.',
+bp_step:'Each tap:',bp_left:'Left to plan',bp_over:'Planned over income',bp_say_noinc:'Add your monthly income first, so Tally can show what is left to plan.',
+bp_say_left:'{v} has no job yet. Give it one below, or put it in savings.',bp_say_zero:'Every dollar has a job.',bp_say_over:'You planned {v} more than you bring in. Lower something below.',
+bp_of_inc:'{p} of income, guide {g}',bp_rename:'Rename or move this category',bp_spent:'{v} spent this month',bp_less:'Lower {cat} by {v}',bp_more:'Raise {cat} by {v}',bp_amount:'Monthly amount for {cat}',
+bp_fill:'Put {v} into {cat}',bp_filled:'Moved what was left into savings.',
+kids_h:'Learning games',kids_lede:'Short games for ages 2 to 13 that practice skills child-development research links to learning: counting and number sense, memory, attention, patterns and early reading.',
+kids_age:'Age',kids_note:'Best played together, a few minutes at a time. Progress stays on this device.','band_2-4':'2–4','band_5-8':'5–8','band_9-13':'9–13',
+baby_h:'Let’s play',baby_lede:'Pick a game.',baby_on:'Turn on baby mode',baby_t:'Baby mode',
+baby_what:'Baby mode shows only the learning games, with big buttons and spoken prompts. Work, home, budget and everything else stay hidden until a grown-up turns it off.',
+baby_pin_note:'To leave baby mode, tap the button at the bottom and enter your PIN.',baby_nopin_note:'To leave baby mode, press and hold the button at the bottom for three seconds. Set a PIN in Settings if you want it locked.',
+baby_go:'Turn it on',baby_off_t:'Baby mode is off.',baby_exit_pin:'Grown-ups: exit baby mode',baby_exit_hold:'Grown-ups: hold to exit baby mode',baby_pin:'Enter your PIN to leave baby mode',
+baby_set_hint:'Shows only the learning games, for little ones. You will need your PIN, or a three-second hold, to leave it.',
+gm_shapes:'Shapes and colors',gm_animals:'Find the animal',gm_count:'Count with me',gm_letters:'First letters',gm_memory:'Memory match',gm_stopgo:'Stop and go',gm_simon:'Follow the lights',
+gm_numline:'Number line',gm_pattern:'What comes next?',gm_math:'Quick math',gm_fraction:'Bigger fraction',
+gw_shapes:'Names shapes and colors out loud.',gw_animals:'Builds first words.',gw_count:'One number for each thing: the base of counting.',gw_letters:'Links letters to the sounds that start words.',
+gw_memory:'Exercises working memory.',gw_stopgo:'Practices self-control: wait, then act.',gw_simon:'Holds a growing sequence in mind.',gw_numline:'Builds a sense of how big numbers are.',
+gw_pattern:'Spots the rule behind a pattern.',gw_math:'Builds quick recall of number facts.',gw_fraction:'Compares parts of a whole.',
+gm_stars:['{n} star','{n} stars'],gm_round:'{a} of {b}',gm_yay:'Great job!',gm_r3:'Superstar!',gm_r2:'Great work!',gm_r1:'Nice try! Play again to earn more stars.',
+gm_again:'Play again',gm_all:'All games',gm_score:'{a} of {b} right on the first try.',gm_hear:'Hear it again',gm_yes:'Yes!|You got it!|Great job!|That’s right!',gm_try:'Try again!',
+sh_circle:'the circle',sh_square:'the square',sh_triangle:'the triangle',sh_star:'the star',sh_heart:'the heart',gq_shape:'Find {s}',gq_color:'Find the color {c}',
+col_red:'red',col_blue:'blue',col_yellow:'yellow',col_green:'green',col_purple:'purple',col_orange:'orange',gq_animal:'Where is {a}?',gq_count:'How many are there?',
+gq_letter:'Which letter does it start with?',gq_letter_say:'{w}. Which letter does {w} start with?',gq_next:'What comes next?',gq_frac:'Which one is bigger?',gq_equal:'Same size',
+gm_moves:'{n} turns',gm_card:'Hidden card',gm_mem_done:'All pairs found in {n} turns.',sg_rule:'Tap the big button when you see the star. When you see the hand, wait.',
+sg_tap:'tap',sg_wait:'wait',gm_start:'Start',sg_pad:'Tap here',sg_oops:'Oops, that was the hand. Wait next time.',
+sm_rule:'Watch the colors light up, then tap them in the same order.',sm_watch:'Watch…',sm_you:'Your turn',sm_pad:'Color {n}',sm_len:'{n} in a row',sm_again:'Not quite. Watch again.',sm_done:'You remembered {n} in a row.',
+nl_q:'Tap where {n} goes on the line.',nl_aria:'Number line from 0 to {max}. Tap where {n} goes.',nl_spot:'Spot on!',nl_close:'Very close!',nl_here:'Here is where {n} goes.',nl_done:'{a} of {b} points.',
+lock1_step:'Step 1 of 2',lock2_step:'Step 2 of 2',lock2_enter:'Enter your password',lock2_pw:'Password',lock2_unlock:'Unlock',lock2_forgot:'Forgot it? Erase this device’s data',
+lock2_empty:'Type your password.',lock2_wrong:'That password doesn’t match. Try again.',lock2_h:'Second layer: password',
+lock2_hint:'After the PIN or Face ID, ask for a password too. Two steps to open Tally on this device.',lock2_needpin:'Set a PIN first; the password is the second step after it.',
+lock2_set:'Add a password',lock2_change:'Change password',lock2_off:'Remove password',lock2_t:'Password for the second layer',
+lock2_rules:'At least 6 characters, and not the same as your PIN. Like the PIN, it keeps people out of the app on this device; it does not encrypt your data.',
+lock2_new:'New password',lock2_again:'Type it again',lock2_save:'Save password',lock2_short:'Use at least 6 characters.',lock2_mismatch:'The two passwords don’t match.',
+lock2_notpin:'Use something longer than a 4-digit PIN.',lock2_on:'Two-step lock is on.',lock2_offt:'Password removed. The PIN still locks Tally.'
+},
+es:{
+back:'Atrás',adopt:'Hacerlo mío',adopt_t:'Haz tuyo este perfil',adopt_hint:'Todo lo del ejemplo viene contigo: registros, fechas límite, números, notas, hogar y presupuesto. Cambia tu nombre y puesto ahora, y luego edita o borra lo que quieras.',
+adopt_replace:'Esto reemplaza tu perfil actual, {name}. Haz una copia en Ajustes si quieres conservarlo.',adopt_go:'Hacerlo mío',adopt_done:'Ya es tuyo. Edita lo que quieras en Ajustes.',
+adopt_tip:'Elige un ejemplo parecido a tu trabajo y toca Hacerlo mío para adoptarlo.',chore_me:'Yo',
+grp_f:'Dirección',ex_sales:'Ejecutivo de ventas',ex_lawyer:'Abogada',ex_opsdir:'Dirección de operaciones',ex_build:'Trabajador de construcción',ex_food:'Encargada de comida rápida',ex_eduadmin:'Administración escolar',ex_ceo:'Dirección general (CEO)',ex_editor:'Editor y gestor de recursos',
+ex_english:'(Algunos detalles de los ejemplos siguen en inglés).',
+tour_top_b:'Atrás te lleva a la pantalla anterior. Usa Viendo para cambiar entre los ejemplos y tu propio trabajo, y Hacerlo mío para adoptar un ejemplo. El botón redondo ? junto a Ajustes vuelve a abrir este tutorial.',
+tour_doing_b:'Toca los registros de hoy en menos de un minuto. Cambia a Semanal, Mensual o Anual para ver qué tan constante has sido y qué registro necesita atención. Elige cualquier fecha del calendario para abrir ese día.',
+per_day:'Diario',per_week:'Semanal',per_month:'Mensual',per_year:'Anual',per_none:'Todavía no hay registros en este periodo.',
+per_sum:['de los registros hechos en {n} día','de los registros hechos en {n} días'],per_best:'Lo más constante: {a}. Necesita atención: {b}.',per_prev:'Anterior',per_next:'Siguiente',
+per_last7:'Últimos 7 días: {p} de los registros hechos.',per_see_week:'Ver la semana',per_since:'Contando desde el {d}, tu primer registro.',per_year_aria:'Registros hechos en cada mes de {y}',
+ht_chores:'Tareas de casa',ht_meals:'Cenas',hd_today:'En casa hoy',hd_todo:['pendiente para hoy','pendientes para hoy'],hd_rout:['rutina para hoy','rutinas para hoy'],hd_bills:['cuenta por vencer','cuentas por vencer'],
+hd_chores:['tarea por hacer','tareas por hacer'],hd_shop:['cosa por comprar','cosas por comprar'],hd_dinner:'Cena de hoy',hd_dinner_none:'Sin planear',
+ch_add:'Agregar una tarea',ch_lede:'Quién hace qué en la casa. Marca una tarea cuando esté hecha; las diarias se reinician cada día y las semanales cada lunes.',
+ch_person_add:'Persona',ch_rotate:'Rotar tareas',ch_rotated:'Ahora cada quien tiene las tareas de la siguiente persona.',ch_none:'Todavía no hay tareas. Agrega una o empieza con estas:',ch_free:'Nada asignado.',
+ch_daily:'Diaria',ch_weekly:'Semanal',ch_sug:'Lavar los trastes|Lavar la ropa|Sacar la basura|Aspirar la sala|Limpiar el baño|Tender las camas|Alimentar a las mascotas|Regar las plantas',
+ch_t:'Tarea',ch_what:'Qué hay que hacer',ch_who:'Quién la hace',ch_how:'Cada cuánto',ch_del:'Borrar tarea',ch_person_t:'Persona',ch_person_del:'Quitar persona',
+ml_lede:'Planea las cenas de la semana y manda lo que necesitas directo a la lista de compras.',ml_all:'Agregar todos los ingredientes a la lista',ml_clear:'Vaciar la semana',ml_clear_sure:'Toca otra vez para vaciar todos los días',
+ml_dish:'cena',ml_ing:'ingredientes',ml_dish_ph:'¿Qué hay de cenar?',ml_ing_ph:'Ingredientes, separados por comas',ml_add:'A la lista',ml_ideas:'Ideas rápidas:',
+ml_idea_list:'Tacos|Noche de pasta|Desayuno para cenar|Sopa y quesadillas|Bowls de arroz|Sobras|Pizza casera|Chili',ml_added:['{n} cosa agregada a la lista de compras','{n} cosas agregadas a la lista de compras'],ml_full:'Todos los días ya tienen cena.',
+bud_plan:'Ajustar montos',bp_adjust:'Ajustar montos',bp_log:'+ Gasto',bp_lede:'Toca − o + para cambiar lo que planeas gastar en cada categoría, o escribe un monto. Mantén presionado un botón para ir más rápido.',
+bp_step:'Cada toque:',bp_left:'Por asignar',bp_over:'Planeado de más',bp_say_noinc:'Primero agrega tu ingreso mensual, para que Tally muestre cuánto queda por asignar.',
+bp_say_left:'{v} todavía no tiene destino. Asígnalo abajo o mándalo a ahorros.',bp_say_zero:'Cada dólar tiene un destino.',bp_say_over:'Planeaste {v} más de lo que ganas. Baja algo abajo.',
+bp_of_inc:'{p} del ingreso, guía {g}',bp_rename:'Cambiar el nombre o el grupo de esta categoría',bp_spent:'{v} gastado este mes',bp_less:'Bajar {cat} en {v}',bp_more:'Subir {cat} en {v}',bp_amount:'Monto mensual de {cat}',
+bp_fill:'Poner {v} en {cat}',bp_filled:'Lo que quedaba pasó a ahorros.',
+kids_h:'Juegos para aprender',kids_lede:'Juegos cortos para edades de 2 a 13 años que practican habilidades que la investigación sobre desarrollo infantil vincula con el aprendizaje: contar y sentido numérico, memoria, atención, patrones y lectura inicial.',
+kids_age:'Edad',kids_note:'Mejor jugar juntos, unos minutos a la vez. El progreso se queda en este dispositivo.','band_2-4':'2–4','band_5-8':'5–8','band_9-13':'9–13',
+baby_h:'¡A jugar!',baby_lede:'Elige un juego.',baby_on:'Activar modo bebé',baby_t:'Modo bebé',
+baby_what:'El modo bebé muestra solo los juegos para aprender, con botones grandes e instrucciones habladas. Trabajo, hogar, presupuesto y todo lo demás quedan ocultos hasta que una persona adulta lo apague.',
+baby_pin_note:'Para salir del modo bebé, toca el botón de abajo y escribe tu PIN.',baby_nopin_note:'Para salir del modo bebé, mantén presionado el botón de abajo tres segundos. Pon un PIN en Ajustes si quieres que quede bloqueado.',
+baby_go:'Activarlo',baby_off_t:'El modo bebé está apagado.',baby_exit_pin:'Adultos: salir del modo bebé',baby_exit_hold:'Adultos: mantén presionado para salir',baby_pin:'Escribe tu PIN para salir del modo bebé',
+baby_set_hint:'Muestra solo los juegos para aprender, para los más pequeños. Para salir necesitarás tu PIN o mantener presionado tres segundos.',
+gm_shapes:'Formas y colores',gm_animals:'Encuentra el animal',gm_count:'Cuenta conmigo',gm_letters:'Primeras letras',gm_memory:'Memorama',gm_stopgo:'Alto y siga',gm_simon:'Sigue las luces',
+gm_numline:'Recta numérica',gm_pattern:'¿Qué sigue?',gm_math:'Cálculo rápido',gm_fraction:'La fracción mayor',
+gw_shapes:'Nombra formas y colores en voz alta.',gw_animals:'Construye las primeras palabras.',gw_count:'Un número para cada cosa: la base de contar.',gw_letters:'Une las letras con el sonido con que empiezan las palabras.',
+gw_memory:'Ejercita la memoria de trabajo.',gw_stopgo:'Practica el autocontrol: esperar y luego actuar.',gw_simon:'Retiene una secuencia que crece.',gw_numline:'Da una idea de qué tan grandes son los números.',
+gw_pattern:'Descubre la regla detrás de un patrón.',gw_math:'Agiliza el cálculo mental.',gw_fraction:'Compara partes de un entero.',
+gm_stars:['{n} estrella','{n} estrellas'],gm_round:'{a} de {b}',gm_yay:'¡Muy bien!',gm_r3:'¡Superestrella!',gm_r2:'¡Muy buen trabajo!',gm_r1:'¡Buen intento! Juega otra vez para ganar más estrellas.',
+gm_again:'Jugar otra vez',gm_all:'Todos los juegos',gm_score:'{a} de {b} correctas al primer intento.',gm_hear:'Escuchar otra vez',gm_yes:'¡Sí!|¡Lo lograste!|¡Muy bien!|¡Correcto!',gm_try:'¡Inténtalo otra vez!',
+sh_circle:'el círculo',sh_square:'el cuadrado',sh_triangle:'el triángulo',sh_star:'la estrella',sh_heart:'el corazón',gq_shape:'Encuentra {s}',gq_color:'Busca el color {c}',
+col_red:'rojo',col_blue:'azul',col_yellow:'amarillo',col_green:'verde',col_purple:'morado',col_orange:'anaranjado',gq_animal:'¿Dónde está {a}?',gq_count:'¿Cuántos hay?',
+gq_letter:'¿Con qué letra empieza?',gq_letter_say:'{w}. ¿Con qué letra empieza {w}?',gq_next:'¿Qué sigue?',gq_frac:'¿Cuál es mayor?',gq_equal:'Son iguales',
+gm_moves:'{n} turnos',gm_card:'Carta oculta',gm_mem_done:'Encontraste todos los pares en {n} turnos.',sg_rule:'Toca el botón grande cuando veas la estrella. Cuando veas la mano, espera.',
+sg_tap:'toca',sg_wait:'espera',gm_start:'Empezar',sg_pad:'Toca aquí',sg_oops:'¡Uy, era la mano! La próxima vez espera.',
+sm_rule:'Mira cómo se encienden los colores y luego tócalos en el mismo orden.',sm_watch:'Mira…',sm_you:'Tu turno',sm_pad:'Color {n}',sm_len:'{n} seguidos',sm_again:'Casi. Mira otra vez.',sm_done:'Recordaste {n} seguidos.',
+nl_q:'Toca dónde va el {n} en la recta.',nl_aria:'Recta numérica del 0 al {max}. Toca dónde va el {n}.',nl_spot:'¡Exacto!',nl_close:'¡Muy cerca!',nl_here:'Aquí va el {n}.',nl_done:'{a} de {b} puntos.',
+lock1_step:'Paso 1 de 2',lock2_step:'Paso 2 de 2',lock2_enter:'Escribe tu contraseña',lock2_pw:'Contraseña',lock2_unlock:'Desbloquear',lock2_forgot:'¿La olvidaste? Borrar los datos de este dispositivo',
+lock2_empty:'Escribe tu contraseña.',lock2_wrong:'Esa contraseña no coincide. Inténtalo otra vez.',lock2_h:'Segunda capa: contraseña',
+lock2_hint:'Después del PIN o de Face ID, pide también una contraseña. Dos pasos para abrir Tally en este dispositivo.',lock2_needpin:'Primero pon un PIN; la contraseña es el segundo paso después de él.',
+lock2_set:'Agregar una contraseña',lock2_change:'Cambiar contraseña',lock2_off:'Quitar contraseña',lock2_t:'Contraseña para la segunda capa',
+lock2_rules:'Al menos 6 caracteres y distinta de tu PIN. Igual que el PIN, impide que otras personas abran la app en este dispositivo; no cifra tus datos.',
+lock2_new:'Contraseña nueva',lock2_again:'Escríbela otra vez',lock2_save:'Guardar contraseña',lock2_short:'Usa al menos 6 caracteres.',lock2_mismatch:'Las dos contraseñas no coinciden.',
+lock2_notpin:'Usa algo más largo que un PIN de 4 dígitos.',lock2_on:'El bloqueo de dos pasos está activado.',lock2_offt:'Contraseña quitada. El PIN sigue bloqueando Tally.'
+},
+fr:{
+back:'Retour',adopt:'L’adopter',adopt_t:'Faire de ce profil le vôtre',adopt_hint:'Tout le contenu de l’exemple vous suit~: points du jour, échéances, chiffres, notes, maison et budget. Changez votre nom et votre poste maintenant, puis modifiez ou supprimez ce que vous voulez.',
+adopt_replace:'Cela remplace votre profil actuel, {name}. Faites une sauvegarde dans Réglages si vous voulez le garder.',adopt_go:'L’adopter',adopt_done:'C’est le vôtre. Modifiez ce que vous voulez dans Réglages.',
+adopt_tip:'Choisissez un exemple proche de votre métier, puis touchez L’adopter pour en faire le vôtre.',chore_me:'Moi',
+grp_f:'Direction',ex_sales:'Commercial grands comptes',ex_lawyer:'Avocate',ex_opsdir:'Direction des opérations',ex_build:'Ouvrier du bâtiment',ex_food:'Cheffe d’équipe en fast-food',ex_eduadmin:'Direction d’établissement scolaire',ex_ceo:'Présidence-direction générale',ex_editor:'Éditeur et gestionnaire de ressources',
+ex_english:'(Certains détails des exemples restent en anglais.)',
+tour_top_b:'Retour vous ramène à l’écran précédent. Utilisez Affichage pour passer des exemples à votre propre travail, et L’adopter pour faire d’un exemple le vôtre. Le bouton rond ? à côté de Réglages rouvre ce tutoriel.',
+tour_doing_b:'Cochez les points du jour en moins d’une minute. Passez à Hebdo, Mensuel ou Annuel pour voir votre régularité et le point qui demande de l’attention. Choisissez une date du calendrier pour ouvrir ce jour.',
+per_day:'Jour',per_week:'Hebdo',per_month:'Mensuel',per_year:'Annuel',per_none:'Aucun point enregistré sur cette période.',
+per_sum:['des points faits sur {n} jour','des points faits sur {n} jours'],per_best:'Le plus régulier~: {a}. À surveiller~: {b}.',per_prev:'Précédent',per_next:'Suivant',
+per_last7:'7 derniers jours~: {p} des points faits.',per_see_week:'Voir la semaine',per_since:'Calcul à partir du {d}, votre premier point.',per_year_aria:'Points faits chaque mois de {y}',
+ht_chores:'Corvées',ht_meals:'Dîners',hd_today:'À la maison aujourd’hui',hd_todo:['tâche à faire','tâches à faire'],hd_rout:['routine prévue','routines prévues'],hd_bills:['facture bientôt due','factures bientôt dues'],
+hd_chores:['corvée restante','corvées restantes'],hd_shop:['article à acheter','articles à acheter'],hd_dinner:'Dîner ce soir',hd_dinner_none:'Pas prévu',
+ch_add:'Ajouter une corvée',ch_lede:'Qui fait quoi à la maison. Cochez une corvée une fois faite~; les quotidiennes repartent chaque jour, les hebdomadaires chaque lundi.',
+ch_person_add:'Personne',ch_rotate:'Faire tourner',ch_rotated:'Chacun a maintenant les corvées de la personne suivante.',ch_none:'Pas encore de corvée. Ajoutez-en une ou partez de celles-ci~:',ch_free:'Rien d’attribué.',
+ch_daily:'Quotidienne',ch_weekly:'Hebdomadaire',ch_sug:'La vaisselle|La lessive|Sortir les poubelles|Passer l’aspirateur au salon|Nettoyer la salle de bain|Faire les lits|Nourrir les animaux|Arroser les plantes',
+ch_t:'Corvée',ch_what:'Ce qu’il faut faire',ch_who:'Qui s’en charge',ch_how:'À quelle fréquence',ch_del:'Supprimer la corvée',ch_person_t:'Personne',ch_person_del:'Retirer la personne',
+ml_lede:'Prévoyez les dîners de la semaine et envoyez ce qu’il faut directement sur la liste de courses.',ml_all:'Ajouter tous les ingrédients à la liste',ml_clear:'Vider la semaine',ml_clear_sure:'Touchez encore pour vider tous les jours',
+ml_dish:'dîner',ml_ing:'ingrédients',ml_dish_ph:'Qu’est-ce qu’on mange~?',ml_ing_ph:'Ingrédients, séparés par des virgules',ml_add:'À la liste',ml_ideas:'Idées rapides~:',
+ml_idea_list:'Tacos|Soirée pâtes|Petit-déjeuner au dîner|Soupe et croque-monsieur|Bols de riz|Restes|Pizza maison|Chili',ml_added:['{n} article ajouté à la liste de courses','{n} articles ajoutés à la liste de courses'],ml_full:'Chaque jour a déjà un dîner.',
+bud_plan:'Montants',bp_adjust:'Ajuster les montants',bp_log:'+ Dépense',bp_lede:'Touchez − ou + pour changer ce que vous prévoyez de dépenser dans chaque catégorie, ou tapez un montant. Maintenez un bouton pour aller plus vite.',
+bp_step:'Chaque toucher~:',bp_left:'Reste à répartir',bp_over:'Prévu au-delà du revenu',bp_say_noinc:'Ajoutez d’abord votre revenu mensuel pour que Tally montre ce qui reste à répartir.',
+bp_say_left:'{v} n’a pas encore d’usage. Répartissez-le ci-dessous ou mettez-le de côté.',bp_say_zero:'Chaque dollar a un usage.',bp_say_over:'Vous avez prévu {v} de plus que ce que vous gagnez. Baissez une catégorie ci-dessous.',
+bp_of_inc:'{p} du revenu, repère {g}',bp_rename:'Renommer ou déplacer cette catégorie',bp_spent:'{v} dépensés ce mois-ci',bp_less:'Baisser {cat} de {v}',bp_more:'Augmenter {cat} de {v}',bp_amount:'Montant mensuel pour {cat}',
+bp_fill:'Mettre {v} dans {cat}',bp_filled:'Le reste est passé dans l’épargne.',
+kids_h:'Jeux pour apprendre',kids_lede:'De petits jeux pour les 2 à 13 ans qui font travailler des compétences que la recherche sur le développement de l’enfant relie aux apprentissages~: compter et le sens des nombres, la mémoire, l’attention, les suites logiques et l’entrée dans la lecture.',
+kids_age:'Âge',kids_note:'À jouer ensemble, quelques minutes à la fois. Les progrès restent sur cet appareil.','band_2-4':'2–4','band_5-8':'5–8','band_9-13':'9–13',
+baby_h:'On joue~!',baby_lede:'Choisis un jeu.',baby_on:'Activer le mode bébé',baby_t:'Mode bébé',
+baby_what:'Le mode bébé n’affiche que les jeux pour apprendre, avec de gros boutons et des consignes à voix haute. Travail, maison, budget et le reste restent cachés jusqu’à ce qu’un adulte le désactive.',
+baby_pin_note:'Pour quitter le mode bébé, touchez le bouton en bas et saisissez votre code PIN.',baby_nopin_note:'Pour quitter le mode bébé, maintenez le bouton du bas pendant trois secondes. Définissez un code PIN dans Réglages si vous voulez le verrouiller.',
+baby_go:'L’activer',baby_off_t:'Le mode bébé est désactivé.',baby_exit_pin:'Adultes~: quitter le mode bébé',baby_exit_hold:'Adultes~: maintenir pour quitter',baby_pin:'Saisissez votre code PIN pour quitter le mode bébé',
+baby_set_hint:'N’affiche que les jeux pour apprendre, pour les tout-petits. Pour en sortir, il faudra votre code PIN ou un appui de trois secondes.',
+gm_shapes:'Formes et couleurs',gm_animals:'Trouve l’animal',gm_count:'Compte avec moi',gm_letters:'Premières lettres',gm_memory:'Jeu de mémoire',gm_stopgo:'Stop ou encore',gm_simon:'Suis les lumières',
+gm_numline:'Droite graduée',gm_pattern:'Et ensuite~?',gm_math:'Calcul rapide',gm_fraction:'La plus grande fraction',
+gw_shapes:'Nomme formes et couleurs à voix haute.',gw_animals:'Construit les premiers mots.',gw_count:'Un nombre pour chaque objet~: la base du comptage.',gw_letters:'Relie les lettres au son du début des mots.',
+gw_memory:'Fait travailler la mémoire de travail.',gw_stopgo:'Entraîne le contrôle de soi~: attendre, puis agir.',gw_simon:'Retient une suite qui s’allonge.',gw_numline:'Donne le sens de la taille des nombres.',
+gw_pattern:'Trouve la règle d’une suite.',gw_math:'Automatise les faits numériques.',gw_fraction:'Compare des parts d’un tout.',
+gm_stars:['{n} étoile','{n} étoiles'],gm_round:'{a} sur {b}',gm_yay:'Bravo~!',gm_r3:'Superstar~!',gm_r2:'Très bien joué~!',gm_r1:'Bel essai~! Rejoue pour gagner plus d’étoiles.',
+gm_again:'Rejouer',gm_all:'Tous les jeux',gm_score:'{a} sur {b} justes du premier coup.',gm_hear:'Réécouter',gm_yes:'Oui~!|Bravo~!|C’est ça~!|Bien joué~!',gm_try:'Essaie encore~!',
+sh_circle:'le cercle',sh_square:'le carré',sh_triangle:'le triangle',sh_star:'l’étoile',sh_heart:'le cœur',gq_shape:'Trouve {s}',gq_color:'Trouve la couleur {c}',
+col_red:'rouge',col_blue:'bleu',col_yellow:'jaune',col_green:'vert',col_purple:'violet',col_orange:'orange',gq_animal:'Où est {a}~?',gq_count:'Combien y en a-t-il~?',
+gq_letter:'Par quelle lettre ça commence~?',gq_letter_say:'{w}. Par quelle lettre commence {w}~?',gq_next:'Qu’est-ce qui vient ensuite~?',gq_frac:'Laquelle est la plus grande~?',gq_equal:'Pareil',
+gm_moves:'{n} tours',gm_card:'Carte cachée',gm_mem_done:'Toutes les paires trouvées en {n} tours.',sg_rule:'Touche le gros bouton quand tu vois l’étoile. Quand tu vois la main, attends.',
+sg_tap:'touche',sg_wait:'attends',gm_start:'Commencer',sg_pad:'Touche ici',sg_oops:'Oups, c’était la main. Attends la prochaine fois.',
+sm_rule:'Regarde les couleurs s’allumer, puis touche-les dans le même ordre.',sm_watch:'Regarde…',sm_you:'À toi',sm_pad:'Couleur {n}',sm_len:'{n} à la suite',sm_again:'Presque. Regarde encore.',sm_done:'Tu as retenu {n} à la suite.',
+nl_q:'Touche l’endroit où va {n} sur la droite.',nl_aria:'Droite graduée de 0 à {max}. Touche l’endroit où va {n}.',nl_spot:'Pile au bon endroit~!',nl_close:'Tout près~!',nl_here:'Voici où va {n}.',nl_done:'{a} points sur {b}.',
+lock1_step:'Étape 1 sur 2',lock2_step:'Étape 2 sur 2',lock2_enter:'Saisissez votre mot de passe',lock2_pw:'Mot de passe',lock2_unlock:'Déverrouiller',lock2_forgot:'Oublié~? Effacer les données de cet appareil',
+lock2_empty:'Saisissez votre mot de passe.',lock2_wrong:'Ce mot de passe ne correspond pas. Réessayez.',lock2_h:'Deuxième niveau~: mot de passe',
+lock2_hint:'Après le code PIN ou Face ID, demander aussi un mot de passe. Deux étapes pour ouvrir Tally sur cet appareil.',lock2_needpin:'Définissez d’abord un code PIN~; le mot de passe vient en deuxième étape.',
+lock2_set:'Ajouter un mot de passe',lock2_change:'Changer le mot de passe',lock2_off:'Retirer le mot de passe',lock2_t:'Mot de passe du deuxième niveau',
+lock2_rules:'Au moins 6 caractères, différent de votre code PIN. Comme le code PIN, il empêche d’ouvrir l’application sur cet appareil~; il ne chiffre pas vos données.',
+lock2_new:'Nouveau mot de passe',lock2_again:'Saisissez-le encore',lock2_save:'Enregistrer le mot de passe',lock2_short:'Utilisez au moins 6 caractères.',lock2_mismatch:'Les deux mots de passe ne correspondent pas.',
+lock2_notpin:'Choisissez plus long qu’un code PIN à 4 chiffres.',lock2_on:'Le verrouillage en deux étapes est activé.',lock2_offt:'Mot de passe retiré. Le code PIN verrouille toujours Tally.'
+}
+});
+
+/* ---------- version 10: example content in Spanish and French ---------- */
+/* Each row: English, Spanish, French. A string only changes when it matches a row exactly, so anything a person typed stays as typed. */
+var TR=[
+['Cleared the offer approvals queue','Vacié la fila de ofertas por aprobar','J’ai vidé la file des offres à approuver'],
+['Answered the open HR partner questions','Respondí las preguntas pendientes de RR. HH.','J’ai répondu aux questions RH en attente'],
+['Priced one job against the market','Comparé un puesto con el mercado','J’ai comparé un poste au marché'],
+['An hour on the merit model, no meetings','Una hora en el modelo de méritos, sin reuniones','Une heure sur le modèle de mérite, sans réunion'],
+['Double-checked a number before it went out','Revisé dos veces una cifra antes de enviarla','J’ai revérifié un chiffre avant de l’envoyer'],
+['Left on time','Salí a tiempo','Parti à l’heure'],
+['Read the overnight incident summary','Leí el resumen de incidentes de la noche','J’ai lu le résumé des incidents de la nuit'],
+['Made the decision someone was waiting on','Tomé la decisión que alguien esperaba','J’ai pris la décision qu’on attendait'],
+['Held a 1:1 and mostly listened','Tuve una reunión 1:1 y sobre todo escuché','J’ai tenu un tête-à-tête et surtout écouté'],
+['Two hours with no meetings','Dos horas sin reuniones','Deux heures sans réunion'],
+['Handed off something I was holding','Delegué algo que estaba reteniendo','J’ai délégué quelque chose que je gardais'],
+['Got a full handoff at shift start','Recibí el relevo completo al iniciar el turno','J’ai eu une relève complète en début de garde'],
+['Charted as I went, not at the end','Documenté sobre la marcha, no al final','J’ai rempli les dossiers au fil de l’eau'],
+['Rounded on every patient each hour','Pasé ronda con cada paciente cada hora','J’ai fait le tour de chaque patient chaque heure'],
+['Took my full meal break','Tomé mi descanso de comida completo','J’ai pris toute ma pause repas'],
+['Asked for help before I was underwater','Pedí ayuda antes de ahogarme en trabajo','J’ai demandé de l’aide avant d’être débordée'],
+['Walked the floor before opening','Recorrí la tienda antes de abrir','J’ai fait le tour du magasin avant l’ouverture'],
+['Checked yesterday’s sales against plan','Comparé las ventas de ayer con el plan','J’ai comparé les ventes d’hier à l’objectif'],
+['Coached one person on the floor','Acompañé a una persona en piso','J’ai accompagné une personne en surface de vente'],
+['Fixed tomorrow’s schedule gaps','Cubrí los huecos del horario de mañana','J’ai comblé les trous du planning de demain'],
+['Cleared the district task list','Terminé la lista de tareas del distrito','J’ai terminé la liste de tâches du secteur'],
+['Went to every class','Fui a todas las clases','Je suis allé à tous les cours'],
+['Two hours of real study, phone away','Dos horas de estudio real, sin teléfono','Deux heures de vraie étude, téléphone rangé'],
+['Reviewed today’s notes','Repasé los apuntes de hoy','J’ai relu les notes du jour'],
+['Started something before the night it is due','Empecé algo antes de la noche de entrega','J’ai commencé un devoir avant la veille'],
+['Moved my body','Hice ejercicio','J’ai bougé'],
+['In bed by midnight','En la cama antes de medianoche','Au lit avant minuit'],
+['Reviewed a teammate’s pull request before lunch','Revisé el pull request de un compañero antes del almuerzo','J’ai relu la pull request d’un collègue avant midi'],
+['Two hours of uninterrupted coding','Dos horas de programación sin interrupciones','Deux heures de code sans interruption'],
+['Merged or shipped something','Integré o publiqué algo','J’ai fusionné ou livré quelque chose'],
+['Wrote or updated a test','Escribí o actualicé una prueba','J’ai écrit ou mis à jour un test'],
+['Updated my ticket before standup','Actualicé mi ticket antes del standup','J’ai mis à jour mon ticket avant le point quotidien'],
+['Logged off on time','Me desconecté a tiempo','Déconnecté à l’heure'],
+['Triaged last night’s failed runs','Clasifiqué las ejecuciones fallidas de anoche','J’ai trié les exécutions en échec de la nuit'],
+['Fixed or quarantined one flaky test','Arreglé o aislé una prueba inestable','J’ai corrigé ou isolé un test instable'],
+['Reviewed the tests in someone’s pull request','Revisé las pruebas del pull request de alguien','J’ai relu les tests d’une pull request'],
+['Two hours of framework work, no meetings','Dos horas en el framework, sin reuniones','Deux heures sur le framework, sans réunion'],
+['Paired with a developer on a test','Trabajé en pareja con un desarrollador en una prueba','J’ai fait un test en binôme avec un développeur'],
+['Greeted every class at the door','Recibí a cada grupo en la puerta','J’ai accueilli chaque classe à la porte'],
+['Gave feedback on one set of work','Di comentarios sobre un grupo de trabajos','J’ai commenté une série de travaux'],
+['Prepped tomorrow’s lessons','Preparé las clases de mañana','J’ai préparé les cours de demain'],
+['Contacted one family','Me comuniqué con una familia','J’ai contacté une famille'],
+['Updated the gradebook','Actualicé el registro de calificaciones','J’ai mis à jour le carnet de notes'],
+['Left by 4:30','Salí antes de las 4:30','Parti avant 16 h 30'],
+['Confirmed tomorrow’s appointments','Confirmé las citas de mañana','J’ai confirmé les rendez-vous de demain'],
+['Cleaned and disinfected my station','Limpié y desinfecté mi estación','J’ai nettoyé et désinfecté mon poste'],
+['Rebooked clients before they left','Agendé de nuevo a los clientes antes de irse','J’ai repris rendez-vous avec les clients avant leur départ'],
+['Posted one cut','Publiqué un corte','J’ai publié une coupe'],
+['Logged today’s income','Anoté los ingresos de hoy','J’ai noté les recettes du jour'],
+['Closed on time','Cerré a tiempo','Fermé à l’heure'],
+['Wrote today’s practice plan','Escribí el plan del entrenamiento de hoy','J’ai écrit le plan d’entraînement du jour'],
+['Watched 30 minutes of film','Vi 30 minutos de video de partidos','J’ai regardé 30 minutes de vidéo de match'],
+['Talked with one player one-on-one','Hablé a solas con un jugador','J’ai parlé seul à seul avec un joueur'],
+['Checked the injury list with the trainer','Revisé la lista de lesiones con el preparador','J’ai vérifié la liste des blessés avec le soigneur'],
+['Answered the parent messages','Respondí los mensajes de las familias','J’ai répondu aux messages des parents'],
+['Home for dinner','En casa para cenar','À la maison pour le dîner'],
+['Full accountability at first formation','Lista completa en la primera formación','Effectif complet au premier rassemblement'],
+['Led or joined physical training','Dirigí o hice entrenamiento físico','J’ai mené ou suivi l’entraînement physique'],
+['Checked on one soldier one-on-one','Hablé a solas con un soldado','J’ai fait le point seul à seul avec un soldat'],
+['Updated the training tracker','Actualicé el registro de entrenamiento','J’ai mis à jour le suivi de formation'],
+['Closed one administrative action','Cerré un trámite administrativo','J’ai clos une action administrative'],
+['Home on time','En casa a tiempo','À la maison à l’heure'],
+['Read tomorrow’s agenda items','Leí los puntos de la agenda de mañana','J’ai lu les points de l’ordre du jour de demain'],
+['Returned every resident call','Devolví todas las llamadas de residentes','J’ai rappelé tous les habitants'],
+['Cleared my approvals queue','Vacié mi fila de aprobaciones','J’ai vidé ma file d’approbations'],
+['Walked through one department','Recorrí un departamento','J’ai visité un service'],
+['Checked yesterday’s sales and cash','Revisé las ventas y la caja de ayer','J’ai vérifié les ventes et la caisse d’hier'],
+['Walked the shop before opening','Recorrí el local antes de abrir','J’ai fait le tour de la boutique avant l’ouverture'],
+['Talked with a customer','Hablé con un cliente','J’ai parlé avec un client'],
+['Paid or scheduled what is due','Pagué o programé lo que vence','J’ai payé ou programmé ce qui est dû'],
+['Answered reviews and messages','Respondí reseñas y mensajes','J’ai répondu aux avis et aux messages'],
+['Went home on time','Me fui a casa a tiempo','Rentré à l’heure'],
+['Read the morning production report','Leí el informe de producción de la mañana','J’ai lu le rapport de production du matin'],
+['Worked the exceptions list','Trabajé la lista de excepciones','J’ai traité la liste des exceptions'],
+['Closed one open item','Cerré un pendiente','J’ai clos un point en suspens'],
+['An hour of uninterrupted engineering','Una hora de ingeniería sin interrupciones','Une heure d’ingénierie sans interruption'],
+['Talked to the field','Hablé con el personal de campo','J’ai parlé au terrain'],
+['Offers waiting on me','Ofertas que esperan mi revisión','Offres qui m’attendent'],
+['Offer turnaround','Tiempo de respuesta a ofertas','Délai de traitement des offres'],
+['Jobs priced to market','Puestos comparados con el mercado','Postes comparés au marché'],
+['Pay-equity flags open','Alertas de equidad salarial abiertas','Alertes d’équité salariale ouvertes'],
+['Uptime, last 30 days','Disponibilidad, últimos 30 días','Disponibilité, 30 derniers jours'],
+['Overdue incident follow-ups','Seguimientos de incidentes vencidos','Suivis d’incidents en retard'],
+['Q4 commitments on track','Compromisos del 4.º trimestre en curso','Engagements du T4 dans les temps'],
+['Open engineering roles','Vacantes de ingeniería abiertas','Postes d’ingénierie ouverts'],
+['Continuing education hours','Horas de educación continua','Heures de formation continue'],
+['Overtime this pay period','Horas extra en este periodo de pago','Heures supplémentaires sur cette paie'],
+['Late charting entries','Registros tardíos en el expediente','Saisies tardives au dossier'],
+['Missed meal breaks this month','Descansos de comida perdidos este mes','Pauses repas manquées ce mois-ci'],
+['Sales vs. plan, month to date','Ventas contra el plan, en lo que va del mes','Ventes par rapport à l’objectif, depuis le début du mois'],
+['Labor hours over schedule','Horas de personal por encima del horario','Heures de personnel au-delà du planning'],
+['Open positions','Puestos vacantes','Postes ouverts'],
+['Shrink','Merma','Démarque'],
+['GPA this semester','Promedio de este semestre','Moyenne du semestre'],
+['Study hours this week','Horas de estudio esta semana','Heures d’étude cette semaine'],
+['Assignments turned in late','Tareas entregadas tarde','Devoirs rendus en retard'],
+['Money left this month','Dinero que queda este mes','Argent restant ce mois-ci'],
+['Pull requests waiting on my review','Pull requests que esperan mi revisión','Pull requests qui attendent ma relecture'],
+['My pull request cycle time','Tiempo de ciclo de mis pull requests','Durée de cycle de mes pull requests'],
+['Open bugs assigned to me','Errores abiertos asignados a mí','Bogues ouverts qui me sont assignés'],
+['Sprint commitments finished','Compromisos del sprint terminados','Engagements du sprint terminés'],
+['Suite pass rate','Tasa de éxito de la suite','Taux de réussite de la suite'],
+['Flaky tests in quarantine','Pruebas inestables aisladas','Tests instables en quarantaine'],
+['Regression run time','Duración de la regresión','Durée de la régression'],
+['Critical flows automated','Flujos críticos automatizados','Parcours critiques automatisés'],
+['Sets of work waiting to be graded','Grupos de trabajos por calificar','Séries de copies à corriger'],
+['Students below a C','Estudiantes por debajo de C','Élèves sous la moyenne'],
+['Family contacts this month','Contactos con familias este mes','Contacts avec les familles ce mois-ci'],
+['Missing assignments','Tareas faltantes','Devoirs manquants'],
+['Clients this week','Clientes esta semana','Clients cette semaine'],
+['Rebooked before leaving','Volvieron a agendar antes de irse','Rendez-vous repris avant de partir'],
+['No-shows this month','Ausencias sin aviso este mes','Absences sans prévenir ce mois-ci'],
+['Product sales this month','Venta de productos este mes','Ventes de produits ce mois-ci'],
+['Players cleared to play','Jugadores habilitados para jugar','Joueurs aptes à jouer'],
+['Practice attendance','Asistencia a entrenamientos','Présence aux entraînements'],
+['Goals allowed per game','Goles recibidos por partido','Buts encaissés par match'],
+['Players below the grade requirement','Jugadores por debajo de la nota mínima','Joueurs sous la note requise'],
+['Required training complete','Entrenamiento obligatorio completo','Formation obligatoire terminée'],
+['Medical readiness','Preparación médica','Aptitude médicale'],
+['Counselings overdue','Entrevistas de orientación vencidas','Entretiens de suivi en retard'],
+['Equipment work orders open','Órdenes de trabajo de equipo abiertas','Bons de travail matériel ouverts'],
+['Open resident requests','Solicitudes de residentes abiertas','Demandes d’habitants ouvertes'],
+['Spending against plan','Gasto contra el plan','Dépenses par rapport au budget'],
+['Vacant positions','Plazas vacantes','Postes vacants'],
+['Records requests past due','Solicitudes de registros vencidas','Demandes de documents en retard'],
+['Sales this week','Ventas esta semana','Ventes cette semaine'],
+['Cash on hand','Efectivo disponible','Trésorerie disponible'],
+['Labor cost','Costo de personal','Coût du personnel'],
+['Online rating','Calificación en línea','Note en ligne'],
+['Net production','Producción neta','Production nette'],
+['Deferred production','Producción diferida','Production différée'],
+['Wells down','Pozos parados','Puits à l’arrêt'],
+['Lifting cost','Costo de extracción','Coût d’extraction'],
+/* units */
+['offers','ofertas','offres'],['days','días','jours'],['jobs','puestos','postes'],['flags','alertas','alertes'],['items','pendientes','points'],
+['roles','vacantes','recrutements'],['hours','horas','heures'],['entries','registros','saisies'],['breaks','descansos','pauses'],['positions','plazas','postes vacants'],
+['goals','goles','buts'],['assignments','tareas','devoirs'],['bugs','errores','bogues'],['sets','grupos','séries'],['students','estudiantes','élèves'],
+['contacts','contactos','contacts'],['clients','clientes','clients'],['no-shows','ausencias','absences'],['players','jugadores','joueurs'],
+['counselings','entrevistas','entretiens'],['orders','órdenes','bons'],['requests','solicitudes','demandes'],['stars','estrellas','étoiles'],
+['tests','pruebas','tests'],['wells','pozos','puits'],['books','libros','livres'],['pages','páginas','pages'],['questions','preguntas','questions'],
+['deals','tratos','affaires'],['matters','asuntos','dossiers'],['incidents','incidentes','incidents'],['tickets','tickets','tickets'],
+['orders late','pedidos tarde','commandes en retard'],['calls','llamadas','appels'],['sec','s','s'],
+/* deadlines */
+['Offer review for the two director hires','Revisión de oferta para las dos contrataciones de dirección','Revue des offres pour les deux recrutements de direction'],
+['2027 salary structure proposal','Propuesta de estructura salarial 2027','Proposition de grille salariale 2027'],
+['Bonus accrual true-up for finance','Ajuste de la provisión de bonos para finanzas','Régularisation de la provision des primes pour la finance'],
+['Merit cycle setup','Preparación del ciclo de méritos','Préparation du cycle de mérite'],
+['Year-end pay equity review','Revisión de equidad salarial de fin de año','Revue d’équité salariale de fin d’année'],
+['Decision: renew or renegotiate the cloud contract','Decisión: renovar o renegociar el contrato de nube','Décision~: renouveler ou renégocier le contrat cloud'],
+['Board deck: technology section','Presentación al consejo: sección de tecnología','Présentation au conseil~: partie technologie'],
+['VP of Engineering hire: final round','Contratación de VP de Ingeniería: ronda final','Recrutement VP Ingénierie~: dernier tour'],
+['2027 budget and headcount plan','Presupuesto y plantilla 2027','Budget et effectifs 2027'],
+['SOC 2 audit: evidence sign-off','Auditoría SOC 2: firma de evidencias','Audit SOC 2~: validation des preuves'],
+['BLS renewal','Renovación de BLS','Renouvellement BLS'],
+['Self-evaluation for my annual review','Autoevaluación para mi revisión anual','Auto-évaluation pour mon entretien annuel'],
+['Annual competency checklist','Lista anual de competencias','Liste annuelle des compétences'],
+['Unit project: fall-prevention poster','Proyecto de la unidad: cartel de prevención de caídas','Projet du service~: affiche de prévention des chutes'],
+['License renewal: continuing education','Renovación de licencia: educación continua','Renouvellement du permis~: formation continue'],
+['Holiday floor set','Montaje de la tienda para las fiestas','Mise en place du magasin pour les fêtes'],
+['December schedule','Horario de diciembre','Planning de décembre'],
+['Seasonal hiring: six associates','Contratación de temporada: seis asociados','Recrutement saisonnier~: six vendeurs'],
+['Performance reviews for three department leads','Evaluaciones de desempeño de tres jefes de área','Évaluations de trois chefs de rayon'],
+['Year-end inventory count','Inventario de fin de año','Inventaire de fin d’année'],
+['Organic chemistry problem set 9','Química orgánica: ejercicios 9','Chimie organique~: série d’exercices 9'],
+['Spring registration','Inscripción de primavera','Inscriptions du printemps'],
+['Biology lab report: enzyme kinetics','Informe de laboratorio de biología: cinética enzimática','Compte rendu de TP de biologie~: cinétique enzymatique'],
+['Statistics midterm 2','Segundo parcial de estadística','Partiel 2 de statistiques'],
+['History paper: first draft','Ensayo de historia: primer borrador','Dissertation d’histoire~: premier jet'],
+['Final exams','Exámenes finales','Examens finaux'],
+['Refund API: idempotency keys','API de reembolsos: claves de idempotencia','API de remboursement~: clés d’idempotence'],
+['On-call handoff document','Documento de relevo de guardia','Document de passation d’astreinte'],
+['Sprint 24 demo','Demo del sprint 24','Démo du sprint 24'],
+['Upgrade the payments SDK','Actualizar el SDK de pagos','Mettre à jour le SDK de paiement'],
+['Performance review self-assessment','Autoevaluación de desempeño','Auto-évaluation annuelle'],
+['Checkout suite: cut the flaky tests','Suite de pago: eliminar las pruebas inestables','Suite de paiement~: supprimer les tests instables'],
+['Release 8.2 regression sign-off','Aprobación de la regresión de la versión 8.2','Validation de la régression de la version 8.2'],
+['Workshop: test design for developers','Taller: diseño de pruebas para desarrolladores','Atelier~: conception de tests pour les développeurs'],
+['Parallelize the API tests','Paralelizar las pruebas de la API','Paralléliser les tests de l’API'],
+['Test strategy for the mobile app','Estrategia de pruebas para la app móvil','Stratégie de test de l’application mobile'],
+['Unit 4 test: ratios and proportional relationships','Examen de la unidad 4: razones y relaciones proporcionales','Contrôle du chapitre 4~: ratios et proportionnalité'],
+['Progress report grades','Calificaciones del informe de progreso','Notes du bulletin intermédiaire'],
+['Input for two IEP meetings','Aportes para dos reuniones de IEP','Contributions à deux réunions de PAP'],
+['Family conferences','Reuniones con familias','Rencontres parents-professeurs'],
+['Unit 5 lesson plans: percent','Planes de clase de la unidad 5: porcentaje','Préparations du chapitre 5~: pourcentages'],
+['Holiday booking','Reservas de las fiestas','Réservations des fêtes'],
+['Supply order','Pedido de insumos','Commande de fournitures'],
+['Train the new apprentice','Capacitar al nuevo aprendiz','Former le nouvel apprenti'],
+['Shop license renewal','Renovación de la licencia del local','Renouvellement de la licence du salon'],
+['Quarterly estimated taxes','Impuestos estimados trimestrales','Acomptes d’impôt trimestriels'],
+['Playoff quarterfinal','Cuartos de final de la liguilla','Quart de finale des éliminatoires'],
+['All-conference nominations','Nominaciones al equipo ideal de la conferencia','Nominations pour l’équipe type'],
+['End-of-season banquet','Cena de fin de temporada','Banquet de fin de saison'],
+['Winter conditioning plan','Plan de acondicionamiento de invierno','Plan de préparation physique d’hiver'],
+['Equipment inventory and order','Inventario y pedido de equipo','Inventaire et commande du matériel'],
+['Monthly counseling packets','Paquetes de orientación mensuales','Dossiers d’entretiens mensuels'],
+['Quarterly training brief','Informe trimestral de entrenamiento','Point trimestriel de formation'],
+['Holiday leave packets','Solicitudes de permiso de fiestas','Dossiers de permissions des fêtes'],
+['Evaluation reports','Informes de evaluación','Rapports d’évaluation'],
+['Equipment inventory before the change of command','Inventario de equipo antes del cambio de mando','Inventaire du matériel avant la passation de commandement'],
+['Council agenda packet','Paquete de la agenda del concejo','Dossier de l’ordre du jour du conseil'],
+['Mid-year budget amendment','Modificación presupuestaria de mitad de año','Modification budgétaire de mi-année'],
+['Public hearing: zoning update','Audiencia pública: actualización de zonificación','Audience publique~: mise à jour du zonage'],
+['State infrastructure grant application','Solicitud de subvención estatal de infraestructura','Demande de subvention d’infrastructure de l’État'],
+['Annual report to residents','Informe anual a los residentes','Rapport annuel aux habitants'],
+['Holiday pre-orders','Pedidos anticipados de las fiestas','Précommandes des fêtes'],
+['Payroll','Nómina','Paie'],
+['Monthly sales tax filing','Declaración mensual del impuesto sobre ventas','Déclaration mensuelle de taxe de vente'],
+['Health inspection prep','Preparación para la inspección sanitaria','Préparation de l’inspection sanitaire'],
+['Lease renewal','Renovación del contrato de arrendamiento','Renouvellement du bail'],
+['Year-end books for the accountant','Libros de fin de año para el contador','Comptes de fin d’année pour le comptable'],
+['Rod-pump redesign review with Priya','Revisión del rediseño de bombeo mecánico con Priya','Revue de la refonte du pompage avec Priya'],
+['Q4 well review for the asset team','Revisión de pozos del 4.º trimestre para el equipo del activo','Revue des puits du T4 pour l’équipe de l’actif'],
+['2027 workover budget: six AFE packets','Presupuesto de reparaciones 2027: seis paquetes AFE','Budget de reconditionnement 2027~: six dossiers AFE'],
+['Annual well status filings (W-10 and G-10)','Informes anuales de estado de pozos (W-10 y G-10)','Déclarations annuelles d’état des puits (W-10 et G-10)'],
+['Year-end reserves review: well notes','Revisión de reservas de fin de año: notas de pozos','Revue des réserves de fin d’année~: notes de puits'],
+/* roles */
+['Senior compensation analyst, 2,400 employees in three countries','Analista sénior de compensaciones, 2,400 empleados en tres países','Analyste rémunération senior, 2~400 salariés dans trois pays'],
+['Chief Technology Officer, 240 engineers at a logistics software company','Directora de tecnología, 240 ingenieros en una empresa de software logístico','Directrice technique, 240 ingénieurs dans un éditeur de logiciels logistiques'],
+['Registered nurse, 32-bed medical-surgical unit, day shift','Enfermera titulada, unidad médico-quirúrgica de 32 camas, turno de día','Infirmière diplômée, service de médecine-chirurgie de 32 lits, équipe de jour'],
+['Store manager, 38 employees at a home-improvement store','Gerente de tienda, 38 empleados en una ferretería grande','Directrice de magasin, 38 salariés dans un magasin de bricolage'],
+['College junior, biology major, 15 credits and a part-time job','Estudiante de tercer año, biología, 15 créditos y un trabajo de medio tiempo','Étudiante en troisième année de biologie, 15 crédits et un job à temps partiel'],
+['Software developer on a six-person payments team','Desarrollador de software en un equipo de pagos de seis personas','Développeur dans une équipe paiements de six personnes'],
+['Senior test automation engineer, 2,400 automated tests across web and API','Ingeniera sénior de automatización de pruebas, 2,400 pruebas automatizadas en web y API','Ingénieure senior en automatisation de tests, 2~400 tests automatisés web et API'],
+['Seventh grade math teacher, 132 students in five sections','Maestra de matemáticas de séptimo grado, 132 estudiantes en cinco grupos','Professeure de mathématiques en cinquième, 132 élèves dans cinq classes'],
+['Barber and shop owner, three chairs','Barbero y dueño de barbería, tres sillas','Barbier et patron du salon, trois fauteuils'],
+['Head coach, high school girls’ soccer, 22 players','Entrenador principal, fútbol femenil de preparatoria, 22 jugadoras','Entraîneur principal, football féminin au lycée, 22 joueuses'],
+['Army platoon sergeant, 32 soldiers','Sargento de pelotón del Ejército, 32 soldados','Sergent-chef de section, 32 soldats'],
+['Assistant city manager, city of 85,000 residents','Subgerente municipal, ciudad de 85,000 habitantes','Directrice générale adjointe, ville de 85~000 habitants'],
+['Owner of a neighborhood bakery and café, nine employees','Dueña de una panadería y café de barrio, nueve empleados','Propriétaire d’une boulangerie-café de quartier, neuf salariés'],
+['Senior production engineer, 138 wells in the Midland Basin','Ingeniero sénior de producción, 138 pozos en la cuenca Midland','Ingénieur production senior, 138 puits dans le bassin de Midland'],
+/* home, calendar, travel, goals, budget, fun */
+['Mom’s birthday','Cumpleaños de mamá','Anniversaire de maman'],['Dentist, 8:30','Dentista, 8:30','Dentiste, 8 h 30'],
+['Holiday lunch with the team','Comida de fin de año con el equipo','Déjeuner de fin d’année avec l’équipe'],['Anniversary','Aniversario','Anniversaire de mariage'],
+['Day after Thanksgiving','Día después de Acción de Gracias','Lendemain de Thanksgiving'],['Company winter break','Cierre de invierno de la empresa','Fermeture d’hiver de l’entreprise'],
+['Dad’s birthday','Cumpleaños de papá','Anniversaire de papa'],
+['Buy a furnace filter for the apartment','Comprar un filtro de calefacción para el departamento','Acheter un filtre de chauffage pour l’appartement'],
+['Replace the furnace filter','Cambiar el filtro de la calefacción','Changer le filtre du chauffage'],
+['Electric bill','Recibo de luz','Facture d’électricité'],['Renew the car registration','Renovar el registro del coche','Renouveler la carte grise'],
+['Renew the parking permit','Renovar el permiso de estacionamiento','Renouveler le permis de stationnement'],
+['Call about the dripping kitchen faucet','Llamar por la llave de la cocina que gotea','Appeler pour le robinet de cuisine qui fuit'],
+['Order holiday cards','Pedir tarjetas de fin de año','Commander les cartes de vœux'],['Clean the gutters','Limpiar las canaletas','Nettoyer les gouttières'],
+['Deep-clean the kitchen','Limpiar a fondo la cocina','Faire un grand ménage de la cuisine'],['Dispute the water bill','Reclamar el recibo del agua','Contester la facture d’eau'],
+['Fix the squeaky back door','Arreglar la puerta trasera que rechina','Réparer la porte arrière qui grince'],
+['Holidays with family in Denver','Fiestas con la familia en Denver','Fêtes en famille à Denver'],['Long weekend in Santa Fe','Fin de semana largo en Santa Fe','Long week-end à Santa Fe'],
+['Flight confirmation is in my email under “Denver”.','La confirmación del vuelo está en mi correo, en “Denver”.','La confirmation du vol est dans mes e-mails, sous «~Denver~».'],
+['Book flights','Reservar vuelos','Réserver les vols'],['Request time off','Pedir los días libres','Poser les congés'],['Arrange a pet sitter','Conseguir quien cuide a la mascota','Trouver quelqu’un pour garder l’animal'],
+['Buy gifts','Comprar regalos','Acheter les cadeaux'],['Pack','Hacer la maleta','Faire la valise'],['Book a place to stay','Reservar alojamiento','Réserver un logement'],['Plan the drive','Planear el viaje en coche','Préparer le trajet en voiture'],
+['Checking','Cuenta de cheques','Compte courant'],['Savings','Ahorros','Épargne'],['Brokerage account','Cuenta de inversión','Compte-titres'],['401(k)','401(k)','401(k)'],
+['Home','Casa','Maison'],['Car loan','Préstamo del coche','Prêt auto'],['Credit card','Tarjeta de crédito','Carte de crédit'],['Student loan','Préstamo estudiantil','Prêt étudiant'],
+['Steady, not rushed','Constante, sin prisa','Régulier, sans précipitation'],['Read 12 books','Leer 12 libros','Lire 12 livres'],['Save $2,500','Ahorrar $2,500','Économiser 2~500~$'],
+['Build the emergency fund','Formar el fondo de emergencia','Constituer l’épargne de précaution'],['Run a 10K','Correr un 10K','Courir un 10~km'],
+['Take a real two-week vacation','Tomar unas vacaciones reales de dos semanas','Prendre de vraies vacances de deux semaines'],['Land a summer internship','Conseguir una pasantía de verano','Décrocher un stage d’été'],
+['Finish a professional certification','Terminar una certificación profesional','Terminer une certification professionnelle'],['Graduate on time','Graduarme a tiempo','Obtenir mon diplôme à temps'],
+['Max out retirement contributions','Aportar el máximo al retiro','Verser le maximum pour la retraite'],
+['Take out trash and recycling','Sacar la basura y el reciclaje','Sortir les poubelles et le recyclage'],['Water the plants','Regar las plantas','Arroser les plantes'],['Test the smoke alarms','Probar los detectores de humo','Tester les détecteurs de fumée'],
+['Rent','Renta','Loyer'],['Phone','Teléfono','Téléphone'],['Internet, my share','Internet, mi parte','Internet, ma part'],['Car insurance','Seguro del coche','Assurance auto'],
+['Mortgage','Hipoteca','Prêt immobilier'],['Internet','Internet','Internet'],['Electric','Luz','Électricité'],['Phone plan','Plan de teléfono','Forfait téléphone'],
+['Milk','Leche','Lait'],['Eggs','Huevos','Œufs'],['Coffee filters','Filtros de café','Filtres à café'],['Dish soap','Jabón para trastes','Liquide vaisselle'],
+['Ray, plumber','Ray, plomero','Ray, plombier'],['Leaks, the water heater','Fugas, el calentador','Fuites, le chauffe-eau'],['Landlord','Casero','Propriétaire'],['Building manager','Administrador del edificio','Gestionnaire de l’immeuble'],
+['Repairs, packages, keys','Reparaciones, paquetes, llaves','Réparations, colis, clés'],['Dr. Lin, vet','Dra. Lin, veterinaria','Dre Lin, vétérinaire'],['Checkups and emergencies','Revisiones y urgencias','Bilans et urgences'],
+['Housing','Vivienda','Logement'],['Groceries','Despensa','Courses'],['Utilities','Servicios','Charges'],['Transportation','Transporte','Transport'],
+['Insurance and health','Seguros y salud','Assurances et santé'],['Eating out','Comer fuera','Restaurants'],['Fun and hobbies','Diversión y pasatiempos','Loisirs'],
+['Subscriptions','Suscripciones','Abonnements'],['Extra debt payments','Pagos extra de deudas','Remboursements anticipés'],
+['Weekly shop','Compra semanal','Courses de la semaine'],['Gas and water','Gas y agua','Gaz et eau'],['Gas','Gasolina','Essence'],['Dinner out','Cena fuera','Dîner au restaurant'],
+['Lunch','Almuerzo','Déjeuner'],['Dinner with friends','Cena con amigos','Dîner entre amis'],['Concert tickets','Boletos de concierto','Billets de concert'],['Music','Música','Musique'],
+['Streaming','Streaming','Streaming'],['Transfer to savings','Transferencia a ahorros','Virement vers l’épargne'],
+['Hike the Inca Trail to Machu Picchu','Caminar el Camino Inca a Machu Picchu','Faire le chemin de l’Inca jusqu’au Machu Picchu'],['See the northern lights','Ver la aurora boreal','Voir les aurores boréales'],
+['Drive the Pacific Coast Highway','Recorrer en coche la Pacific Coast Highway','Rouler sur la Pacific Coast Highway'],
+['Mexico','México','Mexique'],['Canada','Canadá','Canada'],['Spain','España','Espagne'],['Italy','Italia','Italie'],['Japan','Japón','Japon'],['Peru','Perú','Pérou'],['Iceland','Islandia','Islande'],['New Zealand','Nueva Zelanda','Nouvelle-Zélande'],
+['The new season of that baking show','La nueva temporada del programa de repostería','La nouvelle saison de l’émission de pâtisserie'],['A documentary about the deep ocean','Un documental sobre las profundidades del océano','Un documentaire sur les grands fonds marins'],
+['The novel everyone at work keeps recommending','La novela que todos en el trabajo recomiendan','Le roman que tout le monde recommande au travail'],['The ramen place that opened downtown','El lugar de ramen que abrió en el centro','Le restaurant de ramen qui a ouvert en ville'],
+['Board game night with the neighbors','Noche de juegos de mesa con los vecinos','Soirée jeux de société avec les voisins'],['Saturday farmers market','Mercado de productores del sábado','Marché fermier du samedi'],
+['Live music in the park','Música en vivo en el parque','Concert en plein air au parc'],['Try the climbing gym','Probar el gimnasio de escalada','Essayer la salle d’escalade'],
+/* chores and meals */
+['Me','Yo','Moi'],['Dishes','Lavar los trastes','La vaisselle'],['Vacuum the living room','Aspirar la sala','Passer l’aspirateur au salon'],['Laundry','Lavar la ropa','La lessive'],
+['Clean the bathroom','Limpiar el baño','Nettoyer la salle de bain'],['Feed the dog','Darle de comer al perro','Nourrir le chien'],['Make the beds','Tender las camas','Faire les lits'],
+['Tacos','Tacos','Tacos'],['Pasta with salad','Pasta con ensalada','Pâtes et salade'],['Sheet-pan chicken and vegetables','Pollo con verduras al horno','Poulet et légumes au four'],['Leftovers','Sobras','Restes'],
+['Pizza night','Noche de pizza','Soirée pizza'],['Soup and sandwiches','Sopa y sándwiches','Soupe et sandwichs'],['Stir-fry with rice','Salteado con arroz','Sauté et riz'],
+['tortillas, ground beef, lettuce, salsa','tortillas, carne molida, lechuga, salsa','tortillas, bœuf haché, laitue, salsa'],['pasta, tomato sauce, salad greens','pasta, salsa de tomate, lechuga','pâtes, sauce tomate, salade'],
+['chicken thighs, broccoli, potatoes','muslos de pollo, brócoli, papas','hauts de cuisse de poulet, brocoli, pommes de terre'],['pizza dough, mozzarella','masa para pizza, mozzarella','pâte à pizza, mozzarella'],
+['vegetable soup, bread, cheese','sopa de verduras, pan, queso','soupe de légumes, pain, fromage'],['rice, frozen vegetables, soy sauce','arroz, verduras congeladas, salsa de soya','riz, légumes surgelés, sauce soja']
+];
+
+/* ---------- version 10: more examples, each one ready to adopt ---------- */
+/* steps: [label, hours, working days ago it was finished (leave out if open)] */
+var NEWP={
+sales:{name:'Marcus Bell',role:'Enterprise sales executive, $2.4M yearly quota, healthcare software',budget:3,seed:5521,rough:[9,15],
+  checks:['Prospected for 45 minutes before email','Moved one deal to its next step','Updated the CRM the same day','Followed up on every open proposal','Prepped before each call','Left on time'],prob:[.6,.75,.7,.65,.8,.5],
+  nums:[['Quota reached, year to date','%',100,'up',[61,64,66,70,73,76]],['Pipeline coverage','×',3,'up',[2.4,2.6,2.5,2.8,3.1,3.2]],['Meetings booked this week','meetings',8,'up',[5,7,6,9,8,7]],['Deals stalled over 30 days','deals',3,'down',[6,6,5,4,4,3]]],
+  jobs:[['Proposal for Riverside Health',3,[['Confirm pricing with the deal desk',1,1],['Write the business case',2],['Send it and book the review call',0.5]]],
+    ['Quarterly business review with the VP of Sales',8,[['Pull win rates and cycle times',1.5,2],['Write the forecast by stage',2],['List the three deals that need help',1]]],
+    ['Contract renewal: Northgate Clinics',14,[['Usage report for their team',1],['Meet the champion about expansion',1],['Send the renewal paperwork',0.5]]],
+    ['Year-end close plan',21,[['Commit list and best case',1.5,4],['Line up legal review for each contract',1],['Schedule signatures before the holidays',1]]]],
+  shelf:[['How-to','Discovery call outline','Their goal this year, in their words.\nWhat it costs them to do nothing.\nWho else decides, and how.\nTimeline and budget.\nThe next step, booked before you hang up.'],
+    ['How-to','Before a proposal goes out','Pricing approved by the deal desk.\nTerms match what legal signed off.\nThe business case uses their numbers.\nOne clear next step and a date.'],
+    ['Reference','Pipeline coverage','Coverage = open pipeline ÷ quota still to close.\nThree times is a common target for a quarter.'],
+    ['Reference','Win rate','Win rate = deals won ÷ (deals won + deals lost), over the same period.'],
+    ['Link','CRM pipeline view','Add the link to your saved pipeline report.'],
+    ['Who to ask','Priya, sales engineer','Demos, security questionnaires, technical fit.'],
+    ['Who to ask','Deal desk','Discounts, non-standard terms, pricing approvals.'],
+    ['Who to ask','Sam, customer success','How an account is doing before a renewal or upsell.']],
+  tools:['pace','payback'],g:{pace:{plan:200000,sofar:118000},payback:{cost:60000,up:40,m:55}}},
+
+lawyer:{name:'Hannah Pierce',role:'Associate attorney, commercial litigation, 1,900 billable hours a year',budget:4,seed:7713,rough:[16,22],
+  checks:['Logged my time before lunch','Two hours of drafting, door closed','Returned every client call','Checked the docket and deadlines','Moved one matter forward','Left on time'],prob:[.65,.55,.8,.9,.7,.35],
+  nums:[['Billable hours this month','hours',160,'up',[118,124,131,129,140,146]],['Time entries not yet logged','entries',2,'down',[9,7,6,8,4,3]],['Court deadlines in the next 14 days','deadlines',5,'down',[3,4,6,7,5,6]],['Unbilled work over 60 days','$',5000,'down',[14200,12800,11900,9600,8800,7400]]],
+  jobs:[['Motion to dismiss: reply brief',4,[['Read their opposition and note each new argument',2,2],['Research the two cases they rely on',3],['Draft the reply',5],['Partner review and filing',1]]],
+    ['Deposition prep: plant manager',9,[['Build the exhibit list',2,1],['Outline the questions by topic',3],['Prep session with the witness',2]]],
+    ['Discovery responses',12,[['Collect documents from the client',2],['Draft objections and answers',4],['Client verification',0.5]]],
+    ['Settlement memo for the client',18,[['Damages model with ranges',3],['Risks at trial, in plain words',2],['Recommendation and next steps',1]]]],
+  shelf:[['How-to','Before anything gets filed','Caption and case number match the docket.\nEvery citation checked.\nExhibits labeled and attached.\nService list current.\nDeadline confirmed in two places.'],
+    ['How-to','Time entry habits','Record time in tenths of an hour.\nOne task per entry, starting with a verb.\nLog before lunch and before leaving.'],
+    ['Reference','Counting deadlines','Check the court’s local rules for how days are counted and whether weekends and holidays are excluded. When in doubt, file a day early.'],
+    ['Link','Court e-filing portal','Add the link for your court.'],
+    ['Link','Firm docket calendar','Add the link to the shared calendar.'],
+    ['Who to ask','Docketing team','Calculated deadlines, court holidays.'],
+    ['Who to ask','Ruth, senior paralegal','Exhibits, filings, document productions.'],
+    ['Who to ask','Supervising partner','Strategy, client updates, anything that changes the budget.']],
+  tools:['burn','renew'],renew:[['Bar license and CLE credits',220],['Malpractice insurance renewal',95]]},
+
+opsdir:{name:'Victor Ramos',role:'Director of Operations, two distribution centers and 310 employees',budget:3,seed:3391,rough:[5,11],
+  checks:['Read the overnight shipping report','Walked one floor','Cleared one blocker for a manager','Checked safety incidents and near misses','An hour on next quarter, no meetings','Left on time'],prob:[.92,.7,.75,.85,.45,.4],
+  nums:[['On-time shipments','%',98,'up',[96.1,95.4,94.8,96.2,97,97.4]],['Cost per order','$',4.1,'down',[4.62,4.55,4.48,4.39,4.31,4.27]],['Recordable safety incidents, this quarter','incidents',0,'down',[1,1,2,2,2,2]],['Overtime hours this week','hours',400,'down',[620,580,540,510,470,455]]],
+  jobs:[['Peak season staffing plan',3,[['Volume forecast by week',1.5,2],['Temp labor order with the agency',1],['Shift schedule for both sites',2]]],
+    ['Conveyor upgrade: capital request',10,[['Vendor quotes side by side',2,3],['Payback and downtime plan',2],['Present to the CFO',1]]],
+    ['Quarterly operations review',15,[['KPIs for both sites',2],['Three wins, three problems, three asks',1.5],['Rehearse with the site managers',1]]],
+    ['Safety audit follow-up',24,[['Close the forklift training gaps',2],['Fix the dock lighting',1],['Re-audit with the safety lead',1]]]],
+  shelf:[['How-to','Daily operations huddle','Safety first: incidents and near misses.\nYesterday against plan.\nToday’s volume and staffing.\nOne problem, one owner, one date.'],
+    ['How-to','Before approving overtime','Is the volume real or a forecast?\nCan another shift or site absorb it?\nWhat does it cost against a temp?\nWho approved it last time?'],
+    ['Reference','Cost per order','Cost per order = (labor + packaging + facility cost for the period) ÷ orders shipped.'],
+    ['Reference','OSHA recordable rate','Rate = recordable incidents × 200,000 ÷ hours worked.'],
+    ['Link','Warehouse dashboard','Add the link to your live dashboard.'],
+    ['Who to ask','Site managers','What the numbers do not show.'],
+    ['Who to ask','Safety lead','Incidents, audits, training records.'],
+    ['Who to ask','Finance partner','Budget, capital requests, labor cost.']],
+  tools:['payback','burn'],g:{payback:{cost:240000,up:30,m:260}}},
+
+build:{name:'Luis Herrera',role:'Carpenter and crew lead, commercial construction, crew of five',budget:2,seed:6602,rough:[12,18],
+  checks:['Stretched and warmed up before the shift','Walked the site for hazards','Wore all my PPE all day','Checked tomorrow’s materials','Logged my hours','Home for dinner'],prob:[.6,.85,.95,.7,.8,.65],
+  nums:[['Hours this week','hours',45,'down',[52,49,47,50,46,44]],['Overtime this pay period','hours',8,'down',[14,12,10,11,9,7]],['Days without a safety incident','days',100,'up',[41,48,55,62,69,76]],['Punch-list items open','items',10,'down',[34,30,26,21,17,15]]],
+  jobs:[['Frame the second-floor interior walls',3,[['Lay out the walls from the plans',2,1],['Frame and brace',16],['Inspection walk with the foreman',1]]],
+    ['Order materials for the next phase',6,[['Take off quantities from the drawings',2],['Get the order approved',0.5],['Confirm the delivery date',0.5]]],
+    ['OSHA 30 refresher',12,[['Finish the online modules',4,2],['Final quiz',1]]],
+    ['Punch list before handover',20,[['Walk the floor with the super',2],['Fix trim and doors',10],['Sign off with the owner’s rep',1]]]],
+  shelf:[['How-to','Start-of-shift safety check','Hard hat, glasses, gloves, boots, vest.\nLadders and scaffolds inspected.\nCords and tools in good shape.\nKnow where the first aid kit and exits are.'],
+    ['How-to','Ladder setup','One foot out for every four feet up.\nExtend three feet past the landing.\nThree points of contact.\nNever stand on the top two rungs.'],
+    ['Reference','Framing basics','Studs 16 inches on center unless the plans say otherwise.\nDouble top plate, joints offset at least 48 inches.\nHeaders sized to the span on the plans.'],
+    ['Reference','Board feet','Board feet = thickness (in) × width (in) × length (ft) ÷ 12.'],
+    ['Link','OSHA construction safety','Standards and quick cards.','https://www.osha.gov/construction'],
+    ['Who to ask','Mike, site superintendent','Schedule, inspections, changes to the plans.'],
+    ['Who to ask','Safety officer','Incidents, near misses, equipment you are unsure about.'],
+    ['Who to ask','Union steward','Pay, hours, anything about the contract.']],
+  tools:['renew','burn'],renew:[['OSHA 30 card refresher',12],['Forklift certification',85],['First aid and CPR',160]]},
+
+food:{name:'Jasmine Carter',role:'Shift lead at a fast food restaurant, 12 crew members per shift',budget:1,seed:2284,rough:[6,12],
+  checks:['Counted my drawer at the start','Checked and logged temperatures','Restocked before the rush','Kept drive-thru times on target','Thanked one crew member by name','Clocked out on time'],prob:[.95,.9,.75,.6,.7,.55],
+  nums:[['Average drive-thru time','sec',210,'down',[248,240,236,229,221,214]],['Orders made wrong','orders',5,'down',[12,10,11,8,7,6]],['Food waste','$',60,'down',[95,88,90,78,70,66]],['Customer survey score','%',90,'up',[82,84,83,86,87,89]]],
+  jobs:[['Weekend schedule swaps',2,[['Collect the requests',0.5,0],['Find coverage',1],['Send to the manager',0.25]]],
+    ['Train two new crew members',5,[['Register and drive-thru basics',2,1],['Fryer and grill safety',2],['Sign off their checklist',0.5]]],
+    ['Food safety certification renewal',9,[['Study the food safety guide',2,2],['Take the online exam',1]]],
+    ['Monthly deep clean',14,[['Fryers and hoods',2],['Walk-in cooler',1.5],['Checklist signed',0.25]]]],
+  shelf:[['How-to','Opening checklist','Count the drawer.\nCheck and log cooler and freezer temperatures.\nTurn on fryers and grills, check the oil.\nStock the line and the drive-thru window.'],
+    ['How-to','When a customer is upset','Listen all the way through.\nSay sorry once and mean it.\nFix the order first, then talk.\nTell the manager if anything was comped.'],
+    ['Reference','Safe food temperatures','Keep cold food at 41°F or below and hot food at 135°F or above. Follow your store’s food safety guide for cooking temperatures.'],
+    ['Reference','Drive-thru time','Time from the speaker to the window, order to hand-off. Check your store’s target.'],
+    ['Link','Scheduling app','Add the link your store uses.'],
+    ['Who to ask','Store manager','Schedules, pay questions, customer complaints.'],
+    ['Who to ask','Opening shift lead','Deliveries, prep, what ran out.']],
+  tools:['pace','renew'],g:{pace:{plan:52000,sofar:30500}},renew:[['Food handler card',9],['Food safety manager certificate',300]]},
+
+eduadmin:{name:'Dr. Monica Reyes',role:'Assistant principal, middle school of 780 students',budget:3,seed:8816,rough:[10,16],
+  checks:['Greeted students at arrival','Visited two classrooms','Answered every parent email','Checked attendance alerts','Closed one discipline referral','Left by 5:30'],prob:[.9,.55,.7,.85,.65,.4],
+  nums:[['Average daily attendance','%',95,'up',[93.2,93.8,92.9,94.1,94.4,94.6]],['Chronically absent students','students',40,'down',[61,58,55,52,49,47]],['Discipline referrals this week','referrals',10,'down',[18,15,16,13,12,11]],['Classroom visits this month','visits',30,'up',[12,15,19,22,24,27]]],
+  jobs:[['Teacher observations: second round',6,[['Schedule with the eight teachers',1,2],['Observe and write notes',8],['Post-observation meetings',4]]],
+    ['State testing schedule',12,[['Room and proctor plan',2],['Accommodations list with special education',2],['Send to staff and families',1]]],
+    ['Budget request for next year',18,[['Collect department asks',1,4],['Rank against the school plan',2],['Meet with the principal',1]]],
+    ['Attendance improvement plan',25,[['Pull the list of chronically absent students',1],['Family outreach plan',2],['Present at the staff meeting',1]]]],
+  shelf:[['How-to','Classroom walkthrough','Ten minutes.\nWhat are students doing, not only the teacher?\nOne thing that worked, one question.\nSend the note the same day.'],
+    ['How-to','Parent call about behavior','Start with something good about the student.\nDescribe what happened, with facts.\nAsk what they see at home.\nAgree on one next step and a follow-up date.'],
+    ['Reference','Chronic absence','Missing 10% or more of school days for any reason, excused or not.'],
+    ['Link','Student information system','Add the link your district uses.'],
+    ['Link','District calendar','Add the link to the district calendar.'],
+    ['Who to ask','Counseling office','Student supports, schedule changes, family situations.'],
+    ['Who to ask','Special education coordinator','IEPs, accommodations, testing.'],
+    ['Who to ask','Front office manager','Substitutes, visitors, supplies.']],
+  tools:['renew','burn'],renew:[['Crisis response training',45],['Administrator license',400]]},
+
+ceo:{name:'Margaret Lin',role:'Chief Executive Officer, 1,200 employees, consumer goods',budget:2,seed:1207,rough:[20,26],
+  checks:['Read the daily numbers','Made the call someone needed from me','Talked with a customer or a frontline employee','Protected one hour to think','Said no to one thing','Home for dinner'],prob:[.95,.75,.5,.4,.45,.5],
+  nums:[['Revenue vs. plan, year to date','%',100,'up',[97,98,96,99,101,102]],['Cash runway','months',18,'up',[16,16.5,17,17.2,17.8,18.4]],['Employee engagement score','%',75,'up',[68,68,70,70,72,73]],['Top priorities on track','%',80,'up',[60,60,70,70,80,80]]],
+  jobs:[['Board meeting',6,[['Read the pre-read from each leader',2,2],['Write the CEO letter',2],['Rehearse the strategy section',1.5]]],
+    ['Key customer visit: national retailer',9,[['Account brief from sales',1],['Visit and dinner',6],['Follow-up note within a day',0.5]]],
+    ['2027 plan sign-off',12,[['Review targets with the CFO',2,4],['Settle the three open trade-offs',2],['Announce the plan to all staff',1]]],
+    ['Succession planning with HR',20,[['Ready-now and ready-later list',2],['Development plans for the top five',2]]]],
+  shelf:[['How-to','Before a big decision','What happens if we wait a month?\nWhat would we need to believe for this to be right?\nWho disagrees, and have I heard them out?\nHow do we reverse it if it is wrong?'],
+    ['How-to','All-staff update','What happened, plainly.\nWhat it means for people here.\nWhat we are doing next.\nWhere to ask questions.'],
+    ['Reference','Runway','Runway in months = cash ÷ average monthly net burn.'],
+    ['Link','Company dashboard','Add the link to your weekly metrics.'],
+    ['Who to ask','CFO','Cash, forecasts, the board’s financial questions.'],
+    ['Who to ask','Chief of staff','Calendar, follow-ups, what is slipping.'],
+    ['Who to ask','Head of people','Leaders, culture, anything sensitive about a team.']],
+  tools:['pace','burn'],g:{pace:{plan:8500000,sofar:5100000}}},
+
+editor:{name:'Jorge Contreras',role:'Editor and Asset Manager, EM² Spanish translation team at Great Minds',budget:4,seed:2026,rough:[8,13],
+  checks:['Cleared my review queue','Answered the team’s open questions','Checked one page pass against the Style Guide','Logged new terms in the glossary','Filed and tagged today’s assets','An hour building team tools, no meetings'],prob:[.75,.85,.7,.55,.65,.5],
+  nums:[['Pages waiting on my review','pages',20,'down',[48,41,44,36,29,24]],['Open terminology questions','questions',5,'down',[14,12,11,9,8,6]],['Assets filed and tagged','%',95,'up',[71,76,80,84,88,91]],['Hours the team saved with my tools','hours',10,'up',[2,3,5,6,8,9]]],
+  jobs:[['Grade 8 Module 1: second page pass',4,[['Compare with the English source',3,2],['Check register and math phrasing',3],['Mark copyfit issues',1.5],['Send the markup to production',0.5]]],
+    ['Asset audit: EM² Spanish files',9,[['List assets missing tags',2,3],['Fix file names to the naming rule',3],['Archive superseded versions',1.5]]],
+    ['Puente: next version for the team',14,[['Collect feedback from the team of six',1,5],['Build and test the changes',6],['Walk the team through it',1]]],
+    ['GM Success Tracker: family meeting view',18,[['Decide what families need to see',1.5],['Build the summary view',4],['Test with one teacher',1]]],
+    ['Style Guide update: punctuation and numbers',24,[['Gather the open questions',1],['Draft the changes',3],['Review with the team',1]]]],
+  shelf:[['How-to','Before I sign off a page pass','Compare against the English source.\nRegister matches the Style Guide.\nNumbers and math phrasing follow the guide.\nNo copyfit overflow.\nMark only what this pass allows.'],
+    ['How-to','Filing an asset','Name it by the naming rule.\nTag grade, module and lesson.\nPut it in the shared library, not a personal folder.\nMove the old version to the archive.'],
+    ['Reference','Page passes','1PP: first page proof.\n2PP: second page proof.\nFinal: the last look before release.\nThe scope narrows with each pass.'],
+    ['Reference','Asset naming rule','Add the team’s naming convention here so it is one tap away.'],
+    ['Link','Great Minds','Curriculum and company site.','https://greatminds.org/'],
+    ['Link','Puente editorial hub','Add the link to the team hub.'],
+    ['Link','Translation memory and glossary','Add the link to the shared glossary.'],
+    ['Who to ask','Translation team','Terminology, register, how a term was handled before.'],
+    ['Who to ask','Production and design','Copyfit, layout, art files.'],
+    ['Who to ask','Math content reviewer','Whether a phrasing still says the same math.']],
+  tools:['batch','roi'],g:{batch:{items:96,each:4,days:4}}}
+};
+EXG=[['grp_f',['ceo','cto','opsdir']],['grp_a',['editor','comp','sales','lawyer','dev','qa']],['grp_b',['eng','nurse','retail','food','build']],['grp_e',['owner','barber']],['grp_c',['teacher','eduadmin','coach','student']],['grp_d',['mil','gov']]];
+EX=[];EXG.forEach(function(g){EX=EX.concat(g[1])});
+Object.keys(NEWP).forEach(function(k){EXTOOLS[k]=NEWP[k].tools});
+function buildSample(kind){
+  var S=NEWP[kind];
+  var p=S?buildNew(kind,S):buildSampleBase(kind);
+  homeSample(p);
+  return p;
+}
+function buildNew(kind,S){
+  var T=today(),m0=monday(T),p=blank(S.name,S.role);
+  p.budget=S.budget;
+  p.checks=S.checks.map(function(l,i){return {id:'c'+(i+1),label:l}});
+  seedDays(p,S.seed,S.prob,T,S.rough[0],S.rough[1]);
+  p.numbers=S.nums.map(function(n){var v=n[4];return {id:uid(),name:n[0],unit:n[1],target:n[2],better:n[3],hist:v.map(function(x,ix){return {d:addDays(m0,-7*(v.length-1-ix)),v:x}})}});
+  p.jobs=S.jobs.map(function(j){return {id:uid(),title:j[0],due:toWeekday(addDays(T,j[1])),steps:j[2].map(function(s){var o={id:uid(),label:s[0],h:s[1],done:s[2]!=null,doneOn:null};if(o.done)o.doneOn=backWd(T,s[2]);return o})}});
+  p.shelf=S.shelf.map(function(x){return {id:uid(),kind:x[0],title:x[1],body:x[2],url:x[3]||''}});
+  p.sample=true;p.ex=kind;
+  lifeSample(p,T,kind);lifeMore(p,T,kind);
+  p.tools=S.tools.slice();
+  p.g=JSON.parse(JSON.stringify(S.g||{}));
+  if(S.renew)p.g.renew={items:S.renew.map(function(r){return {id:uid(),label:r[0],date:addDays(T,r[1])}})};
+  return p;
+}
+/* chores and a week of dinners for every example */
+function homeSample(p){
+  var H=p.home,w=monday(today());
+  H.people=['Me','Alex','Sam'];
+  function ch(text,who,unit,done){var o={id:uid(),text:text,who:who,unit:unit,done:{}};if(done)o.done[unit==='d'?today():w]=1;return o}
+  H.chores=[ch('Dishes',0,'d',true),ch('Feed the dog',2,'d'),ch('Make the beds',1,'d',true),ch('Vacuum the living room',1,'w'),ch('Laundry',0,'w',true),ch('Clean the bathroom',2,'w'),ch('Take out trash and recycling',1,'w')];
+  var dish=[['Tacos','tortillas, ground beef, lettuce, salsa'],['Pasta with salad','pasta, tomato sauce, salad greens'],['Sheet-pan chicken and vegetables','chicken thighs, broccoli, potatoes'],['Leftovers',''],['Pizza night','pizza dough, mozzarella'],['Soup and sandwiches','vegetable soup, bread, cheese'],['Stir-fry with rice','rice, frozen vegetables, soy sauce']];
+  H.meals={week:w,days:dish.map(function(d){return {dish:d[0],ing:d[1]}})};
+}
+
+TR=TR.concat([
+['Enterprise sales executive, $2.4M yearly quota, healthcare software','Ejecutivo de ventas corporativas, cuota anual de $2.4 M, software de salud','Commercial grands comptes, objectif annuel de 2,4~M$, logiciels de santé'],
+['Associate attorney, commercial litigation, 1,900 billable hours a year','Abogada asociada, litigio comercial, 1,900 horas facturables al año','Avocate collaboratrice, contentieux commercial, 1~900 heures facturables par an'],
+['Director of Operations, two distribution centers and 310 employees','Director de operaciones, dos centros de distribución y 310 empleados','Directeur des opérations, deux centres de distribution et 310 salariés'],
+['Carpenter and crew lead, commercial construction, crew of five','Carpintero y jefe de cuadrilla, construcción comercial, cuadrilla de cinco','Charpentier et chef d’équipe, construction commerciale, équipe de cinq'],
+['Shift lead at a fast food restaurant, 12 crew members per shift','Encargada de turno en un restaurante de comida rápida, 12 personas por turno','Cheffe d’équipe dans un fast-food, 12 équipiers par service'],
+['Assistant principal, middle school of 780 students','Subdirectora, escuela secundaria de 780 estudiantes','Principale adjointe, collège de 780 élèves'],
+['Chief Executive Officer, 1,200 employees, consumer goods','Directora general, 1,200 empleados, bienes de consumo','Présidente-directrice générale, 1~200 salariés, biens de consommation'],
+['Editor and Asset Manager, EM² Spanish translation team at Great Minds','Editor y gestor de recursos, equipo de traducción al español de EM² en Great Minds','Éditeur et gestionnaire de ressources, équipe de traduction espagnole d’EM² chez Great Minds'],
+['Prospected for 45 minutes before email','Prospecté 45 minutos antes del correo','J’ai prospecté 45 minutes avant les e-mails'],
+['Moved one deal to its next step','Avancé un trato a su siguiente paso','J’ai fait avancer une affaire d’une étape'],
+['Updated the CRM the same day','Actualicé el CRM el mismo día','J’ai mis à jour le CRM le jour même'],
+['Followed up on every open proposal','Di seguimiento a cada propuesta abierta','J’ai relancé chaque proposition ouverte'],
+['Prepped before each call','Me preparé antes de cada llamada','Je me suis préparé avant chaque appel'],
+['Logged my time before lunch','Registré mi tiempo antes del almuerzo','J’ai saisi mon temps avant midi'],
+['Two hours of drafting, door closed','Dos horas de redacción, puerta cerrada','Deux heures de rédaction, porte fermée'],
+['Returned every client call','Devolví todas las llamadas de clientes','J’ai rappelé tous les clients'],
+['Checked the docket and deadlines','Revisé la agenda judicial y los plazos','J’ai vérifié le rôle et les échéances'],
+['Moved one matter forward','Avancé un asunto','J’ai fait avancer un dossier'],
+['Read the overnight shipping report','Leí el informe de envíos de la noche','J’ai lu le rapport d’expédition de la nuit'],
+['Walked one floor','Recorrí una nave','J’ai fait le tour d’un entrepôt'],
+['Cleared one blocker for a manager','Quité un obstáculo a un gerente','J’ai levé un blocage pour un responsable'],
+['Checked safety incidents and near misses','Revisé incidentes y casi accidentes','J’ai vérifié les incidents et presque-accidents'],
+['An hour on next quarter, no meetings','Una hora en el próximo trimestre, sin reuniones','Une heure sur le prochain trimestre, sans réunion'],
+['Stretched and warmed up before the shift','Estiré y calenté antes del turno','Je me suis étiré avant le poste'],
+['Walked the site for hazards','Revisé la obra en busca de riesgos','J’ai inspecté le chantier pour les dangers'],
+['Wore all my PPE all day','Usé todo mi equipo de protección todo el día','J’ai porté tous mes EPI toute la journée'],
+['Checked tomorrow’s materials','Revisé los materiales de mañana','J’ai vérifié les matériaux de demain'],
+['Logged my hours','Registré mis horas','J’ai noté mes heures'],
+['Counted my drawer at the start','Conté mi caja al empezar','J’ai compté ma caisse au début'],
+['Checked and logged temperatures','Revisé y anoté las temperaturas','J’ai vérifié et noté les températures'],
+['Restocked before the rush','Reabastecí antes de la hora pico','J’ai réapprovisionné avant le coup de feu'],
+['Kept drive-thru times on target','Mantuve el tiempo del autoservicio en la meta','J’ai tenu les temps du drive dans l’objectif'],
+['Thanked one crew member by name','Agradecí a un compañero por su nombre','J’ai remercié un équipier par son prénom'],
+['Clocked out on time','Marqué salida a tiempo','J’ai pointé à l’heure'],
+['Greeted students at arrival','Recibí a los estudiantes a la llegada','J’ai accueilli les élèves à l’arrivée'],
+['Visited two classrooms','Visité dos salones','J’ai visité deux classes'],
+['Answered every parent email','Respondí todos los correos de familias','J’ai répondu à tous les e-mails des parents'],
+['Checked attendance alerts','Revisé las alertas de asistencia','J’ai vérifié les alertes d’absentéisme'],
+['Closed one discipline referral','Cerré un reporte de disciplina','J’ai clos un signalement disciplinaire'],
+['Left by 5:30','Salí antes de las 5:30','Parti avant 17 h 30'],
+['Read the daily numbers','Leí las cifras del día','J’ai lu les chiffres du jour'],
+['Made the call someone needed from me','Tomé la decisión que alguien necesitaba de mí','J’ai tranché là où on avait besoin de moi'],
+['Talked with a customer or a frontline employee','Hablé con un cliente o un empleado de primera línea','J’ai parlé avec un client ou un salarié de terrain'],
+['Protected one hour to think','Reservé una hora para pensar','J’ai protégé une heure pour réfléchir'],
+['Said no to one thing','Dije que no a una cosa','J’ai dit non à une chose'],
+['Cleared my review queue','Vacié mi fila de revisión','J’ai vidé ma file de relecture'],
+['Answered the team’s open questions','Respondí las preguntas pendientes del equipo','J’ai répondu aux questions en attente de l’équipe'],
+['Checked one page pass against the Style Guide','Revisé un pase de páginas contra la Guía de estilo','J’ai vérifié une épreuve par rapport au guide de style'],
+['Logged new terms in the glossary','Registré términos nuevos en el glosario','J’ai ajouté de nouveaux termes au glossaire'],
+['Filed and tagged today’s assets','Archivé y etiqueté los recursos de hoy','J’ai classé et étiqueté les ressources du jour'],
+['An hour building team tools, no meetings','Una hora creando herramientas para el equipo, sin reuniones','Une heure à créer des outils pour l’équipe, sans réunion'],
+['Quota reached, year to date','Cuota alcanzada en lo que va del año','Objectif atteint depuis le début de l’année'],
+['Pipeline coverage','Cobertura del pipeline','Couverture du pipeline'],
+['Meetings booked this week','Reuniones agendadas esta semana','Rendez-vous pris cette semaine'],
+['Deals stalled over 30 days','Tratos detenidos más de 30 días','Affaires bloquées depuis plus de 30 jours'],
+['Billable hours this month','Horas facturables este mes','Heures facturables ce mois-ci'],
+['Time entries not yet logged','Registros de tiempo pendientes','Saisies de temps en attente'],
+['Court deadlines in the next 14 days','Plazos judiciales en los próximos 14 días','Échéances judiciaires dans les 14 jours'],
+['Unbilled work over 60 days','Trabajo sin facturar de más de 60 días','Travail non facturé depuis plus de 60 jours'],
+['On-time shipments','Envíos a tiempo','Expéditions à l’heure'],
+['Cost per order','Costo por pedido','Coût par commande'],
+['Recordable safety incidents, this quarter','Incidentes de seguridad registrables, este trimestre','Accidents déclarables, ce trimestre'],
+['Overtime hours this week','Horas extra esta semana','Heures supplémentaires cette semaine'],
+['Hours this week','Horas esta semana','Heures cette semaine'],
+['Days without a safety incident','Días sin incidentes de seguridad','Jours sans accident'],
+['Punch-list items open','Pendientes de la lista de remates','Réserves à lever'],
+['Average drive-thru time','Tiempo promedio en el autoservicio','Temps moyen au drive'],
+['Orders made wrong','Pedidos mal preparados','Commandes erronées'],
+['Food waste','Desperdicio de comida','Gaspillage alimentaire'],
+['Customer survey score','Puntuación de la encuesta a clientes','Note de satisfaction client'],
+['Average daily attendance','Asistencia diaria promedio','Taux de présence quotidien'],
+['Chronically absent students','Estudiantes con ausentismo crónico','Élèves absentéistes'],
+['Discipline referrals this week','Reportes de disciplina esta semana','Signalements disciplinaires cette semaine'],
+['Classroom visits this month','Visitas a salones este mes','Visites de classe ce mois-ci'],
+['Revenue vs. plan, year to date','Ingresos contra el plan, en lo que va del año','Chiffre d’affaires par rapport au plan, depuis janvier'],
+['Cash runway','Meses de caja','Trésorerie en mois'],
+['Employee engagement score','Índice de compromiso del personal','Score d’engagement des salariés'],
+['Top priorities on track','Prioridades principales en curso','Grandes priorités dans les temps'],
+['Pages waiting on my review','Páginas que esperan mi revisión','Pages qui attendent ma relecture'],
+['Open terminology questions','Preguntas de terminología abiertas','Questions de terminologie ouvertes'],
+['Assets filed and tagged','Recursos archivados y etiquetados','Ressources classées et étiquetées'],
+['Hours the team saved with my tools','Horas que el equipo ahorró con mis herramientas','Heures gagnées par l’équipe grâce à mes outils'],
+['meetings','reuniones','rendez-vous'],['deadlines','plazos','échéances'],['referrals','reportes','signalements'],['visits','visitas','visites'],['months','meses','mois'],
+['Proposal for Riverside Health','Propuesta para Riverside Health','Proposition pour Riverside Health'],
+['Quarterly business review with the VP of Sales','Revisión trimestral con el VP de Ventas','Revue trimestrielle avec le VP des ventes'],
+['Contract renewal: Northgate Clinics','Renovación de contrato: Northgate Clinics','Renouvellement de contrat~: Northgate Clinics'],
+['Year-end close plan','Plan de cierre de fin de año','Plan de clôture de fin d’année'],
+['Motion to dismiss: reply brief','Moción de desestimación: escrito de réplica','Demande d’irrecevabilité~: mémoire en réplique'],
+['Deposition prep: plant manager','Preparación de declaración: gerente de planta','Préparation de déposition~: directeur d’usine'],
+['Discovery responses','Respuestas al descubrimiento de pruebas','Réponses aux demandes de communication de pièces'],
+['Settlement memo for the client','Memorándum de acuerdo para el cliente','Note de transaction pour le client'],
+['Peak season staffing plan','Plan de personal para temporada alta','Plan d’effectifs pour la haute saison'],
+['Conveyor upgrade: capital request','Mejora de bandas transportadoras: solicitud de inversión','Modernisation des convoyeurs~: demande d’investissement'],
+['Quarterly operations review','Revisión trimestral de operaciones','Revue trimestrielle des opérations'],
+['Safety audit follow-up','Seguimiento de la auditoría de seguridad','Suivi de l’audit de sécurité'],
+['Frame the second-floor interior walls','Armar los muros interiores del segundo piso','Monter l’ossature des cloisons du premier étage'],
+['Order materials for the next phase','Pedir materiales para la siguiente fase','Commander les matériaux de la phase suivante'],
+['OSHA 30 refresher','Repaso de OSHA 30','Remise à niveau OSHA 30'],
+['Punch list before handover','Lista de remates antes de la entrega','Levée des réserves avant la livraison'],
+['Weekend schedule swaps','Cambios de turno del fin de semana','Échanges de planning du week-end'],
+['Train two new crew members','Capacitar a dos personas nuevas','Former deux nouveaux équipiers'],
+['Food safety certification renewal','Renovación de la certificación de inocuidad','Renouvellement de la certification hygiène'],
+['Monthly deep clean','Limpieza profunda mensual','Grand nettoyage mensuel'],
+['Teacher observations: second round','Observaciones docentes: segunda ronda','Observations d’enseignants~: deuxième tour'],
+['State testing schedule','Calendario de exámenes estatales','Calendrier des évaluations de l’État'],
+['Budget request for next year','Solicitud de presupuesto del próximo año','Demande de budget pour l’an prochain'],
+['Attendance improvement plan','Plan para mejorar la asistencia','Plan d’amélioration de l’assiduité'],
+['Board meeting','Reunión del consejo','Conseil d’administration'],
+['Key customer visit: national retailer','Visita a cliente clave: cadena nacional','Visite d’un client clé~: enseigne nationale'],
+['2027 plan sign-off','Aprobación del plan 2027','Validation du plan 2027'],
+['Succession planning with HR','Plan de sucesión con RR. HH.','Plan de succession avec les RH'],
+['Grade 8 Module 1: second page pass','Grado 8, Módulo 1: segundo pase de páginas','8e année, module 1~: deuxième épreuve'],
+['Asset audit: EM² Spanish files','Auditoría de recursos: archivos de EM² en español','Audit des ressources~: fichiers EM² en espagnol'],
+['Puente: next version for the team','Puente: próxima versión para el equipo','Puente~: prochaine version pour l’équipe'],
+['GM Success Tracker: family meeting view','GM Success Tracker: vista para reuniones con familias','GM Success Tracker~: vue pour les rencontres avec les familles'],
+['Style Guide update: punctuation and numbers','Actualización de la Guía de estilo: puntuación y números','Mise à jour du guide de style~: ponctuation et nombres'],
+['Bar license and CLE credits','Licencia de abogada y créditos de educación continua','Inscription au barreau et formation continue'],
+['Malpractice insurance renewal','Renovación del seguro de responsabilidad profesional','Renouvellement de l’assurance responsabilité professionnelle'],
+['OSHA 30 card refresher','Repaso de la tarjeta OSHA 30','Remise à niveau de la carte OSHA 30'],
+['Forklift certification','Certificación de montacargas','Habilitation chariot élévateur'],
+['First aid and CPR','Primeros auxilios y RCP','Premiers secours et RCP'],
+['Food handler card','Tarjeta de manipulador de alimentos','Carte de manipulateur d’aliments'],
+['Food safety manager certificate','Certificado de gerente en inocuidad alimentaria','Certificat de responsable hygiène alimentaire'],
+['Crisis response training','Capacitación en respuesta a crisis','Formation à la gestion de crise'],
+['Administrator license','Licencia de administrador escolar','Habilitation de chef d’établissement']
+]);
+TR.forEach(function(r){r[2]=r[2].replace(/~/g,'\u00a0')});
+var TRX={};
+[0,1,2].forEach(function(j){TR.forEach(function(r,i){if(TRX[r[j]]==null)TRX[r[j]]=i})});
+function trx(s){if(typeof s!=='string')return s;var i=TRX[s];if(i==null)return s;return TR[i][({en:0,es:1,fr:2})[lang()]]}
+/* turn an example's words into the current language; only exact matches change */
+function locP(p){
+  if(!p||!(p.sample||p.ex)||p.lg===lang())return;
+  function each(a,k){if(Array.isArray(a))a.forEach(function(x){if(x&&typeof x[k]==='string')x[k]=trx(x[k])})}
+  p.role=trx(p.role);
+  each(p.checks,'label');each(p.numbers,'name');each(p.numbers,'unit');each(p.jobs,'title');each(p.events,'title');each(p.trips,'name');each(p.trips,'note');
+  p.trips.forEach(function(x){each(x.items,'text')});
+  var H=p.home;each(H.items,'text');each(H.routines,'text');each(H.bills,'name');each(H.shop,'text');each(H.contacts,'name');each(H.contacts,'what');each(H.chores,'text');
+  if(Array.isArray(H.people))H.people=H.people.map(trx);
+  if(H.meals&&Array.isArray(H.meals.days)){each(H.meals.days,'dish');each(H.meals.days,'ing')}
+  ['accts','props','debts'].forEach(function(k){each(p.nw[k],'name')});
+  Object.keys(p.goals.years).forEach(function(y){var Y=p.goals.years[y];Y.theme=trx(Y.theme);each(Y.items,'title');each(Y.items,'unit')});
+  each(p.bud.cats,'name');each(p.bud.tx,'note');each(p.travel.bucket,'text');
+  ['seen','want'].forEach(function(k){var o=p.travel[k];Object.keys(o).forEach(function(c){o[c]=trx(o[c])})});
+  each(p.fun.items,'text');
+  if(p.g&&p.g.renew)each(p.g.renew.items,'label');
+  p.lg=lang();
+}
+
+/* ---------- version 10: state that lives on this device ---------- */
+ui.hist=[];ui.pushed=0;ui.per='day';ui.perOff=0;ui.game=null;ui.budStep=10;ui.babyExit=false;
+function homeEnsure(H){
+  if(!H)return;
+  if(!Array.isArray(H.people)||!H.people.length)H.people=[t('chore_me')];
+  if(!Array.isArray(H.chores))H.chores=[];
+  H.chores.forEach(function(c){if(!c.done||typeof c.done!=='object')c.done={};if(c.who>=H.people.length)c.who=0});
+  if(!H.meals||!Array.isArray(H.meals.days)||H.meals.days.length!==7)H.meals={week:'',days:[0,1,2,3,4,5,6].map(function(){return {dish:'',ing:''}})};
+}
+function normalize(o){
+  o=normalizeBase(o);if(!o)return o;
+  if(typeof o.baby!=='boolean')o.baby=false;
+  if(!o.kids||typeof o.kids!=='object')o.kids={band:'2-4',best:{}};
+  if(!o.kids.best||typeof o.kids.best!=='object')o.kids.best={};
+  if(['2-4','5-8','9-13'].indexOf(o.kids.band)<0)o.kids.band='2-4';
+  if(o.lock&&o.lock.pw&&!o.lock.pw.hash)delete o.lock.pw;
+  Object.keys(o.profiles).forEach(function(k){var p=o.profiles[k];if(p)homeEnsure(p.home)});
+  return o;
+}
+
+/* ---------- drawing: language, baby mode, the back button ---------- */
+function render(){
+  if(state&&!ui.locked){
+    var ch=false;Object.keys(state.profiles).forEach(function(k){var p=state.profiles[k];if(p&&p.lg!==lang()&&(p.sample||p.ex)){locP(p);ch=true}});
+    if(ch)save();
+  }
+  document.body.classList.toggle('baby',!!(state&&state.baby&&!ui.locked));
+  if(state&&state.baby&&!ui.locked){renderBaby();return}
+  renderBase();
+  if(ui.locked)return;
+  chromeAfter();
+}
+function chromeAfter(){
+  document.body.classList.toggle('gaming',!!ui.game);
+  var can=!!(ui.game||ui.hist.length||ui.tab!=='start');
+  $('.bar-l').innerHTML='<button class="backb" data-act="back"'+(can?'':' disabled')+' aria-label="'+t('back')+'"><span aria-hidden="true" class="chev"></span><span class="bl">'+t('back')+'</span></button>';
+  var u=$('#util');if(u&&!$('#help'))u.insertAdjacentHTML('afterbegin','<button class="help" id="help" data-act="tour" aria-label="'+t('tour_btn')+'" title="'+t('tour_btn')+'">?</button>');
+  var p=P(),n=$('#notice .notice');
+  if(p&&p.sample&&n&&!$('[data-act=adopt]',n))n.insertAdjacentHTML('beforeend','<button class="btn small adopt" data-act="adopt">'+t('adopt')+'</button>');
+}
+function renderBaby(){
+  applyChrome();
+  $('.bar-l').innerHTML=ui.game?'<button class="backb" data-act="back" aria-label="'+t('back')+'"><span aria-hidden="true" class="chev"></span><span class="bl">'+t('back')+'</span></button>':'';
+  $('#util').innerHTML='';$('#mid').innerHTML='';
+  $('#b-by').textContent=t('brand_by');
+  $('#fab').hidden=true;$('#tabs').hidden=true;
+  $('#main').innerHTML='<div class="wrap"><section class="area" id="area"></section><div class="baby-out"><button class="baby-exit" data-baby-hold="1"><span class="bx-ring" aria-hidden="true"></span>'+t(hasPin()?'baby_exit_pin':'baby_exit_hold')+'</button></div></div>';
+  $('#gbtn').innerHTML='';$('#foot').innerHTML='';
+  renderFun();
+}
+
+/* ---------- going back ---------- */
+function pushHist(){
+  ui.hist.push(ui.tab);if(ui.hist.length>40)ui.hist.shift();
+  try{history.pushState({tally:1},'');ui.pushed++}catch(e){}
+}
+function goTab(to){if(to===ui.tab&&!ui.game)return;pushHist();gameStop();ui.game=null;ui.tab=to}
+function doBack(){
+  if(ui.locked)return;
+  if(dlg.open){closeDlg();return}
+  whoClose();
+  if(ui.game){gameStop();ui.game=null;if(ui.hist.length&&ui.hist[ui.hist.length-1]===ui.tab)ui.hist.pop();render();return}
+  if(state.baby){render();return}
+  var to=ui.hist.pop();
+  if(to)ui.tab=to;else if(ui.tab!=='start')ui.tab='start';else return;
+  if(ui.tour)tourEnd();
+  render();window.scrollTo(0,0);
+}
+act.back=function(){if(ui.pushed>0){history.back();return}doBack()};
+window.addEventListener('popstate',function(){if(ui.pushed>0)ui.pushed--;doBack()});
+act.tab=function(el){
+  var to=el.getAttribute('data-tab'),go=function(){goTab(to);if(ui.tour)tourEnd();render();window.scrollTo(0,0)};
+  if(el.classList.contains('orb')&&!calm()){el.classList.add('go');setTimeout(go,230)}else go();
+};
+var whoPick0=act['who-pick'];
+act['who-pick']=function(el){ui.hist=[];gameStop();ui.game=null;whoPick0(el)};
+var resetView0=resetView;
+resetView=function(){resetView0();ui.hist=[];ui.per='day';ui.perOff=0;gameStop();ui.game=null};
+
+/* ---------- start: the six spheres first, then how I have been doing ---------- */
+function renderStart(p,main){
+  var s=p.show;
+  main.innerHTML='<div class="wrap start">'+
+    '<section class="orbs-sec" aria-labelledby="orbs-h"><h2 class="q" id="orbs-h">'+t('start_pick')+'</h2><div class="orbs">'+
+    ORBS.filter(function(a){return a==='work'||s[a]}).map(function(a,i){
+      return '<button class="orb orb-'+a+'" style="--i:'+i+'" data-act="'+(a==='goals'?'goals':'tab')+'" data-tab="'+a+'"><span class="orb-ball" aria-hidden="true"><span class="orb-ic">'+AREA_ICON[a]+'</span></span><strong>'+t('area_'+a)+'</strong><small>'+esc(orbStat(p,a))+'</small></button>'}).join('')+
+    '</div></section>'+(s.checks?'<section id="doing" aria-labelledby="doing-h"></section>':'')+(s.cal?'<section id="calsec"></section>':'')+'</div>';
+  renderDoing();
+}
+
+/* ---------- how have I been doing: day, week, month or year ---------- */
+var PERS=['day','week','month','year'];
+function trackStart(p){var k=Object.keys(p.days).sort();return k.length?k[0]:today()}
+function perDays(p,from,to){
+  var T=today(),out=[],g=0,st=trackStart(p);if(to>T)to=T;if(from<st)from=st;var d=from;
+  while(d<=to&&g++<400){var r=p.days[d];if((isWeekday(d)&&!OFFD[d])||(r&&r.c.length))out.push(d);d=addDays(d,1)}
+  return out;
+}
+function perStats(p,from,to){
+  var ids={},days=perDays(p,from,to),per={},done=0;
+  p.checks.forEach(function(c){ids[c.id]=1;per[c.id]=0});
+  days.forEach(function(d){var r=p.days[d];if(!r)return;r.c.forEach(function(id){if(ids[id]){per[id]++;done++}})});
+  var tot=days.length*p.checks.length;
+  return {n:days.length,pct:tot?Math.min(100,Math.round(done/tot*100)):0,per:p.checks.map(function(c){return {c:c,n:per[c.id],of:days.length,pct:days.length?Math.min(100,Math.round(per[c.id]/days.length*100)):0}})};
+}
+function dayPct(p,ds){var tot=p.checks.length;if(!tot)return 0;var ids={};p.checks.forEach(function(c){ids[c.id]=1});return Math.round(rec(p,ds).c.filter(function(id){return ids[id]}).length/tot*100)}
+function ringBtn(p,ds,big){
+  var fut=ds>today();
+  return '<button class="wk'+(ds===today()?' now':'')+(fut?' fut':'')+'" data-act="day" data-d="'+ds+'"'+(fut?' disabled':'')+' aria-label="'+esc(fmtDay(ds)+t('colon')+t('tip_count',{a:rec(p,ds).c.length,b:p.checks.length}))+'"><span class="ring" style="--p:'+(fut?0:dayPct(p,ds))+'"><b class="num">'+parse(ds).getDate()+'</b></span>'+(big?'<small>'+L[lang()].days[dow(ds)]+'</small>':'')+'</button>';
+}
+function perSummary(p,st){
+  if(!st.n||!p.checks.length)return '<p class="empty">'+t('per_none')+'</p>';
+  var by=st.per.slice().sort(function(a,b){return b.pct-a.pct}),best=by[0],weak=by[by.length-1];
+  var h='<p class="per-line"><b class="num">'+pctS(st.pct)+'</b> '+tn('per_sum',st.n)+'</p>';
+  if(by.length>1&&best.pct!==weak.pct)h+='<p class="hint per-note">'+t('per_best',{a:esc(best.c.label),b:esc(weak.c.label)})+'</p>';
+  h+='<ul class="per-bars">'+st.per.map(function(x){return '<li><span class="pb-l">'+esc(x.c.label)+'</span>'+meter(x.pct/100,null,x.pct<40)+'<span class="num pb-v">'+pctS(x.pct)+'</span></li>'}).join('')+'</ul>';
+  return h;
+}
+function perWrap(a,b){return '<div class="per-grid"><div class="per-vis">'+a+'</div><div class="per-sum">'+b+'</div></div>'}
+function perNav(title,canNext){
+  return '<div class="cal-nav per-nav"><button class="btn small" data-act="per-nav" data-step="-1" aria-label="'+t('per_prev')+'">‹</button><strong>'+title+'</strong><button class="btn small" data-act="per-nav" data-step="1" aria-label="'+t('per_next')+'"'+(canNext?'':' disabled')+'>›</button></div>';
+}
+function perHTML(p){
+  var T=today(),per=ui.per,off=ui.perOff,h='';
+  if(per==='day'){
+    var r=rec(p,T),st=streak(p),w=perStats(p,addDays(T,-6),T);
+    h+='<div class="sub-head"><h3>'+t('today_is',{date:fmtDay(T)})+'</h3><span class="meta num">'+t('x_of_y_done',{a:r.c.length,b:p.checks.length})+(st>1?', '+tn('streak',st):'')+'</span></div>';
+    h+=p.checks.length?'<div class="checks">'+p.checks.map(function(c){return '<button class="check" data-act="check" data-id="'+c.id+'" aria-pressed="'+(r.c.indexOf(c.id)>=0)+'">'+esc(c.label)+'</button>'}).join('')+'</div>'+
+      (w.n?'<p class="hint per-7">'+t('per_last7',{p:pctS(w.pct)})+' <button class="link" data-act="per" data-k="week">'+t('per_see_week')+'</button></p>':''):
+      '<p class="empty">'+t('no_checks')+' <button class="link" data-act="settings">'+t('no_checks_btn')+'</button></p>';
+    return h;
+  }
+  if(per==='week'){
+    var from=addDays(monday(T),7*off),to=addDays(from,6),g='';
+    for(var i=0;i<7;i++)g+=ringBtn(p,addDays(from,i),true);
+    h+=perWrap(perNav(fmtShort(from)+' – '+fmtShort(to),off<0)+'<div class="week">'+g+'</div>',perSummary(p,perStats(p,from,to)));
+    return h;
+  }
+  if(per==='month'){
+    var b=parse(T.slice(0,7)+'-01');b.setMonth(b.getMonth()+off);
+    var y=b.getFullYear(),m=b.getMonth(),first=iso(b),last=iso(new Date(y,m+1,0)),lead=(dow(first)+6)%7,cells='',D=L[lang()].days;
+    for(var k=1;k<=7;k++)cells+='<span class="mg-h">'+D[k%7]+'</span>';
+    for(var j=0;j<lead;j++)cells+='<span></span>';
+    for(var ds=first;ds<=last;ds=addDays(ds,1))cells+=ringBtn(p,ds,false);
+    h+=perWrap(perNav(monthTitle(y,m),off<0)+'<div class="mgrid">'+cells+'</div>',perSummary(p,perStats(p,first,last)));
+    return h;
+  }
+  var yr=+T.slice(0,4)+off,bars='',M=L[lang()].mon,st0=trackStart(p);
+  for(var mm=0;mm<12;mm++){
+    var f=yr+'-'+pad(mm+1)+'-01',l=iso(new Date(yr,mm+1,0)),fut=f>T,s=(fut||l<trackStart(p))?null:perStats(p,f,l);
+    bars+='<div class="yb'+(fut?' fut':'')+'"><span class="yb-col"><i style="height:'+(s&&s.n?Math.max(4,s.pct):0)+'%"></i></span><span class="yb-v num">'+(s&&s.n?s.pct:'–')+'</span><small>'+M[mm]+'</small></div>';
+  }
+  h+=perWrap(perNav(String(yr),off<0)+'<div class="ybars" role="img" aria-label="'+esc(t('per_year_aria',{y:yr}))+'">'+bars+'</div>'+(st0>yr+'-01-01'&&st0<=yr+'-12-31'?'<p class="hint">'+t('per_since',{d:fmtShort(st0)})+'</p>':''),perSummary(p,perStats(p,yr+'-01-01',yr+'-12-31')));
+  return h;
+}
+function renderDoing(){
+  var p=P(),box=$('#doing'),cs=$('#calsec');if(!p)return;
+  if(box)box.innerHTML='<div class="doing-head"><h2 class="q" id="doing-h">'+t('q_doing')+'</h2>'+subSeg(PERS,ui.per,'per','per_')+'</div><div class="sub per-'+ui.per+'">'+perHTML(p)+'</div>';
+  if(cs)cs.innerHTML=calHTML(p);
+  renderNums();
+}
+act.per=function(el){ui.per=el.getAttribute('data-k');ui.perOff=0;renderDoing()};
+act['per-nav']=function(el){ui.perOff=Math.min(0,ui.perOff+(+el.getAttribute('data-step')));renderDoing()};
+
+/* ---------- make an example your own ---------- */
+function whoMenuHTML(){
+  return '<button class="vitem mine'+(state.active==='mine'?' on':'')+'" data-act="who-pick" data-p="mine" role="menuitem"><strong>'+t('my_work')+'</strong><small>'+esc((state.profiles.mine&&state.profiles.mine.name)||t('get_started'))+'</small></button>'+
+    '<p class="vhint">'+t('adopt_tip')+'</p>'+
+    '<div class="vgroups">'+EXG.map(function(g){return '<div class="vgroup"><h3>'+t(g[0])+'</h3>'+g[1].map(function(k){return '<button class="vitem'+(state.active===k?' on':'')+'" data-act="who-pick" data-p="'+k+'" role="menuitem">'+t('ex_'+k)+'</button>'}).join('')+'</div>'}).join('')+'</div>';
+}
+act.adopt=function(){
+  var p=P();if(!p||!p.sample)return;var m=state.profiles.mine;
+  openDlg('<h2>'+t('adopt_t')+'</h2><p class="hint">'+t('adopt_hint')+'</p>'+
+    '<label class="fld"><span>'+t('name')+'</span><input id="ad-name" type="text" autocomplete="name" placeholder="'+esc(p.name)+'" data-enter="adopt-go"></label>'+
+    '<label class="fld"><span>'+t('role')+'</span><input id="ad-role" type="text" value="'+esc(p.role)+'" data-enter="adopt-go"></label>'+
+    (m?'<p class="warnbox">'+t('adopt_replace',{name:esc(m.name||t('my_work'))})+'</p>':'')+
+    '<p class="err" id="ad-err" role="alert"></p><div class="row-btns"><span class="grow"></span><button class="btn" data-act="close">'+t('cancel')+'</button><button class="btn primary" data-act="adopt-go">'+t('adopt_go')+'</button></div>');
+  $('#ad-name').focus();
+};
+act['adopt-go']=function(){
+  var k=state.active,src=state.profiles[k];if(!src||!src.sample)return;
+  var name=$('#ad-name').value.trim(),role=$('#ad-role').value.trim();
+  if(!name){$('#ad-err').textContent=t('e_name');return}
+  var p=JSON.parse(JSON.stringify(src));
+  p.sample=false;p.touched=true;p.name=name;p.role=role;p.kind='';p.seededOn=today();
+  state.profiles.mine=p;state.profiles[k]=buildSample(k);state.active='mine';save();
+  closeDlg();resetView();render();toast(t('adopt_done'));
+};
+
+/* ---------- home: today at a glance, chores and dinners ---------- */
+HTABS=['todo','rout','chores','meals','bills','shop','info'];
+function choreDone(c){return !!c.done[c.unit==='d'?today():monday(today())]}
+function homeToday(p){
+  var T=today(),H=p.home,ym=T.slice(0,7),wd=(dow(T)+6)%7;
+  var todo=H.items.filter(function(x){return !x.done&&x.date&&x.date<=T}).length;
+  var rout=H.routines.filter(function(r){return r.next<=T}).length;
+  var bills=H.bills.filter(function(b){return !b.paid[ym]&&daysBetween(T,billDue(b,ym))<=3}).length;
+  var chores=H.chores.filter(function(c){return !choreDone(c)}).length;
+  var shop=H.shop.filter(function(x){return !x.done}).length;
+  var din=(H.meals.days[wd]||{}).dish;
+  function tile(k,ic,n,label,warn){return '<button class="ht'+(n?'':' zero')+(warn&&n?' warn':'')+'" data-act="home-tab" data-k="'+k+'"><span class="ht-ic" aria-hidden="true">'+ic+'</span><b class="num">'+n+'</b><small>'+label+'</small></button>'}
+  return '<div class="htoday" role="group" aria-label="'+t('hd_today')+'">'+
+    tile('todo','📝',todo,tn('hd_todo',todo),true)+tile('rout','🔁',rout,tn('hd_rout',rout),true)+tile('bills','💳',bills,tn('hd_bills',bills),true)+
+    tile('chores','🧹',chores,tn('hd_chores',chores))+tile('shop','🛒',shop,tn('hd_shop',shop))+
+    '<button class="ht din" data-act="home-tab" data-k="meals"><span class="ht-ic" aria-hidden="true">🍽️</span><small>'+t('hd_dinner')+'</small><b>'+(din?esc(din):t('hd_dinner_none'))+'</b></button></div>';
+}
+function renderHome(){
+  var p=P(),H=p.home,tab=HTABS.indexOf(ui.homeTab)>=0?ui.homeTab:'todo';homeEnsure(H);ui.homeTab=tab;
+  if(tab!=='chores'&&tab!=='meals'){
+    renderHomeBase();
+    var hd=$('#area .area-head');if(hd)hd.insertAdjacentHTML('afterend',homeToday(p));
+    return;
+  }
+  var h='<div class="area-head"><h2 class="q">'+t('q_home')+'</h2>'+(tab==='chores'?'<button class="btn" data-act="ch-add">'+t('ch_add')+'</button>':'')+'</div>'+homeToday(p)+subSeg(HTABS,tab,'home-tab','ht_');
+  h+=tab==='chores'?choresHTML(p):mealsHTML(p);
+  $('#area').innerHTML=h;
+}
+function choresHTML(p){
+  var H=p.home,h='<p class="shelf-lede">'+t('ch_lede')+'</p><div class="ppl">'+H.people.map(function(n,i){
+    var c=H.chores.filter(function(x){return x.who===i}).length;
+    return '<button class="person" data-act="ch-person" data-i="'+i+'"><span class="av" aria-hidden="true">'+esc(String(n).charAt(0).toUpperCase())+'</span>'+esc(n)+' <small class="num">'+c+'</small></button>'}).join('')+
+    '<button class="chip" data-act="ch-person-add">'+t('ch_person_add')+'</button>'+(H.people.length>1&&H.chores.length?'<button class="btn small" data-act="ch-rotate">'+t('ch_rotate')+'</button>':'')+'</div>';
+  if(!H.chores.length)return h+'<p class="empty">'+t('ch_none')+'</p>'+choreSug(H);
+  h+='<div class="hgrid">'+H.people.map(function(n,i){
+    var cs=H.chores.filter(function(x){return x.who===i});
+    return '<div class="hcol"><h3>'+esc(n)+'<span class="num">'+cs.filter(choreDone).length+'/'+cs.length+'</span></h3>'+(cs.length?'<ul class="lines">'+cs.map(function(c){var d=choreDone(c);
+      return '<li><label><input type="checkbox" data-act="ch-done" data-id="'+c.id+'"'+(d?' checked':'')+'><span'+(d?' class="done-txt"':'')+'>'+esc(c.text)+'</span></label><span class="when">'+t(c.unit==='d'?'ch_daily':'ch_weekly')+'</span><button class="link quiet" data-act="ch-edit" data-id="'+c.id+'">'+t('edit')+'</button></li>'}).join('')+'</ul>':'<p class="empty">'+t('ch_free')+'</p>')+'</div>'}).join('')+'</div>';
+  return h+choreSug(H);
+}
+function choreSug(H){
+  var have=H.chores.map(function(c){return c.text.toLowerCase()}),s='';
+  t('ch_sug').split('|').forEach(function(x,i){if(have.indexOf(x.toLowerCase())<0)s+='<button class="chip" data-act="ch-sug" data-i="'+i+'">'+esc(x)+'</button>'});
+  return s?'<div class="sug">'+s+'</div>':'';
+}
+function choreForm(c,pre){
+  var H=P().home;
+  openForm({title:t('ch_t'),fields:[{k:'text',label:t('ch_what'),value:c?c.text:(pre||'')},{k:'who',label:t('ch_who'),type:'select',value:c?c.who:0,options:H.people.map(function(n,i){return [i,n]})},
+      {k:'unit',label:t('ch_how'),type:'select',value:c?c.unit:'w',options:[['d',t('ch_daily')],['w',t('ch_weekly')]]}],
+    submitLabel:t('bud_save'),
+    onSubmit:function(v){if(!v.text)return t('e_home');var who=+v.who||0;if(c){c.text=v.text;c.who=who;c.unit=v.unit}else H.chores.push({id:uid(),text:v.text,who:who,unit:v.unit,done:{}})},
+    onDelete:c?function(){H.chores=H.chores.filter(function(x){return x!==c})}:null,deleteLabel:t('ch_del')});
+}
+function personForm(i){
+  var H=P().home,isNew=i==null;
+  openForm({title:t('ch_person_t'),fields:[{k:'name',label:t('name'),value:isNew?'':H.people[i]}],submitLabel:t('bud_save'),
+    onSubmit:function(v){if(!v.name)return t('e_name');if(isNew)H.people.push(v.name);else H.people[i]=v.name},
+    onDelete:(!isNew&&H.people.length>1)?function(){H.people.splice(i,1);H.chores.forEach(function(c){if(c.who===i)c.who=0;else if(c.who>i)c.who--})}:null,deleteLabel:t('ch_person_del')});
+}
+act['ch-add']=function(){choreForm(null)};
+act['ch-edit']=function(el){var id=el.getAttribute('data-id'),c=P().home.chores.filter(function(x){return x.id===id})[0];if(c)choreForm(c)};
+act['ch-sug']=function(el){choreForm(null,t('ch_sug').split('|')[+el.getAttribute('data-i')])};
+act['ch-done']=function(el){var id=el.getAttribute('data-id'),c=P().home.chores.filter(function(x){return x.id===id})[0];if(!c)return;var k=c.unit==='d'?today():monday(today());if(el.checked)c.done[k]=1;else delete c.done[k];touch();renderHome()};
+act['ch-person']=function(el){personForm(+el.getAttribute('data-i'))};
+act['ch-person-add']=function(){personForm(null)};
+act['ch-rotate']=function(){var H=P().home,n=H.people.length;H.chores.forEach(function(c){c.who=(c.who+1)%n});touch();renderHome();toast(t('ch_rotated'))};
+
+function mealsHTML(p){
+  var H=p.home,D=L[lang()].days,wd=(dow(today())+6)%7;
+  var h='<p class="shelf-lede">'+t('ml_lede')+'</p><div class="row-btns ml-top"><button class="btn" data-act="ml-all">'+t('ml_all')+'</button><button class="link quiet" data-act="ml-clear">'+t('ml_clear')+'</button></div><ol class="meals">';
+  H.meals.days.forEach(function(m,i){
+    h+='<li class="meal'+(i===wd?' now':'')+'"><span class="ml-d">'+D[(i+1)%7]+(i===wd?' <small>'+t('rel_today')+'</small>':'')+'</span>'+
+      '<input type="text" class="ml-dish" data-meal="'+i+'" data-f="dish" value="'+esc(m.dish)+'" placeholder="'+t('ml_dish_ph')+'" aria-label="'+esc(D[(i+1)%7]+t('colon')+t('ml_dish'))+'">'+
+      '<input type="text" class="ml-ing" data-meal="'+i+'" data-f="ing" value="'+esc(m.ing)+'" placeholder="'+t('ml_ing_ph')+'" aria-label="'+esc(D[(i+1)%7]+t('colon')+t('ml_ing'))+'">'+
+      '<button class="btn small" data-act="ml-shop" data-i="'+i+'"'+(m.ing?'':' disabled')+'>'+t('ml_add')+'</button></li>';
+  });
+  h+='</ol><div class="sug"><span class="hint">'+t('ml_ideas')+'</span>'+t('ml_idea_list').split('|').map(function(x,i){return '<button class="chip" data-act="ml-idea" data-i="'+i+'">'+esc(x)+'</button>'}).join('')+'</div>';
+  return h;
+}
+function shopAdd(text){
+  var H=P().home,n=0;
+  String(text||'').split(/[,;\n]/).forEach(function(x){x=x.trim();if(!x)return;var has=H.shop.some(function(s){return !s.done&&s.text.toLowerCase()===x.toLowerCase()});if(!has){H.shop.push({id:uid(),text:x,done:false});n++}});
+  return n;
+}
+act['ml-shop']=function(el){var n=shopAdd(P().home.meals.days[+el.getAttribute('data-i')].ing);touch();toast(tn('ml_added',n))};
+act['ml-all']=function(){var n=0;P().home.meals.days.forEach(function(m){n+=shopAdd(m.ing)});touch();toast(tn('ml_added',n))};
+act['ml-clear']=function(el){
+  if(!el.getAttribute('data-armed')){el.setAttribute('data-armed','1');el.textContent=t('ml_clear_sure');el.classList.add('danger-link');return}
+  P().home.meals.days.forEach(function(m){m.dish='';m.ing=''});touch();renderHome();
+};
+act['ml-idea']=function(el){
+  var x=t('ml_idea_list').split('|')[+el.getAttribute('data-i')],ds=P().home.meals.days,wd=(dow(today())+6)%7,i;
+  for(var k=0;k<7;k++){i=(wd+k)%7;if(!ds[i].dish){ds[i].dish=x;break}}
+  if(k===7)return toast(t('ml_full'));
+  touch();renderHome();
+};
+document.addEventListener('change',function(e){
+  var el=e.target;if(!el.getAttribute)return;
+  var mi=el.getAttribute('data-meal');
+  if(mi!=null){var d=P().home.meals.days[+mi];d[el.getAttribute('data-f')]=el.value.trim();touch();
+    var b=$('[data-act=ml-shop][data-i="'+mi+'"]');if(b)b.disabled=!d.ing;return}
+  var bp=el.getAttribute('data-bp');if(bp){bpSet(bp,parseFloat(el.value));return}
+});
+
+/* ---------- budget: setting the amounts, one tap at a time ---------- */
+BTABS=['month','plan','debt','nw'];
+var BP_STEPS=[1,5,10,25,100];
+function renderWorth(){
+  if(ui.budTab==='plan'){renderBudPlan();return}
+  renderWorthBase();
+  var box=$('#area');
+  if((ui.budTab||'month')==='month'){
+    var add=$('[data-act=cat-add]',box);
+    if(add)add.insertAdjacentHTML('beforebegin','<button class="btn small adj" data-act="bud-tab" data-k="plan">'+t('bp_adjust')+'</button>');
+    $all('.plus',box).forEach(function(b){b.classList.add('txt');b.textContent=t('bp_log')});
+  }
+}
+function bpLeft(p){var inc=+p.bud.income||0,pl=0;p.bud.cats.forEach(function(c){pl+=+c.plan||0});return {inc:inc,plan:pl,left:inc-pl}}
+function bpSumHTML(p){
+  var x=bpLeft(p),cls=!x.inc?'':x.left<-0.005?'bad':Math.abs(x.left)<0.005?'ok':'warn';
+  var say=!x.inc?t('bp_say_noinc'):x.left<-0.005?t('bp_say_over',{v:mny(-x.left)}):Math.abs(x.left)<0.005?t('bp_say_zero'):t('bp_say_left',{v:mny(x.left)});
+  return '<button class="bp-tile" data-act="bud-income"><span>'+t('bud_income')+'</span><strong class="num">'+mny(x.inc)+'</strong><small>'+t(x.inc?'edit':'bud_set')+'</small></button>'+
+    '<div class="bp-tile"><span>'+t('bud_planned')+'</span><strong class="num">'+mny(x.plan)+'</strong></div>'+
+    '<div class="bp-tile big '+cls+'"><span>'+t(x.left<-0.005?'bp_over':'bp_left')+'</span><strong class="num">'+mny(Math.abs(x.left))+'</strong></div>'+
+    '<p class="bp-say '+cls+'">'+say+'</p>';
+}
+function bpGroupText(p,g){
+  var x=bpLeft(p),s=0;p.bud.cats.forEach(function(c){if((BG.indexOf(c.grp)>=0?c.grp:'want')===g)s+=+c.plan||0});
+  var guide={need:50,want:30,save:20}[g];
+  return mny(s)+(x.inc>0?', '+t('bp_of_inc',{p:pctS(Math.round(s/x.inc*100)),g:pctS(guide)}):'');
+}
+function renderBudPlan(){
+  var p=P(),box=$('#area'),ym=today().slice(0,7);if(!p.sample)budSeed(p);
+  var c=budCalc(p,ym),x=bpLeft(p);
+  var h='<div class="area-head"><h2 class="q">'+t('q_bud')+'</h2></div>'+subSeg(BTABS,'plan','bud-tab','bud_')+
+    '<p class="shelf-lede">'+t('bp_lede')+'</p><div class="bp-layout"><aside class="bp-side"><div class="bp-sum" id="bp-sum">'+bpSumHTML(p)+'</div></aside><div class="bp-main">'+
+    '<div class="bp-steps" role="group" aria-label="'+t('bp_step')+'"><span>'+t('bp_step')+'</span>'+BP_STEPS.map(function(s){return '<button data-act="bp-step" data-s="'+s+'" aria-pressed="'+(ui.budStep===s)+'">'+money0(s)+'</button>'}).join('')+'</div>';
+  BG.forEach(function(g,gi){
+    var cs=p.bud.cats.filter(function(k){return (BG.indexOf(k.grp)>=0?k.grp:'want')===g});if(!cs.length)return;
+    h+='<h4 class="grp"><b class="m'+gi+'"></b>'+t('grp_'+g)+'<span class="num" id="bp-g-'+g+'">'+bpGroupText(p,g)+'</span></h4><ul class="bp-list">'+cs.map(function(k){
+      var sp=c.spent[k.id]||0,pl=+k.plan||0;
+      return '<li class="bp-row" data-row="'+k.id+'"><div class="bp-name"><button class="bp-nm" data-act="cat-edit" data-id="'+k.id+'" title="'+t('bp_rename')+'">'+esc(k.name)+'</button><small>'+t('bp_spent',{v:mny(sp)})+'</small></div>'+
+        '<div class="bp-ctl"><button class="bp-b" data-bp-dir="-1" data-id="'+k.id+'" aria-label="'+esc(t('bp_less',{cat:k.name,v:money0(ui.budStep)}))+'">−</button>'+
+        '<label class="bp-in"><span aria-hidden="true">$</span><input type="number" inputmode="decimal" min="0" step="any" data-bp="'+k.id+'" value="'+(Math.round(pl*100)/100)+'" aria-label="'+esc(t('bp_amount',{cat:k.name}))+'"></label>'+
+        '<button class="bp-b" data-bp-dir="1" data-id="'+k.id+'" aria-label="'+esc(t('bp_more',{cat:k.name,v:money0(ui.budStep)}))+'">+</button></div>'+
+        '<div class="bp-meter" id="bp-m-'+k.id+'">'+meter(pl?sp/pl:(sp?1:0),null,pl>0&&sp>pl+0.005)+'</div></li>'}).join('')+'</ul>';
+  });
+  var sv=p.bud.cats.filter(function(k){return k.grp==='save'})[0];
+  h+='<div class="row-btns"><button class="link" data-act="cat-add">'+t('bud_cat_add')+'</button><span class="grow"></span>'+
+    (x.inc>0&&x.left>0.005&&sv?'<button class="btn" data-act="bp-fill">'+t('bp_fill',{v:mny(x.left),cat:esc(sv.name)})+'</button>':'')+'</div></div></div>';
+  box.innerHTML=h;
+}
+function bpSet(id,v,fromBtn){
+  var p=P(),c=budFind('cats',id);if(!c||isNaN(v))return;
+  c.plan=Math.max(0,Math.round(v*100)/100);touch();
+  var inp=$('[data-bp="'+id+'"]');if(inp&&(fromBtn||document.activeElement!==inp))inp.value=c.plan;
+  bpRefresh(p,id);
+}
+function bpRefresh(p,id){
+  var s=$('#bp-sum');if(s)s.innerHTML=bpSumHTML(p);
+  BG.forEach(function(g){var e=$('#bp-g-'+g);if(e)e.textContent=bpGroupText(p,g)});
+  var c=budFind('cats',id),m=$('#bp-m-'+id);
+  if(c&&m){var sp=budCalc(p,today().slice(0,7)).spent[id]||0,pl=+c.plan||0;m.innerHTML=meter(pl?sp/pl:(sp?1:0),null,pl>0&&sp>pl+0.005)}
+  var f=$('[data-act=bp-fill]'),x=bpLeft(p);if(f&&!(x.left>0.005))f.remove();
+}
+function bpNudge(id,dir){
+  var c=budFind('cats',id);if(!c)return;
+  var s=ui.budStep,cur=+c.plan||0,nx=dir>0?Math.floor(cur/s+1e-9)*s+s:Math.ceil(cur/s-1e-9)*s-s;
+  bpSet(id,Math.max(0,nx),true);
+}
+act['bp-step']=function(el){ui.budStep=+el.getAttribute('data-s');renderBudPlan()};
+act['bp-fill']=function(){
+  var p=P(),sv=p.bud.cats.filter(function(k){return k.grp==='save'})[0],x=bpLeft(p);
+  if(!sv||!(x.left>0))return;sv.plan=Math.round(((+sv.plan||0)+x.left)*100)/100;touch();renderBudPlan();toast(t('bp_filled'));
+};
+/* press and hold − or + to keep going */
+(function(){
+  var timer=null,reps=0;
+  function stop(){clearTimeout(timer);timer=null;reps=0}
+  document.addEventListener('pointerdown',function(e){
+    var b=e.target.closest&&e.target.closest('[data-bp-dir]');if(!b||b.disabled)return;
+    e.preventDefault();stop();
+    try{b.setPointerCapture(e.pointerId)}catch(x){}
+    var id=b.getAttribute('data-id'),dir=+b.getAttribute('data-bp-dir');
+    bpNudge(id,dir);
+    (function again(){timer=setTimeout(function(){reps++;bpNudge(id,dir);again()},reps?(reps>12?45:90):420)})();
+  });
+  ['pointerup','pointercancel','lostpointercapture'].forEach(function(ev){document.addEventListener(ev,stop,true)});window.addEventListener('blur',stop);
+  document.addEventListener('click',function(e){
+    var b=e.target.closest&&e.target.closest('[data-bp-dir]');if(!b)return;
+    if(e.detail===0)bpNudge(b.getAttribute('data-id'),+b.getAttribute('data-bp-dir'));
+  });
+  document.addEventListener('input',function(e){
+    var id=e.target.getAttribute&&e.target.getAttribute('data-bp');if(!id)return;
+    var v=parseFloat(e.target.value);if(isNaN(v))return;
+    var c=budFind('cats',id);if(!c)return;c.plan=Math.max(0,Math.round(v*100)/100);P().touched=true;save();bpRefresh(P(),id);
+  });
+})();
+
+/* ---------- fun: learning games for ages 2 to 13 ---------- */
+var BANDS=['2-4','5-8','9-13'];
+var GAMES=[
+  {id:'shapes',ic:'🔷',b:['2-4']},{id:'animals',ic:'🐮',b:['2-4']},{id:'count',ic:'🍎',b:['2-4','5-8']},{id:'letters',ic:'🔤',b:['2-4','5-8']},
+  {id:'memory',ic:'🃏',b:['2-4','5-8','9-13']},{id:'stopgo',ic:'🚦',b:['2-4','5-8','9-13']},{id:'simon',ic:'🎵',b:['5-8','9-13']},
+  {id:'numline',ic:'📏',b:['5-8','9-13']},{id:'pattern',ic:'🧩',b:['5-8','9-13']},{id:'math',ic:'➕',b:['5-8','9-13']},{id:'fraction',ic:'🍕',b:['9-13']}
+];
+function band(){return (state.kids&&state.kids.band)||'2-4'}
+function rint(a,b){return a+Math.floor(Math.random()*(b-a+1))}
+function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),x=a[i];a[i]=a[j];a[j]=x}return a}
+function pick(a){return a[Math.floor(Math.random()*a.length)]}
+function say(text){
+  try{if(!window.speechSynthesis||!text)return;speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(String(text).replace(/<[^>]+>/g,''));u.lang=LOC[lang()];u.rate=.9;u.pitch=1.1;speechSynthesis.speak(u)}catch(e){}
+}
+var AC=null;
+function beep(f,ms){
+  try{AC=AC||new (window.AudioContext||window.webkitAudioContext)();var o=AC.createOscillator(),g=AC.createGain();o.frequency.value=f;o.type='sine';g.gain.setValueAtTime(.0001,AC.currentTime);g.gain.exponentialRampToValueAtTime(.18,AC.currentTime+.02);g.gain.exponentialRampToValueAtTime(.0001,AC.currentTime+ms/1000);o.connect(g);g.connect(AC.destination);o.start();o.stop(AC.currentTime+ms/1000+.05)}catch(e){}
+}
+function starsHTML(n,max){var s='';for(var i=0;i<(max||3);i++)s+='<i class="'+(i<n?'on':'')+'">★</i>';return '<span class="stars" aria-label="'+tn('gm_stars',n)+'">'+s+'</span>'}
+function bestOf(id){return +((state.kids.best||{})[id+'@'+band()])||0}
+
+function gamesHub(baby){
+  var b=band(),list=GAMES.filter(function(g){return g.b.indexOf(b)>=0});
+  return '<section class="kids'+(baby?' big':'')+'" aria-labelledby="kids-h"><div class="area-head"><h2 class="q" id="kids-h">'+t(baby?'baby_h':'kids_h')+'</h2>'+
+    (baby?'':'<button class="btn baby-on" data-act="baby-on">'+t('baby_on')+'</button>')+'</div>'+
+    '<p class="shelf-lede">'+t(baby?'baby_lede':'kids_lede')+'</p>'+
+    '<div class="band-row"><span>'+t('kids_age')+'</span>'+subSeg(BANDS,b,'kid-band','band_')+'</div>'+
+    '<div class="games">'+list.map(function(g){return '<button class="game" data-act="game-open" data-g="'+g.id+'"><span class="game-ic" aria-hidden="true">'+g.ic+'</span><strong>'+t('gm_'+g.id)+'</strong><small>'+t('gw_'+g.id)+'</small>'+starsHTML(bestOf(g.id))+'</button>'}).join('')+'</div>'+
+    '<p class="hint kids-note">'+t('kids_note')+'</p></section>';
+}
+function renderFun(){
+  var box=$('#area');if(!box)return;
+  if(ui.game){renderGame();return}
+  if(state.baby){box.innerHTML=gamesHub(true);return}
+  renderFunBase();
+  box.insertAdjacentHTML('afterbegin',gamesHub(false));
+}
+act['kid-band']=function(el){state.kids.band=el.getAttribute('data-k');save();renderFun()};
+act['game-open']=function(el){
+  var id=el.getAttribute('data-g');pushHist();
+  ui.game={id:id,band:band(),round:0,total:10,score:0,first:true,busy:false};
+  GSTART[id]();renderGame();window.scrollTo(0,0);
+  if(state.baby)render();else chromeAfter();
+};
+act['game-close']=function(){act.back()};
+act['gm-again']=function(){var id=ui.game.id;gameStop();ui.game={id:id,band:band(),round:0,total:10,score:0,first:true,busy:false};GSTART[id]();renderGame()};
+act['gm-say']=function(){if(ui.game&&ui.game.q)say(ui.game.q.say)};
+function gameStop(){var g=ui.game;if(g){clearTimeout(g.timer);clearTimeout(g.t2);g.dead=true}try{if(window.speechSynthesis)speechSynthesis.cancel()}catch(e){}}
+function gameTop(){
+  var g=ui.game,prog=g.prog!=null?g.prog:(g.over?'':t('gm_round',{a:Math.min(g.round+1,g.total),b:g.total}));
+  return '<div class="gm-top"><span class="gm-ic" aria-hidden="true">'+GAMES.filter(function(x){return x.id===g.id})[0].ic+'</span><strong>'+t('gm_'+g.id)+'</strong><span class="gm-prog num">'+prog+'</span></div>';
+}
+function renderGame(){
+  var g=ui.game,box=$('#area');if(!g||!box)return;
+  box.innerHTML='<section class="gm gm-'+g.id+(state.baby?' big':'')+'" aria-live="polite">'+gameTop()+'<div class="gm-stage" id="gm-stage">'+(g.over?resultHTML():GDRAW[g.id]())+'</div></section>';
+}
+function finish(stars,line){
+  var g=ui.game;g.over=true;g.stars=stars;g.line=line;
+  var k=g.id+'@'+g.band;if(stars>(+state.kids.best[k]||0)){state.kids.best[k]=stars;save()}
+  renderGame();say(t('gm_yay'));
+}
+function resultHTML(){
+  var g=ui.game;
+  return '<div class="gm-res"><div class="big-stars">'+starsHTML(g.stars)+'</div><h3>'+t(g.stars===3?'gm_r3':g.stars===2?'gm_r2':'gm_r1')+'</h3><p>'+g.line+'</p>'+
+    '<div class="row-btns"><button class="btn primary" data-act="gm-again">'+t('gm_again')+'</button><button class="btn" data-act="game-close">'+t('gm_all')+'</button></div></div>';
+}
+function mcStars(g){var f=g.score/g.total;return f>=.9?3:f>=.6?2:1}
+
+/* multiple choice: one question per round */
+var MC={};
+function mcNext(){
+  var g=ui.game;if(!g||g.dead)return;
+  if(g.round>=g.total){finish(mcStars(g),t('gm_score',{a:g.score,b:g.total}));return}
+  g.first=true;g.q=MC[g.id](g);renderGame();
+  if(g.q.auto)setTimeout(function(){if(ui.game===g)say(g.q.say)},250);
+}
+function mcHTML(){
+  var q=ui.game.q;
+  return '<div class="gm-q">'+q.prompt+(q.say?'<button class="say" data-act="gm-say" aria-label="'+t('gm_hear')+'">🔊</button>':'')+'</div>'+
+    '<div class="gm-opts n'+q.opts.length+(q.wide?' wide':'')+'">'+q.opts.map(function(o,i){return '<button class="gm-opt" data-act="gm-pick" data-i="'+i+'" aria-label="'+esc(o.aria||'')+'">'+o.html+'</button>'}).join('')+'</div>'+
+    '<p class="gm-fb" id="gm-fb">'+(q.after||'')+'</p>';
+}
+act['gm-pick']=function(el){
+  var g=ui.game;if(!g||!g.q||g.busy)return;var o=g.q.opts[+el.getAttribute('data-i')];
+  if(o.ok){
+    g.busy=true;if(g.first)g.score++;el.classList.add('right');beep(660,160);setTimeout(function(){beep(880,180)},120);
+    var fb=$('#gm-fb');if(fb)fb.innerHTML=(g.q.reveal||'')+' <b>'+pick(t('gm_yes').split('|'))+'</b>';
+    say(g.q.sayRight||pick(t('gm_yes').split('|')));
+    g.timer=setTimeout(function(){g.busy=false;g.round++;mcNext()},g.q.reveal?1500:950);
+  }else{
+    g.first=false;el.classList.add('wrong');el.disabled=true;beep(220,180);
+    var f2=$('#gm-fb');if(f2)f2.textContent=t('gm_try');
+    if(g.q.auto)say(t('gm_try'));
+  }
+};
+function opts(right,pool,n,draw){
+  var o=[right];shuffle(pool).forEach(function(x){if(o.length<n&&o.indexOf(x)<0)o.push(x)});
+  return shuffle(o).map(function(x){var d=draw(x);d.ok=x===right;return d});
+}
+var COLORS=[['red','#E03131'],['blue','#1C7ED6'],['yellow','#F2B705'],['green','#2F9E44'],['purple','#7048E8'],['orange','#F76707']];
+var SHAPES={circle:'<circle cx="50" cy="50" r="40"/>',square:'<rect x="13" y="13" width="74" height="74" rx="8"/>',triangle:'<path d="M50 9 92 87H8Z" stroke-linejoin="round"/>',
+  star:'<path d="M50 7 62 38H94L68 57 78 90 50 70 22 90 32 57 6 38H38Z"/>',heart:'<path d="M50 89C20 66 6 48 6 31 6 17 17 8 29 8c10 0 17 6 21 14 4-8 11-14 21-14 12 0 23 9 23 23 0 17-14 35-44 58Z"/>'};
+function shapeSVG(s,c){return '<svg viewBox="0 0 100 100" class="shp" aria-hidden="true" fill="'+c+'">'+SHAPES[s]+'</svg>'}
+MC.shapes=function(g){
+  var ks=Object.keys(SHAPES);
+  if(g.round%2===0){var s=pick(ks),col=pick(COLORS)[1],w=t('sh_'+s);
+    return {auto:true,say:t('gq_shape',{s:w}),prompt:'<p class="gm-say">'+t('gq_shape',{s:'<b>'+w+'</b>'})+'</p>',opts:opts(s,ks,3,function(x){return {html:shapeSVG(x,col),aria:t('sh_'+x)}})}}
+  var shp=pick(ks),c=pick(COLORS),cw=t('col_'+c[0]);
+  return {auto:true,say:t('gq_color',{c:cw}),prompt:'<p class="gm-say">'+t('gq_color',{c:'<b>'+cw+'</b>'})+'</p>',opts:opts(c[0],COLORS.map(function(x){return x[0]}),3,function(x){return {html:shapeSVG(shp,COLORS.filter(function(y){return y[0]===x})[0][1]),aria:t('col_'+x)}})};
+};
+var ANIMALS=[['🐶','the dog','el perro','le chien'],['🐱','the cat','el gato','le chat'],['🐮','the cow','la vaca','la vache'],['🦆','the duck','el pato','le canard'],['🐷','the pig','el cerdo','le cochon'],['🐴','the horse','el caballo','le cheval'],
+  ['🐑','the sheep','la oveja','le mouton'],['🦁','the lion','el león','le lion'],['🐘','the elephant','el elefante','l’éléphant'],['🐟','the fish','el pez','le poisson'],['🐦','the bird','el pájaro','l’oiseau'],['🐸','the frog','la rana','la grenouille'],['🐵','the monkey','el mono','le singe'],['🐰','the rabbit','el conejo','le lapin']];
+function li(){return ({en:1,es:2,fr:3})[lang()]}
+MC.animals=function(){
+  var a=pick(ANIMALS),w=a[li()];
+  return {auto:true,say:t('gq_animal',{a:w}),sayRight:w,prompt:'<p class="gm-say">'+t('gq_animal',{a:'<b>'+w+'</b>'})+'</p>',opts:opts(a,ANIMALS,3,function(x){return {html:'<span class="emo">'+x[0]+'</span>',aria:x[li()]}})};
+};
+var THINGS=['🍎','⭐','🐞','🎈','🐟','🍓','🚗','🌸','🦆','🍪'];
+MC.count=function(g){
+  var small=g.band==='2-4',n=small?rint(1,5):rint(3,12),e=pick(THINGS),items='';
+  for(var i=0;i<n;i++)items+='<span>'+e+'</span>';
+  var pool=[];for(var k=Math.max(1,n-3);k<=n+3;k++)if(k!==n)pool.push(k);
+  return {auto:small,say:t('gq_count'),sayRight:String(n),prompt:'<p class="gm-say">'+t('gq_count')+'</p><div class="cnt'+(n>6?' many':'')+'" aria-label="'+esc(t('gq_count'))+'">'+items+'</div>',
+    opts:opts(n,pool,small?3:4,function(x){return {html:'<span class="bignum">'+x+'</span>',aria:String(x)}})};
+};
+var WORDS={en:[['🍎','apple'],['⚽','ball'],['🐱','cat'],['🐶','dog'],['🥚','egg'],['🐟','fish'],['🎩','hat'],['🌙','moon'],['☀️','sun'],['🌳','tree'],['🚌','bus'],['🐷','pig'],['🦁','lion'],['🦊','fox']],
+  es:[['🐝','abeja'],['⛵','barco'],['🏠','casa'],['🎲','dado'],['⭐','estrella'],['🐱','gato'],['🌙','luna'],['✋','mano'],['🦆','pato'],['☀️','sol'],['🚆','tren'],['🐻','oso'],['🍉','sandía'],['🐭','ratón']],
+  fr:[['✈️','avion'],['⛵','bateau'],['🐱','chat'],['🌸','fleur'],['🎂','gâteau'],['🌙','lune'],['🏠','maison'],['☁️','nuage'],['🐟','poisson'],['☀️','soleil'],['🚆','train'],['🐻','ours'],['🦊','renard'],['🦆','canard']]};
+MC.letters=function(g){
+  var W=WORDS[lang()],w=pick(W),L0=w[1].charAt(0).toUpperCase(),pool=W.map(function(x){return x[1].charAt(0).toUpperCase()});
+  'ABCDEFGHILMNOPRST'.split('').forEach(function(c){pool.push(c)});
+  var young=g.band==='2-4',word=w[1].charAt(0).toUpperCase()+w[1].slice(1);
+  return {auto:true,say:t('gq_letter_say',{w:w[1]}),prompt:'<span class="emo big">'+w[0]+'</span><p class="gm-say">'+(young?t('gq_letter'):'<span class="blank">_'+esc(w[1].slice(1))+'</span>')+'</p>',
+    reveal:'<span class="word">'+esc(word)+'</span>',opts:opts(L0,pool,young?3:4,function(x){return {html:'<span class="bignum">'+x+'</span>',aria:x}})};
+};
+MC.pattern=function(g){
+  if(g.band==='5-8'){
+    var set=shuffle(['🔴','🔵','🟡','🟢','🟣','⭐','🌙','❤️']).slice(0,3),types=[[0,1],[0,0,1],[0,1,1],[0,1,2]],ty=pick(types),seq=[];
+    for(var i=0;i<7;i++)seq.push(set[ty[i%ty.length]]);
+    var ans=set[ty[7%ty.length]];
+    return {say:t('gq_next'),prompt:'<p class="gm-say">'+t('gq_next')+'</p><div class="seq">'+seq.map(function(x){return '<span>'+x+'</span>'}).join('')+'<span class="qm">?</span></div>',
+      opts:opts(ans,set,3,function(x){return {html:'<span class="emo">'+x+'</span>',aria:x}})};
+  }
+  var kind=rint(0,3),a=rint(1,20),d,s=[];
+  if(kind===0){d=rint(2,9);for(var j=0;j<5;j++)s.push(a+d*j);var r=a+d*5}
+  else if(kind===1){d=rint(2,6);a=rint(40,90);for(j=0;j<5;j++)s.push(a-d*j);r=a-d*5}
+  else if(kind===2){d=rint(2,3);a=rint(1,5);for(j=0;j<5;j++)s.push(a*Math.pow(d,j));r=a*Math.pow(d,5)}
+  else{a=rint(1,4);for(j=0;j<5;j++)s.push((a+j)*(a+j));r=(a+5)*(a+5)}
+  var pool=[r+1,r-1,r+2,r-2,r+d,r-d,r+10,s[4]+1].filter(function(x){return x>0&&x!==r});
+  return {say:t('gq_next'),prompt:'<p class="gm-say">'+t('gq_next')+'</p><div class="seq num">'+s.map(function(x){return '<span>'+fmtNum(x)+'</span>'}).join('')+'<span class="qm">?</span></div>',
+    opts:opts(r,pool,4,function(x){return {html:'<span class="bignum">'+fmtNum(x)+'</span>',aria:String(x)}})};
+};
+MC.math=function(g){
+  var a,b,r,op,i=g.round;
+  if(g.band==='5-8'){if(i<5){a=rint(1,9);b=rint(1,10-a);op='+';r=a+b}else{a=rint(5,18);b=rint(1,Math.min(9,a));op='−';r=a-b}}
+  else{var k=i%3;if(k===0){a=rint(2,12);b=rint(2,12);op='×';r=a*b}else if(k===1){b=rint(2,12);r=rint(2,12);a=b*r;op='÷'}else{a=rint(12,89);b=rint(11,99-a>11?99-a:11);op='+';r=a+b}}
+  var pool=[r+1,r-1,r+2,r-2,r+10,r-10,r+(op==='×'?a:3),r-(op==='×'?b:3)].filter(function(x){return x>=0&&x!==r});
+  return {say:a+' '+op+' '+b,prompt:'<p class="eq num">'+a+' '+op+' '+b+' = <span class="qm">?</span></p>',opts:opts(r,pool,4,function(x){return {html:'<span class="bignum">'+x+'</span>',aria:String(x)}})};
+};
+function fracBar(n,d){var s='';for(var i=0;i<d;i++)s+='<i'+(i<n?' class="on"':'')+'></i>';return '<span class="fbar">'+s+'</span>'}
+MC.fraction=function(){
+  var a,b,c,d,eq=Math.random()<.18;
+  b=rint(2,10);a=rint(1,b-1);
+  if(eq){var m=rint(2,3);c=a*m;d=b*m}else{do{d=rint(2,10);c=rint(1,d-1)}while(a*d===c*b)}
+  var L1=a/b,R1=c/d,ans=Math.abs(L1-R1)<1e-9?'eq':L1>R1?'l':'r';
+  function fr(n,dd){return '<span class="frac"><b>'+n+'</b><b>'+dd+'</b></span>'}
+  return {say:'',prompt:'<p class="gm-say">'+t('gq_frac')+'</p>',wide:true,reveal:'<span class="fbars">'+fracBar(a,b)+fracBar(c,d)+'</span>',
+    opts:[{html:fr(a,b),aria:a+'/'+b,ok:ans==='l'},{html:'<span class="eqw">'+t('gq_equal')+'</span>',aria:t('gq_equal'),ok:ans==='eq'},{html:fr(c,d),aria:c+'/'+d,ok:ans==='r'}]};
+};
+
+/* memory: find the pairs */
+var GSTART={},GDRAW={};
+['shapes','animals','count','letters','pattern','math','fraction'].forEach(function(id){GSTART[id]=function(){ui.game.round=0;ui.game.q=MC[id](ui.game);if(ui.game.q.auto)setTimeout(function(){if(ui.game&&ui.game.q)say(ui.game.q.say)},300)};GDRAW[id]=mcHTML});
+GSTART.memory=function(){
+  var g=ui.game,n=g.band==='2-4'?3:g.band==='5-8'?6:8,e=shuffle(['🐶','🍎','🚗','⭐','🌸','🐟','🎈','🍓','🐢','🦋','⚽','🍩']).slice(0,n);
+  g.cards=shuffle(e.concat(e)).map(function(x){return {e:x,open:false,done:false}});g.moves=0;g.pick=-1;g.pairs=n;g.prog=t('gm_moves',{n:0});
+};
+GDRAW.memory=function(){
+  var g=ui.game;
+  return '<div class="mem c'+(g.cards.length<=6?3:4)+'">'+g.cards.map(function(c,i){return '<button class="card'+(c.open||c.done?' open':'')+(c.done?' done':'')+'" data-act="gm-card" data-i="'+i+'" aria-label="'+(c.open||c.done?c.e:t('gm_card'))+'"'+(c.done?' disabled':'')+'><span>'+(c.open||c.done?c.e:'')+'</span></button>'}).join('')+'</div>';
+};
+act['gm-card']=function(el){
+  var g=ui.game;if(!g||g.busy)return;var i=+el.getAttribute('data-i'),c=g.cards[i];if(c.open||c.done)return;
+  c.open=true;beep(520,90);
+  if(g.pick<0){g.pick=i;renderGame();return}
+  var a=g.cards[g.pick];g.moves++;g.prog=t('gm_moves',{n:g.moves});
+  if(a.e===c.e){a.done=c.done=true;a.open=c.open=false;g.pick=-1;beep(880,160);renderGame();
+    if(g.cards.every(function(x){return x.done})){var r=g.moves/g.pairs;finish(r<=1.6?3:r<=2.4?2:1,t('gm_mem_done',{n:g.moves}))}
+    return}
+  g.busy=true;renderGame();
+  g.timer=setTimeout(function(){a.open=c.open=false;g.pick=-1;g.busy=false;renderGame()},850);
+};
+
+/* stop and go: tap the star, never the stop sign */
+GSTART.stopgo=function(){var g=ui.game;g.trials=g.band==='2-4'?12:20;g.ti=0;g.hits=0;g.ok=0;g.started=false;g.sym='';g.prog=''};
+GDRAW.stopgo=function(){
+  var g=ui.game;
+  if(!g.started)return '<div class="sg-intro"><p class="gm-say">'+t('sg_rule')+'</p><div class="sg-demo"><span class="sg-go">⭐</span><span>'+t('sg_tap')+'</span><span class="sg-stop">✋</span><span>'+t('sg_wait')+'</span></div><button class="btn primary big" data-act="sg-start">'+t('gm_start')+'</button></div>';
+  return '<button class="sg-pad'+(g.sym?' '+g.sym:'')+'" data-act="gm-tap" aria-label="'+t('sg_pad')+'"><span>'+(g.sym==='go'?'⭐':g.sym==='stop'?'✋':'')+'</span></button><p class="gm-fb" id="gm-fb">'+(g.fb||'')+'</p>';
+};
+act['sg-start']=function(){var g=ui.game;g.started=true;say(t('sg_rule'));g.timer=setTimeout(sgNext,900)};
+function sgNext(){
+  var g=ui.game;if(!g||g.dead||g.id!=='stopgo')return;
+  if(g.ti>=g.trials){var f=g.ok/g.trials;finish(f>=.9?3:f>=.7?2:1,t('gm_score',{a:g.ok,b:g.trials}));return}
+  g.sym=Math.random()<.7?'go':'stop';g.tapped=false;g.fb='';g.prog=t('gm_round',{a:g.ti+1,b:g.trials});renderGame();
+  var show=g.band==='2-4'?1700:g.band==='5-8'?1150:850;
+  g.timer=setTimeout(function(){
+    if(g.sym==='stop'&&!g.tapped)g.ok++;
+    g.ti++;g.sym='';renderGame();g.t2=setTimeout(sgNext,420);
+  },show);
+}
+act['gm-tap']=function(){
+  var g=ui.game;if(!g||!g.started||!g.sym||g.tapped)return;g.tapped=true;
+  if(g.sym==='go'){g.ok++;g.hits++;g.fb=pick(t('gm_yes').split('|'));beep(780,120)}else{g.fb=t('sg_oops');beep(200,200)}
+  var fb=$('#gm-fb');if(fb)fb.textContent=g.fb;
+};
+
+/* follow the lights: remember a growing sequence */
+var PADS=[['#E03131',330],['#1C7ED6',392],['#F2B705',494],['#2F9E44',587]];
+GSTART.simon=function(){var g=ui.game;g.seq=[];g.len=g.band==='5-8'?2:3;g.best=0;g.inp=0;g.lit=-1;g.lives=1;g.mode='intro';g.prog=''};
+GDRAW.simon=function(){
+  var g=ui.game;
+  if(g.mode==='intro')return '<div class="sg-intro"><p class="gm-say">'+t('sm_rule')+'</p><button class="btn primary big" data-act="sm-start">'+t('gm_start')+'</button></div>';
+  return '<p class="gm-say sm-st">'+t(g.mode==='show'?'sm_watch':'sm_you')+'</p><div class="pads">'+PADS.map(function(p,i){return '<button class="pad'+(g.lit===i?' lit':'')+'" style="--pc:'+p[0]+'" data-act="sm-pad" data-i="'+i+'" aria-label="'+t('sm_pad',{n:i+1})+'"'+(g.mode!=='you'?' disabled':'')+'></button>'}).join('')+'</div>';
+};
+act['sm-start']=function(){smRound(null)};
+function smRound(keep){
+  var g=ui.game;if(!g||g.dead)return;if(keep)g.seq=keep;else{g.seq=[];for(var i=0;i<g.len;i++)g.seq.push(rint(0,3))}g.inp=0;g.mode='show';g.prog=t('sm_len',{n:g.len});renderGame();
+  var on=g.band==='9-13'?430:620,off=g.band==='9-13'?160:240,k=0;
+  (function step(){
+    if(!ui.game||ui.game!==g||g.dead)return;
+    if(k>=g.seq.length){g.lit=-1;g.mode='you';renderGame();return}
+    g.lit=g.seq[k];beep(PADS[g.lit][1],on-60);renderGame();
+    g.timer=setTimeout(function(){g.lit=-1;renderGame();k++;g.t2=setTimeout(step,off)},on);
+  })();
+}
+act['sm-pad']=function(el){
+  var g=ui.game;if(!g||g.mode!=='you')return;var i=+el.getAttribute('data-i');beep(PADS[i][1],180);
+  el.classList.add('lit');setTimeout(function(){el.classList.remove('lit')},160);
+  if(i!==g.seq[g.inp]){
+    beep(180,260);
+    if(g.lives>0){g.lives--;g.mode='show';renderGame();var st=$('.sm-st');if(st)st.textContent=t('sm_again');g.timer=setTimeout(smReplay,1100);return}
+    var s=g.band==='5-8'?(g.best>=5?3:g.best>=4?2:1):(g.best>=7?3:g.best>=5?2:1);
+    finish(s,t('sm_done',{n:g.best}));return;
+  }
+  g.inp++;
+  if(g.inp>=g.seq.length){g.best=g.len;g.len++;g.mode='show';g.lit=-1;renderGame();var st=$('.sm-st');if(st)st.textContent=pick(t('gm_yes').split('|'));beep(880,160);g.timer=setTimeout(function(){smRound(null)},900)}
+};
+function smReplay(){var g=ui.game;if(!g||g.dead)return;smRound(g.seq)}
+
+/* number line: where does the number go? */
+GSTART.numline=function(){var g=ui.game;g.max=g.band==='5-8'?10:100;g.total=8;g.pts=0;nlNew()};
+function nlNew(){var g=ui.game;g.target=rint(1,g.max-1);g.guess=null;g.prog=t('gm_round',{a:g.round+1,b:g.total})}
+GDRAW.numline=function(){
+  var g=ui.game,mid=g.max/2,h='<p class="gm-say">'+t('nl_q',{n:'<b class="num">'+g.target+'</b>'})+'</p><div class="nl"><button class="nl-track" data-act="nl-tap" aria-label="'+esc(t('nl_aria',{n:g.target,max:g.max}))+'">';
+  if(g.guess!=null)h+='<i class="nl-g" style="left:'+(g.guess/g.max*100)+'%"></i><i class="nl-t" style="left:'+(g.target/g.max*100)+'%"><b class="num">'+g.target+'</b></i>';
+  h+='</button><div class="nl-lab num"><span>0</span><span>'+mid+'</span><span>'+g.max+'</span></div></div><p class="gm-fb" id="gm-fb">'+(g.fb||'')+'</p>';
+  return h;
+};
+act['nl-tap']=function(el,e){
+  var g=ui.game;if(!g||g.guess!=null)return;var r=el.getBoundingClientRect(),x=e&&e.clientX!=null&&e.clientX>0?(e.clientX-r.left)/r.width:.5;
+  x=Math.max(0,Math.min(1,x));g.guess=Math.round(x*g.max);var err=Math.abs(g.guess-g.target)/g.max;
+  g.pts+=err<=.05?1:err<=.1?.5:0;g.fb=err<=.05?t('nl_spot'):err<=.1?t('nl_close'):t('nl_here',{n:g.target});beep(err<=.1?780:330,160);
+  renderGame();
+  g.timer=setTimeout(function(){g.round++;g.fb='';if(g.round>=g.total){var f=g.pts/g.total;finish(f>=.8?3:f>=.5?2:1,t('nl_done',{a:fmtNum(g.pts),b:g.total}))}else{nlNew();renderGame()}},1600);
+};
+
+/* ---------- baby mode: only the games, big and simple ---------- */
+act['baby-on']=function(){
+  openDlg('<h2>'+t('baby_t')+'</h2><p>'+t('baby_what')+'</p><p class="hint">'+t(hasPin()?'baby_pin_note':'baby_nopin_note')+'</p>'+
+    '<div class="row-btns"><span class="grow"></span><button class="btn" data-act="close">'+t('cancel')+'</button><button class="btn primary" data-act="baby-go">'+t('baby_go')+'</button></div>');
+};
+act['baby-go']=function(){closeDlg();state.baby=true;save();gameStop();ui.game=null;ui.tab='fun';ui.hist=[];render();window.scrollTo(0,0)};
+function babyOff(){state.baby=false;save();gameStop();ui.game=null;ui.tab='fun';render();toast(t('baby_off_t'))}
+act['baby-cancel']=function(){ui.babyExit=false;lockClose();render()};
+(function(){
+  var timer=null,start=0;
+  function stop(){var b=$('[data-baby-hold]');if(b)b.style.setProperty('--h','0');clearInterval(timer);timer=null}
+  document.addEventListener('pointerdown',function(e){
+    var b=e.target.closest&&e.target.closest('[data-baby-hold]');if(!b)return;
+    if(hasPin()){ui.babyExit=true;lockOpen('unlock');return}
+    e.preventDefault();start=Date.now();clearInterval(timer);
+    timer=setInterval(function(){var f=Math.min(1,(Date.now()-start)/3000);b.style.setProperty('--h',String(f));if(f>=1){stop();babyOff()}},40);
+  });
+  ['pointerup','pointercancel'].forEach(function(ev){document.addEventListener(ev,function(){if(timer)stop()},true)});
+  document.addEventListener('keydown',function(e){var b=e.target.closest&&e.target.closest('[data-baby-hold]');if(b&&(e.key==='Enter'||e.key===' ')&&hasPin()){e.preventDefault();ui.babyExit=true;lockOpen('unlock')}});
+})();
+
+/* ---------- lock: an optional password as a second layer ---------- */
+function hashPw(pw,salt){
+  if(window.crypto&&crypto.subtle&&window.TextEncoder){
+    var enc=new TextEncoder();
+    return crypto.subtle.importKey('raw',enc.encode(pw),'PBKDF2',false,['deriveBits'])
+      .then(function(k){return crypto.subtle.deriveBits({name:'PBKDF2',salt:enc.encode(salt),iterations:150000,hash:'SHA-256'},k,256)})
+      .then(function(b){return 'p'+Array.prototype.map.call(new Uint8Array(b),function(x){return ('0'+x.toString(16)).slice(-2)}).join('')});
+  }
+  return hashPin(pw,salt);
+}
+function hasPw(){return !!(state.lock&&state.lock.pw&&state.lock.pw.hash)}
+function unlocked(){
+  if(hasPw()&&LK.mode!=='pass'){LK.mode='pass';LK.pin='';LK.msg='';renderLock();return}
+  ui.locked=false;lockClose();
+  if(ui.babyExit){ui.babyExit=false;babyOff();return}
+  render();
+}
+function pinDone(){
+  var pin=LK.pin;
+  if(LK.mode==='unlock'){
+    hashPin(pin,state.lock.salt).then(function(h){if(h===state.lock.hash)unlocked();else{LK.pin='';LK.msg=t('lock_wrong');renderLock()}});
+  }else if(LK.mode==='set1'){LK.first=pin;LK.pin='';LK.mode='set2';LK.msg='';renderLock()}
+  else if(LK.mode==='set2'){
+    if(pin!==LK.first){LK.mode='set1';LK.pin='';LK.first='';LK.msg=t('lock_mismatch');renderLock();return}
+    var salt=uid()+uid(),old=state.lock||{};
+    hashPin(pin,salt).then(function(h){state.lock={salt:salt,hash:h,cred:old.cred||''};if(old.pw)state.lock.pw=old.pw;save();lockClose();render();toast(t('t_lock_on'))});
+  }
+}
+function renderLock(){
+  var box=$('#lock');
+  if(LK.mode==='pass'){
+    box.innerHTML='<div class="lock-in"><img class="if-logo big" src="'+IFLOGO+'" alt=""><h2>Tally</h2><p class="lock-step">'+t('lock2_step')+'</p><p class="lock-t" id="lock-t">'+t('lock2_enter')+'</p>'+
+      '<label class="fld pw-fld"><span class="vh">'+t('lock2_pw')+'</span><input id="lk-pw" type="password" autocomplete="current-password" data-enter="pw-check" aria-describedby="lock-t"></label>'+
+      '<p class="err" role="alert">'+esc(LK.msg)+'</p><button class="btn primary" data-act="pw-check">'+t('lock2_unlock')+'</button>'+
+      (ui.babyExit?'<button class="link quiet" data-act="baby-cancel">'+t('cancel')+'</button>':'<button class="link quiet" data-act="pin-forgot">'+t('lock2_forgot')+'</button>')+'</div>';
+    box.hidden=false;document.body.classList.add('locked');
+    setTimeout(function(){var i=$('#lk-pw');if(i)i.focus()},60);
+    return;
+  }
+  renderLockBase();
+  if(ui.babyExit&&LK.mode==='unlock'){
+    var f=$('[data-act=pin-forgot]',box);if(f)f.remove();
+    var tl=$('#lock-t',box);if(tl)tl.textContent=t('baby_pin');
+    $('.lock-in',box).insertAdjacentHTML('beforeend','<button class="btn" data-act="baby-cancel">'+t('cancel')+'</button>');
+  }
+  if(hasPw()&&LK.mode==='unlock'&&!ui.babyExit){var st=$('#lock-t',box);if(st)st.insertAdjacentHTML('beforebegin','<p class="lock-step">'+t('lock1_step')+'</p>')}
+}
+act['pw-check']=function(){
+  var i=$('#lk-pw'),v=i?i.value:'';if(!v){LK.msg=t('lock2_empty');renderLock();return}
+  var b=$('[data-act=pw-check]');if(b)b.disabled=true;
+  hashPw(v,state.lock.pw.salt).then(function(h){if(h===state.lock.pw.hash)unlocked();else{LK.msg=t('lock2_wrong');renderLock()}});
+};
+var lockSettings0=lockSettingsHTML;
+lockSettingsHTML=function(){
+  var h=lockSettings0();
+  h+='<div class="lock2"><h4>'+t('lock2_h')+'</h4><p class="hint">'+t(hasPin()?'lock2_hint':'lock2_needpin')+'</p>';
+  if(hasPin())h+='<div class="row-btns lock-btns">'+(hasPw()?'<button class="btn" data-act="pw-set">'+t('lock2_change')+'</button><button class="btn" data-act="pw-off">'+t('lock2_off')+'</button>':'<button class="btn" data-act="pw-set">'+t('lock2_set')+'</button>')+'</div>';
+  return h+'</div>';
+};
+act['pw-set']=function(){
+  openDlg('<h2>'+t('lock2_t')+'</h2><p class="hint">'+t('lock2_rules')+'</p>'+
+    '<label class="fld"><span>'+t('lock2_new')+'</span><input id="pw1" type="password" autocomplete="new-password" minlength="6"></label>'+
+    '<label class="fld"><span>'+t('lock2_again')+'</span><input id="pw2" type="password" autocomplete="new-password" data-enter="pw-save"></label>'+
+    '<p class="err" id="pw-err" role="alert"></p><div class="row-btns"><span class="grow"></span><button class="btn" data-act="settings">'+t('cancel')+'</button><button class="btn primary" data-act="pw-save">'+t('lock2_save')+'</button></div>');
+  $('#pw1').focus();
+};
+act['pw-save']=function(){
+  var a=$('#pw1').value,b=$('#pw2').value,e=$('#pw-err');
+  if(a.length<6){e.textContent=t('lock2_short');return}
+  if(a!==b){e.textContent=t('lock2_mismatch');return}
+  if(/^\d{4}$/.test(a)){e.textContent=t('lock2_notpin');return}
+  var salt=uid()+uid()+uid();
+  hashPw(a,salt).then(function(h){state.lock.pw={salt:salt,hash:h};save();openDlg(settingsHTML());toast(t('lock2_on'))});
+};
+act['pw-off']=function(){delete state.lock.pw;save();openDlg(settingsHTML());toast(t('lock2_offt'))};
+
+/* settings: baby mode lives here too */
+var settings0=settingsHTML;
+settingsHTML=function(){
+  var h=settings0(),add='<h3>'+t('baby_h')+'</h3><p class="hint">'+t('baby_set_hint')+'</p><div class="row-btns"><button class="btn" data-act="baby-on">'+t('baby_on')+'</button></div>';
+  var i=h.indexOf('<h3>'+t('about_you')+'</h3>');
+  return i>0?h.slice(0,i)+add+h.slice(i):h+add;
+};
 
 init();
 if(ui.locked){lockOpen('unlock');applyChrome();if(state.lock.cred)setTimeout(bioUnlock,300)}else render();

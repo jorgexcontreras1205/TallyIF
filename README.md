@@ -29,4 +29,6 @@ Upload the new `index.html` over the old one. Installed copies pick it up the ne
 - Each device keeps its own data. To move it, use Settings, then Backup, on one device and restore on the other.
 - The Travel map loads its country shapes from the internet the first time it opens. After that it is kept on the device and works offline.
 - The optional PIN, and Face ID or Touch ID, are set in Settings on each device. They close the app to someone holding the device; they do not encrypt the data.
-- The address is public, so anyone with the link can open the app. They get an empty copy, never your entries.
+- The optional second layer, a password, is also set in Settings and is asked for after the PIN or Face ID.
+- Baby mode (Fun, then Turn on baby mode) shows only the learning games. Leaving it takes the PIN, or a three-second hold when no PIN is set.
+- The address is public, so anyone with the link can open the app and see the example profiles. They get an empty copy, never your entries.
